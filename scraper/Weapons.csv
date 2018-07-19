@@ -1,1 +1,936 @@
-[[1, "Buster Sword I", "384", "80", 0, null, null, 1], [2, "Buster Sword II", "432", "90", 0, null, null, 1], [3, "Buster Sword III", "480", "100", 0, null, null, 1], [4, "Buster Blade I", "576", "120", 0, null, null, 1], [5, "Buster Blade II", "624", "130", 0, null, null, 1], [6, "Buster Blade III", "672", "140", "240", "Poison", null, 1], [7, "Chrome Razor I", "720", "150", "330", "Poison", null, 1], [8, "Chrome Razor II", "864", "180", "420", "Poison", null, 1], [9, "Nergal Judicator", "912", "190", "120", "Dragon", null, 1], [10, "Purgation's Atrocity", "1008", "210", "150", "Dragon", null, 1], [11, "Thunder Blade I", "528", "110", "120", "Thunder", null, 1], [12, "Thunder Blade II", "624", "130", "150", "Thunder", null, 1], [13, "Lightning Punisher I", "672", "140", "180", "Thunder", null, 1], [14, "Lightning Punisher II", "816", "170", "210", "Thunder", null, 1], [15, "Lightning Punisher III", "912", "190", "240", "Thunder", null, 1], [16, "Freeze Blade I", "576", "120", "240", "Ice", null, 1], [17, "Freeze Blade II", "624", "130", "270", "Ice", null, 1], [18, "Frost Blaze I", "720", "150", "330", "Ice", null, 1], [19, "Frost Blaze II", "768", "160", "390", "Ice", null, 1], [20, "Jagras Blade I", "528", "110", 0, null, null, 1], [21, "Jagras Blade II", "576", "120", 0, null, null, 1], [22, "Jagras Blade III", "672", "140", 0, null, null, 1], [23, "Jagras Hacker I", "816", "170", "210", "Ice", null, 1], [24, "Jagras Hacker II", "864", "180", "240", "Ice", null, 1], [25, "Jagras Hacker III", "912", "190", "300", "Ice", null, 1], [26, "Girros Blade I", "528", "110", "210", "Paralysis", null, 1], [27, "Girros Blade II", "624", "130", "240", "Paralysis", null, 1], [28, "Malady's Kiss I", "672", "140", "270", "Paralysis", null, 1], [29, "Malady's Kiss II", "720", "150", "360", "Paralysis", null, 1], [30, "Malady's Kiss III", "768", "160", "450", "Paralysis", null, 1], [31, "Lava Blaze I", "768", "160", "270", "Fire", null, 1], [32, "Lava Blaze II", "864", "180", "330", "Fire", null, 1], [33, "Blooming Blade I", "528", "110", "240", "Poison", null, 1], [34, "Blooming Blade II", "576", "120", "300", "Poison", null, 1], [35, "Blooming Blade III", "624", "130", "360", "Poison", null, 1], [36, "Datura Blaze I", "720", "150", "420", "Poison", null, 1], [37, "Datura Blaze II", "768", "160", "480", "Poison", null, 1], [38, "Datura Blaze III", "816", "170", "540", "Poison", null, 1], [39, "Flame Blade I", "672", "140", "120", "Fire", null, 1], [40, "Flame Blade II", "720", "150", "150", "Fire", null, 1], [41, "Red Wing", "768", "160", "180", "Fire", null, 1], [42, "Blue Wing", "816", "170", "210", "Fire", null, 1], [43, "Rathalos Glinsword", "912", "190", "240", "Fire", null, 1], [44, "Bone Blade I", "480", "100", 0, null, null, 1], [45, "Bone Blade II", "528", "110", 0, null, null, 1], [46, "Bone Blade III", "576", "120", 0, null, null, 1], [47, "Bone Slasher I", "672", "140", 0, null, null, 1], [48, "Bone Slasher II", "720", "150", 0, null, null, 1], [49, "Bone Slasher III", "768", "160", "180", "Ice", null, 1], [50, "Giant Jawblade I", "816", "170", "240", "Ice", null, 1], [51, "Giant Jawblade II", "912", "190", "300", "Ice", null, 1], [52, "Hazak Kys", "912", "190", "300", "Dragon", null, 1], [53, "Leviathan's Fury", "960", "200", "300", "Dragon", null, 1], [54, "Flammenzahn", "720", "150", "240", "Fire", "-30", 1], [55, "Flammenzahn+", "864", "180", "300", "Fire", "-30", 1], [56, "Gnshing Flammenzahn", "1008", "210", "360", "Fire", "-30", 1], [57, "Aqua Slasher I", "576", "120", "120", "Water", null, 1], [58, "Aqua Slasher II", "624", "130", "150", "Water", null, 1], [59, "Aqua Slasher III", "672", "140", "180", "Water", null, 1], [60, "Water Golum I", "768", "160", "240", "Water", null, 1], [61, "Water Golum II", "816", "170", "270", "Water", null, 1], [62, "Water Golum III", "912", "190", "300", "Water", null, 1], [63, "Carapace Buster I", "624", "130", 0, "", "-20", 1], [64, "Carapace Buster II", "672", "140", 0, "", "-20", 1], [65, "Carapace Buster III", "720", "150", 0, "", "-20", 1], [66, "Barroth Shredder I", "816", "170", "270", "Paralysis", "-20", 1], [67, "Barroth Shredder II", "864", "180", "330", "Paralysis", "-20", 1], [68, "Barroth Shredder III", "960", "200", "390", "Paralysis", "-20", 1], [69, "Spiked Blade I", "624", "130", "150", "Sleep", null, 1], [70, "Spiked Blade II", "672", "140", "180", "Sleep", null, 1], [71, "Radobaan Slab I", "768", "160", "210", "Sleep", null, 1], [72, "Radobaan Slab II", "816", "170", "240", "Sleep", null, 1], [73, "Radobaan Slab III", "912", "190", "270", "Sleep", null, 1], [74, "Dragonbone Cleaver I", "480", "100", "270", "Dragon", null, 1], [75, "Dragonbone Cleaver II", "576", "120", "330", "Dragon", null, 1], [76, "Dragonbone Cleaver III", "768", "160", "420", "Dragon", null, 1], [77, "Thundersword", "528", "110", "390", "Thunder", null, 1], [78, "Kirin Thundersword", "720", "150", "480", "Thunder", null, 1], [79, "King Thundersword", "768", "160", "540", "Thunder", null, 1], [80, "Magda Potestas I", "768", "160", "330", "Blast", "-20", 1], [81, "Magda Potestas II", "1056", "220", "420", "Blast", "-20", 1], [82, "Blacksteel Chopper I", "480", "100", "90", "Dragon", null, 1], [83, "Blacksteel Chopper II", "576", "120", "120", "Dragon", null, 1], [84, "Icesteel Edge ", "816", "170", "210", "Ice", null, 1], [85, "Daora's Decimator", "864", "180", "270", "Ice", null, 1], [86, "Xeno Maliq", "816", "170", "210", "Dragon", null, 1], [87, "Wyvern Jawblade", "864", "180", "240", "Blast", null, 1], [88, "Great Wyvern Jawblade", "960", "200", "330", "Blast", null, 1], [89, "Berseker Sword", "1008", "210", "180", "Dragon", "-30", 1], [90, "Anguish", "1104", "230", "240", "Dragon", "-30", 1], [91, "Wyvern Ignition \"Steel\"", "720", "150", 0, "", "-15", 1], [92, "Wyvern Ignition \"Impact\"", "1008", "210", "510", "Fire", "-15", 1], [93, "Iron Katana I", "264", "80", 0, null, null, 2], [94, "Iron Katana II", "297", "90", 0, null, null, 2], [95, "Iron Katana III", "330", "100", 0, null, null, 2], [96, "Iron Grace I", "363", "110", 0, null, null, 2], [97, "Iron Grace II", "429", "130", 0, null, null, 2], [98, "Iron Grace III", "462", "140", "120", "Water", null, 2], [99, "Iron Gospel I", "528", "160", "150", "Water", null, 2], [100, "Iron Gospel II", "594", "180", "180", "Water", null, 2], [101, "Nergal Reaver", "627", "190", "90", "Dragon", null, 2], [102, "Extermination's Edge", "693", "210", "120", "Dragon", null, 2], [103, "Flickering Glow I", "429", "130", 0, null, null, 2], [104, "Flickering Glow II", "462", "140", 0, null, null, 2], [105, "Dazzling Flash I", "528", "160", "240", "Thunder", null, 2], [106, "Dazzling Flash II", "561", "170", "300", "Thunder", null, 2], [107, "Dazzling Flash III", "594", "180", "360", "Thunder", null, 2], [108, "First Dance I", "330", "100", 0, "", null, 2], [109, "First Dance II", "363", "110", 0, "", null, 2], [110, "First Dance III", "429", "130", 0, "", null, 2], [111, "Last Dance I", "495", "150", "210", "Sleep", null, 2], [112, "Last Dance II", "528", "160", "240", "Sleep", null, 2], [113, "Last Dance III", "561", "170", "270", "Sleep", null, 2], [114, "Brazenridge I", "594", "180", "90", "Fire", "-10", 2], [115, "Brazenridge II", "660", "200", "120", "Fire", "-10", 2], [116, "Wyvern Blade \"Leaf\"", "363", "110", "240", "Poison", null, 2], [117, "Wyvern Blade \"Verde\"", "495", "150", "270", "Poison", null, 2], [118, "Wyvern Blade \"Holly\"", "627", "190", "330", "Poison", null, 2], [119, "Wyvern Blade \"Fall\"", "396", "120", "150", "Fire", null, 2], [120, "Wyvern Blade \"Blood\"", "528", "160", "180", "Fire", null, 2], [121, "Wyvern Blade \"Azure\"", "561", "170", "210", "Fire", null, 2], [122, "Wyvern Blade \"Indigo\"", "627", "190", "240", "Fire", null, 2], [123, "Bone Shotel I", "297", "90", 0, null, null, 2], [124, "Bone Shotel II", "330", "100", 0, null, null, 2], [125, "Bone Shotel III", "396", "120", 0, null, null, 2], [126, "Hard Bone Shotel I", "429", "130", 0, null, null, 2], [127, "Hard Bone Shotel II", "495", "150", 0, null, null, 2], [128, "Hard Bone Shotel III", "528", "160", "210", "Sleep", null, 2], [129, "Bone Reaper I", "561", "170", "240", "Sleep", null, 2], [130, "Bone Reaper II", "627", "190", "270", "Sleep", null, 2], [131, "Rookslayer Long Sword", "561", "170", "150", "Blast", "-10", 2], [132, "Bazel Varga Rookslayer", "660", "200", "210", "Blast", "-10", 2], [133, "Blazing Shotel I", "462", "140", "150", "Fire", "-20", 2], [134, "Blazing Shotel II", "528", "160", "210", "Fire", "-20", 2], [135, "Anja Scimitar I", "594", "180", "270", "Fire", "-20", 2], [136, "Anja Scimitar II", "660", "200", "330", "Fire", "-20", 2], [137, "Anja Scimitar III", "693", "210", "390", "Fire", "-20", 2], [138, "Jyura Shotel I", "396", "120", "150", "Water", null, 2], [139, "Jyura Shotel II", "429", "130", "180", "Water", null, 2], [140, "Jyura Shotel III", "462", "140", "210", "Water", null, 2], [141, "Dipterus I", "495", "150", "240", "Water", null, 2], [142, "Dipterus II", "561", "170", "300", "Water", null, 2], [143, "Dipterus III", "627", "190", "360", "Water", null, 2], [144, "Hazak Grosser I", "627", "190", "210", "Dragon", null, 2], [145, "Hazak Grosser II", "660", "200", "270", "Dragon", null, 2], [146, "Pulsar Shotel I", "363", "110", "120", "Thunder", null, 2], [147, "Pulsar Shotel II", "396", "120", "150", "Thunder", null, 2], [148, "Pulsar Shotel III", "462", "140", "180", "Thunder", null, 2], [149, "Kadachi Fang I", "528", "160", "210", "Thunder", null, 2], [150, "Kadachi Fang II", "561", "170", "240", "Thunder", null, 2], [151, "Kadachi Fang III", "594", "180", "270", "Thunder", null, 2], [152, "Glacial Shotel I", "429", "130", "210", "Ice", null, 2], [153, "Glacial Shotel II", "462", "140", "240", "Ice", null, 2], [154, "Stealer", "495", "150", "300", "Ice", null, 2], [155, "Legia Stealer", "528", "160", "360", "Ice", null, 2], [156, "Dark Shotel I", "396", "120", 0, null, null, 2], [157, "Dark Shotel II", "429", "130", 0, null, null, 2], [158, "Dark Scimitar I", "462", "140", "180", "", null, 2], [159, "Dark Scimitar II", "495", "150", "210", "", null, 2], [160, "Dark Scimitar III", "528", "160", "240", "", null, 2], [161, "Dragonbone Stabber I", "330", "100", "270", "Dragon", null, 2], [162, "Dragonbone Stabber II", "363", "110", "330", "Dragon", null, 2], [163, "Dragonbone Stabber III", "528", "160", "420", "Dragon", null, 2], [164, "Magda Facultas I", "528", "160", "300", "Blast", "-20", 2], [165, "Magda Facultas II", "726", "220", "360", "Blast", "-20", 2], [166, "Blacksteel Long Sword I", "330", "100", "120", "Dragon", null, 2], [167, "Blacksteel Long Sword II", "363", "110", "150", "Dragon", null, 2], [168, "Imperial Saber", "561", "170", "300", "Blast", null, 2], [169, "Imperial Shimmer", "627", "190", "300", "Blast", null, 2], [170, "Xeno Cypher ", "594", "180", "180", "Dragon", null, 2], [171, "Supermacy Blade", "561", "170", "120", "Dragon", null, 2], [172, "Divine Slasher", "693", "210", "150", "Dragon", null, 2], [173, "Reaver \"Cruelty\"", "693", "210", "150", "Dragon", "-25", 2], [174, "Reaver \"Calamity\"", "759", "230", "210", "Dragon", "-25", 2], [175, "Azure Star Blade", "363", "110", "120", "Water", null, 2], [176, "Hunter's Knife I", "112", "80", 0, null, null, 3], [177, "Hunter's Knife II", "126", "90", 0, null, null, 3], [178, "Hunter's Knife III", "140", "100", 0, null, null, 3], [179, "Steel Knife I", "168", "120", 0, null, null, 3], [180, "Steel Knife II", "182", "130", 0, null, null, 3], [181, "Steel Knife III", "196", "140", "120", "Sleep", null, 3], [182, "Chrome Slicer I", "224", "160", "150", "Sleep", null, 3], [183, "Chrome Slicer II", "252", "180", "240", "Sleep", null, 3], [184, "Nergal Jack", "280", "200", "120", "Dragon", null, 3], [185, "Eradication Vanguard", "294", "210", "150", "Dragon", null, 3], [186, "Flame Knife I", "182", "130", "120", "Fire", null, 3], [187, "Flame Knife II", "196", "140", "120", "Fire", null, 3], [188, "Heat Edge", "224", "160", "150", "Fire", null, 3], [189, "Corona", "266", "190", "180", "Fire", null, 3], [190, "Heavy Bang", "210", "150", 0, null, null, 3], [191, "Heavy Bang+", "252", "180", "270", "Thunder", null, 3], [192, "Master Bang", "280", "200", "330", "Thunder", null, 3], [193, "Aqua Messer I", "140", "100", "90", "Water", null, 3], [194, "Aqua Messer II", "168", "120", "120", "Water", null, 3], [195, "Aqua Messer III", "196", "140", "150", "Water", null, 3], [196, "Rogue Wave I", "210", "150", "180", "Water", null, 3], [197, "Rogue Wave II", "224", "160", "210", "Water", null, 3], [198, "Rogue Wave III", "252", "180", "240", "Water", null, 3], [199, "Glacial Grace I", "182", "130", "210", "Ice", null, 3], [200, "Glacial Grace II", "196", "140", "240", "Ice", null, 3], [201, "Rimespire ", "210", "150", "300", "Ice", null, 3], [202, "Legia Rimespire", "224", "160", "330", "Ice", null, 3], [203, "Princess Rapier", "168", "120", "150", "Poison", null, 3], [204, "Queen Rapier", "210", "150", "180", "Poison", null, 3], [205, "Queen Rose", "238", "170", "210", "Poison", null, 3], [206, "Royal Rose", "266", "190", "240", "Poison", null, 3], [207, "Lumu Knife I", "168", "120", 0, null, null, 3], [208, "Lumu Knife II", "182", "130", 0, null, null, 3], [209, "Lumu Tabar I", "210", "150", "270", "Blast", null, 3], [210, "Lumu Tabar II", "224", "160", "300", "Blast", null, 3], [211, "Lumu Tabar III", "238", "170", "330", "Blast", null, 3], [212, "Blooming Knife I", "154", "110", "210", "Poison", null, 3], [213, "Blooming Knife II", "182", "130", "240", "Poison", null, 3], [214, "Blooming Knife III", "196", "140", "270", "Poison", null, 3], [215, "Datura Blossom I", "210", "150", "330", "Poison", null, 3], [216, "Datura Blossom II", "224", "160", "360", "Poison", null, 3], [217, "Datura Blossom III", "238", "170", "390", "Poison", null, 3], [218, "Girros Knife I", "168", "120", "120", "Paralysis", null, 3], [219, "Girros Knife II", "182", "130", "150", "Paralysis", null, 3], [220, "Malady's Tabar I", "196", "140", "180", "Paralysis", null, 3], [221, "Malady's Tabar II", "210", "150", "210", "Paralysis", null, 3], [222, "Malady's Tabar III", "224", "160", "240", "Paralysis", null, 3], [223, "Bone Kukri I", "140", "100", 0, null, null, 3], [224, "Bone Kukri II", "154", "110", 0, null, null, 3], [225, "Bone Kukri III", "168", "120", 0, null, null, 3], [226, "Chief Kukri I", "196", "140", 0, null, null, 3], [227, "Chief Kukri II", "210", "150", 0, null, null, 3], [228, "Chief Kukri III", "224", "160", "180", "", null, 3], [229, "Grand Barong I", "238", "170", "240", "", null, 3], [230, "Grand Barong II", "266", "190", "300", "", null, 3], [231, "Spiked Edge I", "182", "130", "120", "Sleep", null, 3], [232, "Spiked Edge II", "196", "140", "120", "Sleep", null, 3], [233, "Baan Claw I", "238", "170", "150", "Sleep", null, 3], [234, "Baan Claw II", "252", "180", "180", "Sleep", null, 3], [235, "Baan Claw III", "266", "190", "210", "Sleep", null, 3], [236, "Jagras Edge I", "168", "120", 0, null, null, 3], [237, "Jagras Edge II", "196", "140", 0, null, null, 3], [238, "Jagras Edge III", "210", "150", 0, null, null, 3], [239, "Jagras Garotte I", "238", "170", "300", "Water", null, 3], [240, "Jagras Garotte II", "252", "180", "330", "Water", null, 3], [241, "Jagras Garotte III", "266", "190", "360", "Water", null, 3], [242, "Thunder Edge I", "182", "130", "90", "Thunder", null, 3], [243, "Thunder Edge II", "210", "150", "120", "Thunder", null, 3], [244, "Lightning Nemesis I", "224", "160", "150", "Thunder", null, 3], [245, "Lightning Nemesis II", "252", "180", "180", "Thunder", null, 3], [246, "Lightning Nemesis III", "266", "190", "210", "Thunder", null, 3], [247, "Carapace Edge I", "182", "130", 0, null, null, 3], [248, "Carapace Edge II", "196", "140", 0, null, null, 3], [249, "Carapace Edge III", "224", "160", 0, null, null, 3], [250, "Barroth Club I", "252", "180", "120", "Paralysis", "-10", 3], [251, "Barroth Club II", "266", "190", "150", "Paralysis", "-10", 3], [252, "Barroth Club III", "294", "210", "180", "Paralysis", "-10", 3], [253, "Blazing Edge I", "196", "140", "150", "Fire", "-20", 3], [254, "Blazing Edge II", "224", "160", "180", "Fire", "-20", 3], [255, "Flammensucher", "266", "190", "210", "Fire", "-20", 3], [256, "Gnashing Flammensucher", "294", "210", "240", "Fire", "-20", 3], [257, "Dragonbone Sword I", "140", "100", "270", "Dragon", null, 3], [258, "Dragonbone Sword II", "154", "110", "330", "Dragon", null, 3], [259, "Dragonbone Sword III", "196", "140", "450", "Dragon", null, 3], [260, "Fulminator", "154", "110", "270", "Thunder", null, 3], [261, "Thunderbolt Sword I", "210", "150", "300", "Thunder", null, 3], [262, "Thunderbolt Sword II", "224", "160", "360", "Thunder", null, 3], [263, "Blacksteel Sword I", "140", "100", "120", "Dragon", null, 3], [264, "Blacksteel Sword II", "154", "110", "150", "Dragon", null, 3], [265, "Teostra's Spada", "252", "180", "210", "Blast", null, 3], [266, "Teostra's Emblem", "266", "190", "240", "Blast", null, 3], [267, "Xeno Mabura", "238", "170", "270", "Dragon", null, 3], [268, "Fatal Jho", "280", "200", "150", "Dragon", "-20", 3], [269, "Fatal Bite", "308", "220", "210", "Dragon", "-20", 3], [270, "Matched Slicers I", "112", "80", 0, null, null, 4], [271, "Matched Slicers II", "126", "90", 0, null, null, 4], [272, "Matched Slicers III", "140", "100", 0, null, null, 4], [273, "Dual Slicers I", "154", "110", 0, null, null, 4], [274, "Dual Slicers II", "182", "130", 0, null, null, 4], [275, "Dual Slicers III", "196", "140", "210", "Poison", null, 4], [276, "Chrome Slicers I", "224", "160", "240", "Poison", null, 4], [277, "Chrome Slicers II", "252", "180", "270", "Poison", null, 4], [278, "Nergal Gouge", "280", "200", "90", "Dragon", null, 4], [279, "Decimation Claws", "294", "210", "120", "Dragon", null, 4], [280, "Luminous Daggers I", "168", "120", 0, null, null, 4], [281, "Luminous Daggers II", "196", "140", 0, null, null, 4], [282, "Dual Destroyers I", "224", "160", "120", "Thunder", null, 4], [283, "Dual Destroyers II", "238", "170", "150", "Thunder", null, 4], [284, "Dual Destroyers III", "252", "180", "210", "Thunder", null, 4], [285, "Rookslayer Handaxes", "252", "180", "120", "Blast", "-10", 4], [286, "Bazelhawk Rookslayer", "280", "200", "150", "Blast", "-10", 4], [287, "Freeze Daggers I", "182", "130", "60", "Ice", null, 4], [288, "Freeze Daggers II", "210", "150", "60", "Ice", null, 4], [289, "Freeze Chain I", "238", "170", "120", "Ice", null, 4], [290, "Freeze Chain II", "252", "180", "150", "Ice", null, 4], [291, "Rending Beaks I", "154", "110", 0, "", null, 4], [292, "Rending Beaks II", "168", "120", 0, "", null, 4], [293, "Rending Beaks III", "182", "130", 0, "", null, 4], [294, "Arcanaria I", "210", "150", "90", "Sleep", null, 4], [295, "Arcanaria II", "224", "160", "90", "Sleep", null, 4], [296, "Arcanaria III", "238", "170", "120", "Sleep", null, 4], [297, "Sworn Rapiers", "182", "130", "90", "Water", null, 4], [298, "Sworn Rapiers+", "210", "150", "90", "Water", null, 4], [299, "Holy Sabers", "252", "180", "120", "Water", null, 4], [300, "Bone Hachets I", "140", "100", 0, null, null, 4], [301, "Bone Hachets II", "154", "110", 0, null, null, 4], [302, "Bone Hachets III", "168", "120", 0, null, null, 4], [303, "Wild Hachets I", "196", "140", 0, null, null, 4], [304, "Wild Hachets II", "210", "150", 0, null, null, 4], [305, "Wild Hachets III", "224", "160", "120", "Blast", null, 4], [306, "Strong Hatchets I", "238", "170", "150", "Blast", null, 4], [307, "Strong Hatchets II", "266", "190", "180", "Blast", null, 4], [308, "Blazing Hachets I", "196", "140", "90", "Fire", "-20", 4], [309, "Blazing Hachets II", "210", "150", "120", "Fire", "-20", 4], [310, "Anja Cyclone I", "238", "170", "150", "Fire", "-20", 4], [311, "Anja Cyclone II", "266", "190", "180", "Fire", "-20", 4], [312, "Anja Cyclone III", "294", "210", "210", "Fire", "-20", 4], [313, "Diablos Hachets I", "224", "160", 0, "", "-10", 4], [314, "Diablos Hachets II", "266", "190", "90", "Ice", "-10", 4], [315, "Diablos Clubs I", "294", "210", "90", "Ice", "-10", 4], [316, "Diablos Clubs II", "322", "230", "90", "Ice", "-10", 4], [317, "Madness Pangas I", "154", "110", "90", "Water", null, 4], [318, "Madness Pangas II", "182", "130", "90", "Water", null, 4], [319, "Madness Pangas III", "210", "150", "120", "Water", null, 4], [320, "Jyura Hatchets I", "238", "170", "150", "Water", null, 4], [321, "Jyura Hatchets II", "252", "180", "180", "Water", null, 4], [322, "Jyura Hatchets III", "266", "190", "210", "Water", null, 4], [323, "Lava Cyclone I", "252", "180", "120", "Fire", null, 4], [324, "Lava Cyclone II", "252", "180", "150", "Fire", null, 4], [325, "Taurus Pangas I", "168", "120", 0, null, null, 4], [326, "Taurus Pangas II", "182", "130", 0, null, null, 4], [327, "Dark Ripper I", "196", "140", "90", "", null, 4], [328, "Dark Ripper II", "210", "150", "90", "", null, 4], [329, "Dark Ripper III", "224", "160", "90", "", null, 4], [330, "Pulsar Hachets I", "154", "110", "60", "Thunder", null, 4], [331, "Pulsar Hachets II", "168", "120", "60", "Thunder", null, 4], [332, "Pulsar Hachets III", "196", "140", "60", "Thunder", null, 4], [333, "Kadachi Claws I", "224", "160", "90", "Thunder", null, 4], [334, "Kadachi Claws II", "238", "170", "120", "Thunder", null, 4], [335, "Kadachi Claws III", "252", "180", "150", "Thunder", null, 4], [336, "Garon Hatchets I", "182", "130", 0, "", null, 4], [337, "Garon Hatchets II", "196", "140", "180", "Fire", null, 4], [338, "Blood-drinker Chainblade", "210", "150", "180", "Fire", null, 4], [339, "Sin", "224", "160", "180", "Fire", null, 4], [340, "Dragonbone Twinblades I", "140", "100", "120", "Dragon", null, 4], [341, "Dragonbone Twinblades II", "168", "120", "120", "Dragon", null, 4], [342, "Enduring Schism", "196", "140", "270", "Dragon", null, 4], [343, "Kirin Bolts", "154", "110", "210", "Thunder", null, 4], [344, "Kirin Bolts+", "196", "140", "240", "Thunder", null, 4], [345, "Monarch", "224", "160", "270", "Thunder", null, 4], [346, "Magda Ungulae I", "224", "160", "180", "Blast", "-20", 4], [347, "Magda Ungulae II", "308", "220", "210", "Blast", "-20", 4], [348, "Blacksteel Twins I", "140", "100", "90", "Dragon", null, 4], [349, "Blacksteel Twins II", "154", "110", "120", "Dragon", null, 4], [350, "Twin Nails", "238", "170", "210", "", null, 4], [351, "Fire and Ice", "252", "180", "240", "", null, 4], [352, "Xeno Raqs", "238", "170", "150", "Dragon", null, 4], [353, "Wrath & Rancor", "280", "200", "120", "Dragon", "-20", 4], [354, "Wrathful Predation", "308", "220", "180", "Dragon", "-20", 4], [355, "Iron Hammer I", "416", "80", 0, null, null, 5], [356, "Iron Hammer II", "468", "90", 0, null, null, 5], [357, "Iron Hammer III", "520", "100", 0, null, null, 5], [358, "Iron Demon I", "572", "110", 0, null, null, 5], [359, "Iron Demon II", "676", "130", 0, null, null, 5], [360, "Iron Demon III", "728", "140", "210", "Blast", null, 5], [361, "Iron Archdemon I", "832", "160", "240", "Blast", null, 5], [362, "Iron Archdemon II", "936", "180", "270", "Blast", null, 5], [363, "Nergal Crusher", "1040", "200", "90", "Dragon", null, 5], [364, "Obliteration's Footfall", "1092", "210", "120", "Dragon", null, 5], [365, "Frozen Core ", "624", "120", "270", "Ice", null, 5], [366, "Frozen Core+", "832", "160", "390", "Ice", null, 5], [367, "Cocytus", "936", "180", "450", "Ice", null, 5], [368, "Aqua Hammer I", "572", "110", "90", "Water", null, 5], [369, "Aqua Hammer II", "624", "120", "120", "Water", null, 5], [370, "Aqua Hammer III", "676", "130", "150", "Water", null, 5], [371, "Water Basher I", "780", "150", "180", "Water", null, 5], [372, "Water Basher II", "832", "160", "210", "Water", null, 5], [373, "Water Basher III", "936", "180", "240", "Water", null, 5], [374, "Girros Hammer I", "624", "120", "210", "", null, 5], [375, "Girros Hammer II", "676", "130", "270", "", null, 5], [376, "Malady's Fist I", "728", "140", "330", "Paralysis", null, 5], [377, "Malady's Fist II", "780", "150", "360", "Paralysis", null, 5], [378, "Malady's Fist III", "832", "160", "390", "Paralysis", null, 5], [379, "Blooming Hammer I", "520", "100", "300", "Poison", null, 5], [380, "Blooming Hammer II", "624", "120", "360", "Poison", null, 5], [381, "Blooming Hammer III", "728", "140", "420", "Poison", null, 5], [382, "Buon Fiore", "780", "150", "480", "Poison", null, 5], [383, "Buona Flora", "936", "180", "540", "Poison", null, 5], [384, "Thunder Hammer I", "676", "130", "180", "Thunder", null, 5], [385, "Thunder Hammer II", "780", "150", "210", "Thunder", null, 5], [386, "Lightning Bash I", "832", "160", "832", "Thunder", null, 5], [387, "Lightning Bash II", "884", "170", "270", "Thunder", null, 5], [388, "Lightning Bash III", "988", "190", "300", "Thunder", null, 5], [389, "Bone Bludgeon I", "520", "100", 0, null, null, 5], [390, "Bone Bludgeon II", "572", "110", 0, null, null, 5], [391, "Bone Bludgeon III", "624", "120", 0, null, null, 5], [392, "Fossil Bludgeon I", "728", "140", 0, null, null, 5], [393, "Fossil Bludgeon II", "780", "150", 0, null, null, 5], [394, "Fossil Bludgeon III", "832", "160", "360", "Thunder", null, 5], [395, "Grandrock I", "884", "170", "390", "Thunder", null, 5], [396, "Grandrock II", "988", "190", "420", "Thunder", null, 5], [397, "Hazak Vlafos", "988", "190", "210", "Dragon", null, 5], [398, "Pandemonium's Root", "1040", "200", "270", "Dragon", null, 5], [399, "Bone Spike I", "676", "130", "150", "Sleep", null, 5], [400, "Bone Spike II", "728", "140", "180", "Sleep", null, 5], [401, "Baan Strike I", "780", "150", "210", "Sleep", null, 5], [402, "Baan Strike II", "884", "170", "240", "Sleep", null, 5], [403, "Baan Strike III", "988", "190", "270", "Sleep", null, 5], [404, "Brazenbreak I", "988", "190", "120", "Fire", null, 5], [405, "Brazenbreak II", "1092", "210", "120", "Fire", null, 5], [406, "Kulu Beak I", "624", "120", 0, "", null, 5], [407, "Kulu Beak II", "676", "130", 0, "", null, 5], [408, "Kulu Beak III", "728", "140", 0, "", null, 5], [409, "Crushing Beak I", "780", "150", "240", "Sleep", null, 5], [410, "Crushing Beak II", "832", "160", "300", "Sleep", null, 5], [411, "Crushing Beak III", "884", "170", "360", "Sleep", null, 5], [412, "Diablos Sledge I", "884", "170", 0, "", "-25", 5], [413, "Diablos Sledge II", "988", "190", "120", "Ice", "-25", 5], [414, "Diablos Shatterer I", "1092", "210", "150", "Ice", "-25", 5], [415, "Diablos Shatterer II", "1196", "230", "150", "Ice", "-25", 5], [416, "Carapace Sledge I", "676", "130", 0, "", "-10", 5], [417, "Carapace Sledge II", "728", "140", 0, "", "-10", 5], [418, "Carapace Sledge III", "832", "160", 0, "", "-10", 5], [419, "Barroth Breaker I", "936", "180", "270", "Paralysis", "-10", 5], [420, "Barroth Breaker II", "988", "190", "330", "Paralysis", "-10", 5], [421, "Barroth Breaker III", "1040", "200", "390", "Paralysis", "-10", 5], [422, "Blazing Hammer I", "780", "150", "210", "Fire", "-20", 5], [423, "Blazing Hammer II", "832", "160", "270", "Fire", "-20", 5], [424, "Anja Striker I", "884", "170", "330", "Fire", "-20", 5], [425, "Anja Striker II", "988", "190", "360", "Fire", "-20", 5], [426, "Anja Striker III", "1092", "210", "390", "Fire", "-20", 5], [427, "Dragonbone Basher I", "520", "100", "300", "Dragon", null, 5], [428, "Dragonbone Basher II", "572", "110", "360", "Dragon", null, 5], [429, "Dragonbone Basher III", "832", "160", "420", "Dragon", null, 5], [430, "Magda Floga", "832", "160", "330", "Blast", "-20", 5], [431, "Ragefire Magda Floga", "1144", "220", "420", "Blast", "-20", 5], [432, "Blacksteel Hammer I", "520", "100", "120", "Dragon", null, 5], [433, "Blacksteel Hammer II", "572", "110", "150", "Dragon", null, 5], [434, "Icesteel Hammer", "988", "190", "120", "Ice", null, 5], [435, "Daora's Colossus", "1040", "200", "150", "Ice", null, 5], [436, "Xeno Maph'agarna", "884", "170", "180", "Dragon", null, 5], [437, "Jail Hammer", "832", "160", "180", "", null, 5], [438, "Binder Mace", "936", "180", "210", "", null, 5], [439, "Devil's Due", "1092", "210", "150", "Dragon", "-30", 5], [440, "Devil's Crush", "1196", "230", "210", "Dragon", "-30", 5], [441, "Metal Bagpipe I", "336", "80", 0, null, null, 6], [442, "Metal Bagpipe II", "378", "90", 0, null, null, 6], [443, "Metal Bagpipe III", "420", "100", 0, null, null, 6], [444, "Great Bagpipe I", "462", "110", 0, null, null, 6], [445, "Great Bagpipe II", "546", "130", 0, null, null, 6], [446, "Great Bagpipe III", "588", "140", 0, "\u266a", null, 6], [447, "Fortissimo I", "672", "160", 0, "\u266a", null, 6], [448, "Fortissimo II", "756", "180", 0, "\u266a", null, 6], [449, "Nergal Groove", "840", "200", 0, "", null, 6], [450, "Desolation's Overture", "882", "210", 0, "", null, 6], [451, "Thunder Gaida I", "504", "120", 0, "", null, 6], [452, "Thunder Gaida II", "546", "130", 0, "", null, 6], [453, "Lightning Drum I", "630", "150", 0, "", null, 6], [454, "Lightning Drum II", "714", "170", 0, "", null, 6], [455, "Lightning Drum III", "756", "180", 0, "", null, 6], [456, "Kulu Duda I", "420", "100", 0, "\u266a", null, 6], [457, "Kulu Duda II", "504", "120", 0, "\u266a", null, 6], [458, "Kulu Duda III", "588", "140", 0, "\u266a", null, 6], [459, "Dancing Davul I", "630", "150", 0, "\u266a240Sleep", null, 6], [460, "Dancing Davul II", "672", "160", 0, "\u266a300Sleep", null, 6], [461, "Dancing Davul III", "714", "170", 0, "\u266a360Sleep", null, 6], [462, "Valkyrie Chordmaker", "462", "110", 0, "\u266a150Fire", null, 6], [463, "Queen Chordmaker", "630", "150", 0, "\u266a180Fire", null, 6], [464, "Coral Chordmaker", "714", "170", 0, "\u266a210Fire", null, 6], [465, "Royal Chordmaker", "798", "190", 0, "\u266a240Fire", null, 6], [466, "Aqua Bagpipe I", "420", "100", 0, "", null, 6], [467, "Aqua Bagpipe II", "504", "120", 0, "", null, 6], [468, "Aqua Bagpipe III", "546", "130", 0, "", null, 6], [469, "Water Tamtam I", "588", "140", 0, "", null, 6], [470, "Water Tamtam II", "672", "160", 0, "", null, 6], [471, "Water Tamtam III", "756", "180", 0, "", null, 6], [472, "Glacial Bagpipe I", "546", "130", 0, "\u266a240Ice", null, 6], [473, "Glacial Bagpipe II", "588", "140", 0, "\u266a300Ice", null, 6], [474, "Sectored", "630", "150", 0, "\u266a330Ice", null, 6], [475, "Legia Sectored", "672", "160", 0, "\u266a360Ice", null, 6], [476, "Bone Horn I", "420", "100", 0, null, null, 6], [477, "Bone Horn II", "462", "110", 0, null, null, 6], [478, "Bone Horn III", "504", "120", 0, null, null, 6], [479, "Hard Bone Horn I", "588", "140", 0, null, null, 6], [480, "Hard Bone Horn II", "630", "150", 0, null, null, 6], [481, "Hard Bone Horn III", "672", "160", 0, "\u266a180Ice", null, 6], [482, "Heavy Bone Horn I", "714", "170", 0, "\u266a210Ice", null, 6], [483, "Heavy Bone Horn II", "798", "190", 0, "\u266a240Ice", null, 6], [484, "Gama Horn I", "756", "180", 0, "", null, 6], [485, "Gama Horn II", "798", "190", 0, "", null, 6], [486, "Blazing Horn I", "546", "130", 0, "\u266a210Fire", "-20", 6], [487, "Blazing Horn II", "630", "150", 0, "\u266a240Fire", "-20", 6], [488, "Anja Barone I", "672", "160", 0, "\u266a270Fire", "-20", 6], [489, "Anja Barone II", "798", "190", 0, "\u266a330Fire", "-20", 6], [490, "Anja Barone III", "882", "210", 0, "\u266a450Fire", "-20", 6], [491, "Blooming Horn I", "504", "120", 0, "", null, 6], [492, "Blooming Horn II", "546", "130", 0, "", null, 6], [493, "Blooming Horn III", "588", "140", 0, "", null, 6], [494, "Datura Horn I", "630", "150", 0, "", null, 6], [495, "Datura Horn II", "672", "160", 0, "", null, 6], [496, "Datura Horn III", "714", "170", 0, "", null, 6], [497, "Lumu Horn I", "546", "130", 0, "\u266a", null, 6], [498, "Lumu Horn II", "588", "140", 0, "\u266a", null, 6], [499, "Lumu Barone I", "630", "150", 0, "\u266a420Water", null, 6], [500, "Lumu Barone II", "672", "160", 0, "\u266a480Water", null, 6], [501, "Lumu Barone III", "714", "170", 0, "\u266a570Water", null, 6], [502, "Rookslayer Drum", "756", "180", 0, "\u266a180Blast", "-10", 6], [503, "Bazelreid Rookslayer", "840", "200", 0, "\u266a210Blast", "-10", 6], [504, "Sonic Horn I", "462", "110", 0, "\u266a", null, 6], [505, "Sonic Horn II", "504", "120", 0, "\u266a", null, 6], [506, "Sonic Horn III", "546", "130", 0, "\u266a", null, 6], [507, "Glass Royale", "588", "140", 0, "\u266a", null, 6], [508, "Glass Royale+", "630", "150", 0, "\u266a", null, 6], [509, "Queen Vespoid Horn", "672", "160", 0, "\u266a", null, 6], [510, "Spiked Horn I", "546", "130", 0, "", null, 6], [511, "Spiked Horn II", "588", "140", 0, "", null, 6], [512, "Baan Horn I", "672", "160", 0, "", null, 6], [513, "Baan Horn II", "756", "180", 0, "", null, 6], [514, "Baan Horn III", "798", "190", 0, "", null, 6], [515, "Dragonbone Auldhorn I", "420", "100", 0, "", null, 6], [516, "Dragonbone Auldhorn II", "462", "110", 0, "", null, 6], [517, "Dragonbone Auldhorn III", "672", "160", 0, "", null, 6], [518, "Thundercry Horn ", "504", "120", 0, "", null, 6], [519, "Thunderbolt Horn I", "588", "140", 0, "", null, 6], [520, "Thunderbolt Horn II", "672", "160", 0, "", null, 6], [521, "Blacksteel Dragonhorn I", "420", "100", 0, "", null, 6], [522, "Blacksteel Dragonhorn II", "462", "110", 0, "", null, 6], [523, "Teostra's Tiple", "756", "180", 0, "", null, 6], [524, "Teostra's Orph\u00e9e", "798", "190", 0, "", null, 6], [525, "Xeno Manasheena", "714", "170", 0, "\u266a180Dragon", null, 6], [526, "Devil's Maestro", "840", "200", 0, "\u266a180Dragon", "-30", 6], [527, "Deep Vero", "924", "220", 0, "\u266a240Dragon", "-30", 6], [528, "Iron Lance I", "184", "80", 0, null, null, 7], [529, "Iron Lance II", "207", "90", 0, null, null, 7], [530, "Iron Lance III", "230", "100", 0, null, null, 7], [531, "Steel Lance I", "253", "110", 0, null, null, 7], [532, "Steel Lance II", "299", "130", 0, null, null, 7], [533, "Steel Lance III", "322", "140", "210", "", null, 7], [534, "Chrome Lance I", "368", "160", "240", "", null, 7], [535, "Chrome Lance II", "414", "180", "270", "", null, 7], [536, "Nergal Impaler", "460", "200", "120", "Dragon", null, 7], [537, "Perdition's Hand", "483", "210", "150", "Dragon", null, 7], [538, "Glacial Lance I", "299", "130", "270", "Ice", null, 7], [539, "Glacial Lance II", "322", "140", "300", "Ice", null, 7], [540, "Legiana Halberd I", "345", "150", "330", "Ice", null, 7], [541, "Legiana Halberd II", "368", "160", "360", "Ice", null, 7], [542, "Kulu Lance I", "253", "110", 0, "", null, 7], [543, "Kulu Lance II", "276", "120", 0, "", null, 7], [544, "Kulu Lance III", "299", "130", 0, "", null, 7], [545, "Kulu Hasta I", "345", "150", "300", "Sleep", null, 7], [546, "Kulu Hasta II", "368", "160", "330", "Sleep", null, 7], [547, "Kulu Hasta III", "391", "170", "360", "Sleep", null, 7], [548, "Gama Pilebunker I", "368", "160", "180", "Blast", null, 7], [549, "Gama Pilebunker II", "391", "170", "210", "Blast", null, 7], [550, "Thunder Lance I", "276", "120", "120", "Thunder", null, 7], [551, "Thunder Lance II", "322", "140", "150", "Thunder", null, 7], [552, "Lightning Spire I", "368", "160", "180", "Thunder", null, 7], [553, "Lightning Spire II", "391", "170", "210", "Thunder", null, 7], [554, "Lightning Spire III", "414", "180", "240", "Thunder", null, 7], [555, "Blooming Lance I", "230", "100", "240", "Poison", null, 7], [556, "Blooming Lance II", "253", "110", "300", "Poison", null, 7], [557, "Blooming Lance III", "299", "130", "360", "Poison", null, 7], [558, "Datura Pike I", "345", "150", "420", "Poison", null, 7], [559, "Datura Pike II", "368", "160", "480", "Poison", null, 7], [560, "Datura Pike III", "391", "170", "540", "Poison", null, 7], [561, "Flame Lance I", "299", "130", "180", "Fire", null, 7], [562, "Flame Lance II", "322", "140", "210", "Fire", null, 7], [563, "Red Tail", "391", "170", "240", "Fire", null, 7], [564, "Blue Tail", "414", "180", "210", "Fire", null, 7], [565, "Blue Prominence", "437", "190", "300", "Fire", null, 7], [566, "Bone Lance I", "207", "90", 0, null, null, 7], [567, "Bone Lance II", "230", "100", 0, null, null, 7], [568, "Bone Lance III", "253", "110", 0, null, null, 7], [569, "Hard Bone Lance I", "322", "140", 0, null, null, 7], [570, "Hard Bone Lance II", "345", "150", 0, null, null, 7], [571, "Hard Bone Lance III", "368", "160", "180", "Poison", null, 7], [572, "Heavy Bone Lance I", "391", "170", "210", "Poison", null, 7], [573, "Heavy Bone Lance II", "437", "190", "240", "Poison", null, 7], [574, "Hazak W\u00e4chter", "437", "190", "240", "Dragon", null, 7], [575, "Love's Sorrow", "460", "200", "270", "Dragon", null, 7], [576, "Taurus Lance I", "276", "120", 0, null, null, 7], [577, "Taurus Lance II", "299", "130", 0, null, null, 7], [578, "Dark Stinger I", "322", "140", "180", "Blast", null, 7], [579, "Dark Stinger II", "345", "150", "210", "Blast", null, 7], [580, "Dark Stinger III", "368", "160", "240", "Blast", null, 7], [581, "Carapace Lance I", "253", "110", 0, "", "-20", 7], [582, "Carapace Lance II", "276", "120", 0, "", "-20", 7], [583, "Carapace Lance III", "345", "150", 0, "", "-20", 7], [584, "Barroth Stinger I", "391", "170", "300", "Paralysis", "-20", 7], [585, "Barroth Stinger II", "437", "190", "330", "Paralysis", "-20", 7], [586, "Barroth Stinger III", "460", "200", "390", "Paralysis", "-20", 7], [587, "Garon Lance I", "299", "130", 0, "", null, 7], [588, "Garon Lance II", "322", "140", "150", "Fire", null, 7], [589, "Garon Dhara I", "345", "150", "180", "Fire", null, 7], [590, "Garon Dhara II", "391", "170", "210", "Fire", null, 7], [591, "Aqua Horn I", "253", "110", "150", "Water", null, 7], [592, "Aqua Horn II", "276", "120", "180", "Water", null, 7], [593, "Aqua Horn III", "322", "140", "210", "Water", null, 7], [594, "Water Spike I", "345", "150", "240", "Water", null, 7], [595, "Water Spike II", "391", "170", "270", "Water", null, 7], [596, "Water Spike III", "437", "190", "300", "Water", null, 7], [597, "Dragonbone Lance I", "230", "100", "300", "Dragon", null, 7], [598, "Dragonbone Lance II", "253", "110", "360", "Dragon", null, 7], [599, "Dragonbone Lance III", "368", "160", "420", "Dragon", null, 7], [600, "Rookslayer Lance", "414", "180", "180", "Blast", "-10", 7], [601, "Bazel Myniad Rookslayer", "460", "200", "210", "Blast", "-10", 7], [602, "Thunderpike", "253", "110", "420", "Thunder", null, 7], [603, "Thunderspear", "345", "150", "480", "Thunder", null, 7], [604, "Thunderpiercer", "368", "160", "540", "Thunder", null, 7], [605, "Blacksteel Lance I", "230", "100", "120", "Dragon", null, 7], [606, "Blacksteel Lance II", "253", "110", "150", "Dragon", null, 7], [607, "Icesteel Spear", "391", "170", "210", "Ice", null, 7], [608, "Daora's Fang", "414", "180", "240", "Ice", null, 7], [609, "Xeno Zauta", "391", "170", "180", "Dragon", null, 7], [610, "Babel Spear", "414", "180", "270", "Fire", null, 7], [611, "Elder Babel Spear", "460", "200", "330", "Fire", null, 7], [612, "Grief Lance", "483", "210", "150", "Dragon", "-25", 7], [613, "Fiendish Tower", "529", "230", "210", "Dragon", "-25", 7], [614, "Iron Gunlance I", "184", "80", 0, "rmalLv1", null, 8], [615, "Iron Gunlance II", "207", "90", 0, "rmalLv1", null, 8], [616, "Iron Gunlance III", "230", "100", 0, "rmalLv1", null, 8], [617, "Steel Gunlance I", "253", "110", 0, "rmalLv2", null, 8], [618, "Steel Gunlance II", "299", "130", 0, "rmalLv2", null, 8], [619, "Steel Gunlance III", "322", "140", 0, "rmalLv2", null, 8], [620, "Chrome Gunlance I", "368", "160", 0, "rma", null, 8], [621, "Chrome Gunlance II", "414", "180", 0, "rma", null, 8], [622, "Nergal Ram", "460", "200", 0, "de", null, 8], [623, "Eradication Flame", "483", "210", 0, "de", null, 8], [624, "Pulsar Gunlance I", "230", "100", 0, "ngLv1120Thunder", null, 8], [625, "Pulsar Gunlance II", "253", "110", 0, "ngLv1150Thunder", null, 8], [626, "Pulsar Gunlance III", "299", "130", 0, "ngLv1180Thunder", null, 8], [627, "Kadachi Striker", "345", "150", 0, "ngLv2210Thunder", null, 8], [628, "Kadachi Striker+", "391", "170", 0, "ngLv2240Thunder", null, 8], [629, "Mythic Kadachi Striker", "414", "180", 0, "ngLv3270Thunder", null, 8], [630, "Rath Gunlance I", "276", "120", 0, "ngLv1120Fire", null, 8], [631, "Rath Gunlance II", "322", "140", 0, "ngLv1150Fire", null, 8], [632, "Red Rook", "345", "150", 0, "ngLv2180Fire", null, 8], [633, "Blue Rook", "414", "180", 0, "ngLv2210Fire", null, 8], [634, "Blue Chariot", "437", "190", 0, "ngLv3240Fire", null, 8], [635, "Princess Panoply", "276", "120", 0, "rmalLv2240Poison", null, 8], [636, "Princess Panoply+", "345", "150", 0, "rmalLv2270Poison", null, 8], [637, "Rose Burst", "391", "170", 0, "rmalLv3300Poison", null, 8], [638, "Royal Burst", "437", "190", 0, "rmalLv4330Poison", null, 8], [639, "Madness Gunlance I", "253", "110", 0, "d", null, 8], [640, "Madness Gunlance II", "276", "120", 0, "d", null, 8], [641, "Madness Gunlance III", "299", "130", 0, "d", null, 8], [642, "Jyura Blaster I", "345", "150", 0, "d", null, 8], [643, "Jyura Blaster II", "368", "160", 0, "d", null, 8], [644, "Jyura Blaster III", "437", "190", 0, "d", null, 8], [645, "Glacial Gunlance I", "299", "130", 0, "r", null, 8], [646, "Glacial Gunlance II", "322", "140", 0, "r", null, 8], [647, "Legiana Cannon I", "345", "150", 0, "r", null, 8], [648, "Legiana Cannon II", "368", "160", 0, "r", null, 8], [649, "Bone Gunlance I", "207", "90", 0, "rmalLv1", null, 8], [650, "Bone Gunlance II", "230", "100", 0, "rmalLv1", null, 8], [651, "Bone Gunlance III", "253", "110", 0, "rmalLv1", null, 8], [652, "Bone Cannon I", "276", "120", 0, "ngLv1", null, 8], [653, "Bone Cannon II", "322", "140", 0, "ngLv1", null, 8], [654, "Bone Cannon III", "368", "160", 0, "ngL", null, 8], [655, "Great Bone Gunlance I", "391", "170", 0, "ngL", null, 8], [656, "Great Bone Gunlance II", "437", "190", 0, "ngL", null, 8], [657, "Bazel Buster I", "437", "190", 0, "deLv3180Blast", "-10", 8], [658, "Bazel Buster II", "460", "200", 0, "deLv3210Blast", "-10", 8], [659, "Jagras Gunlance I", "253", "110", 0, "rmalLv2", null, 8], [660, "Jagras Gunlance II", "276", "120", 0, "rmalLv2", null, 8], [661, "Jagras Gunlance III", "322", "140", 0, "rmalLv2", null, 8], [662, "Glutton Gunlance I", "345", "150", 0, "rma", null, 8], [663, "Glutton Gunlance II", "437", "190", 0, "rma", null, 8], [664, "Glutton Gunlance III", "437", "190", 0, "rma", null, 8], [665, "Girros Gunlance I", "276", "120", 0, "rmalLv2", null, 8], [666, "Girros Gunlance II", "299", "130", 0, "rmalLv2", null, 8], [667, "Deathfang Gunlance I", "322", "140", 0, "rmalLv3330Paralysis", null, 8], [668, "Deathfang Gunlance II", "345", "150", 0, "rmalLv3390Paralysis", null, 8], [669, "Deathfang Gunlance III", "368", "160", 0, "rmalLv3450Paralysis", null, 8], [670, "Hazak Spysa I", "437", "190", 0, "ng", null, 8], [671, "Hazak Spysa II", "460", "200", 0, "ng", null, 8], [672, "Carapace Cannon I", "276", "120", 0, "deLv1", "-10", 8], [673, "Carapace Cannon II", "299", "130", 0, "deLv1", "-10", 8], [674, "Carapace Cannon III", "345", "150", 0, "deLv1", "-10", 8], [675, "Barroth Blaster I", "391", "170", 0, "deLv2270Paralysis", "-10", 8], [676, "Barroth Blaster II", "437", "190", 0, "deLv2330Paralysis", "-10", 8], [677, "Barroth Blaster III", "460", "200", 0, "deLv3390Paralysis", "-10", 8], [678, "Blazing Gunlance I", "299", "130", 0, "ngLv1210Fire", "-20", 8], [679, "Blazing Gunlance II", "322", "140", 0, "ngLv1240Fire", "-20", 8], [680, "Anja Cannon I", "368", "160", 0, "ngLv2270Fire", "-20", 8], [681, "Anja Cannon II", "414", "180", 0, "ngLv2330Fire", "-20", 8], [682, "Anja Cannon III", "483", "210", 0, "ngLv3450Fire", "-20", 8], [683, "Dragonbone Gunlance I", "230", "100", 0, "rmal", null, 8], [684, "Dragonbone Gunlance II", "253", "110", 0, "rmal", null, 8], [685, "Dragonbone Gunlance III", "368", "160", 0, "rmal", null, 8], [686, "Magda Lahat", "368", "160", 0, "ngLv3330Blast", "-10", 8], [687, "Earthshaker Magda Lahat", "460", "200", 0, "ngLv4420Blast", "-10", 8], [688, "Blacksteel Gunlance I", "230", "100", 0, "rmal", null, 8], [689, "Blacksteel Gunlance II", "253", "110", 0, "rmal", null, 8], [690, "Icesteel Gunlance", "391", "170", 0, "ngLv3210Ice", null, 8], [691, "Daora's Brigia", "414", "180", 0, "ngLv3240Ice", null, 8], [692, "Xeno Hemta", "391", "170", 0, "ngLv3180Dragon", null, 8], [693, "Ravenous Gunlance", "483", "210", 0, "ngLv3180Dragon", "-30", 8], [694, "Insatiable Gunlance", "529", "230", 0, "ngLv3240Dragon", "-30", 8], [695, "Proto Iron Axe I", "280", "80", 0, "werPhial", null, 9], [696, "Proto Iron Axe II", "315", "90", 0, "werPhial", null, 9], [697, "Proto Iron Axe III", "350", "100", 0, "werPhial", null, 9], [698, "Improved Steel Axe I", "385", "110", 0, "", null, 9], [699, "Improved Steel Axe II", "455", "130", 0, "", null, 9], [700, "Improved Steel Axe III", "490", "140", "300", "PoisonPo", null, 9], [701, "Perfected Alloy Axe I", "560", "160", "360", "PoisonPo", null, 9], [702, "Perfected Alloy Axe II", "630", "180", "420", "PoisonPo", null, 9], [703, "Nergal Gash", "665", "190", "120", "Drag", null, 9], [704, "Dying Light", "700", "200", "150", "Drag", null, 9], [705, "Glacial Axe I", "455", "130", "210", "IcePower", null, 9], [706, "Glacial Axe II", "490", "140", "240", "IcePower", null, 9], [707, "Frostreaver", "525", "150", "270", "IcePower", null, 9], [708, "Legia Frostreaver", "560", "160", "300", "IcePower", null, 9], [709, "Thunder Axe I", "420", "120", "90", "Thund", null, 9], [710, "Thunder Axe II", "490", "140", "90", "Thund", null, 9], [711, "Lightning Chopper I", "560", "160", "120", "Thund", null, 9], [712, "Lightning Chopper II", "595", "170", "150", "Thund", null, 9], [713, "Lightning Chopper III", "630", "180", "180", "Thund", null, 9], [714, "Motor Chopper I", "630", "180", "120", "Fi", null, 9], [715, "Motor Chopper II", "735", "210", "120", "Fi", null, 9], [716, "Jagras Axe I", "385", "110", 0, "h", null, 9], [717, "Jagras Axe II", "420", "120", 0, "h", null, 9], [718, "Jagras Axe III", "490", "140", 0, "h", null, 9], [719, "Jagras Raider I", "560", "160", "180", "SleepExh", null, 9], [720, "Jagras Raider II", "630", "180", "210", "SleepExh", null, 9], [721, "Jagras Raider III", "665", "190", "240", "SleepExh", null, 9], [722, "Bazel Raider I", "665", "190", "150", "BlastPowerPhial", "-15", 9], [723, "Bazel Raider II", "700", "200", "180", "BlastPowerPhial", "-15", 9], [724, "Rathalos Axe I", "455", "130", "120", "FirePowerPhial", null, 9], [725, "Rathalos Axe II", "490", "140", "120", "FirePowerPhial", null, 9], [726, "Rathbringer Axe I", "560", "160", "150", "FirePowerPhial", null, 9], [727, "Rathbringer Axe II", "665", "190", "150", "FirePowerPhial", null, 9], [728, "Bone Axe I", "315", "90", 0, "werPhial", null, 9], [729, "Bone Axe II", "350", "100", 0, "werPhial", null, 9], [730, "Bone Axe III", "385", "110", 0, "werPhial", null, 9], [731, "Bone Smasher I", "490", "140", 0, "werPhial", null, 9], [732, "Bone Smasher II", "525", "150", 0, "werPhial", null, 9], [733, "Bone Smasher III", "560", "160", 0, "werPhial", null, 9], [734, "Power Smasher I", "595", "170", 0, "", null, 9], [735, "Power Smasher II", "665", "190", 0, "agonPhial420", null, 9], [736, "Hazak Demios I", "665", "190", "180", "DragonPower", null, 9], [737, "Hazak Demios II", "700", "200", "210", "DragonPower", null, 9], [738, "Madness Axe I", "385", "110", "150", "WaterPower", null, 9], [739, "Madness Axe II", "420", "120", "180", "WaterPower", null, 9], [740, "Madness Axe III", "490", "140", "210", "WaterPower", null, 9], [741, "Jyura Drought I", "560", "160", "240", "WaterPower", null, 9], [742, "Jyura Drought II", "630", "180", "270", "WaterPower", null, 9], [743, "Jyura Drought III", "665", "190", "300", "WaterPower", null, 9], [744, "Lumu Axe I", "420", "120", 0, "werPhial", null, 9], [745, "Lumu Axe II", "490", "140", 0, "werPhial", null, 9], [746, "Lumu Smasher I", "525", "150", "360", "BlastPowerPhial", null, 9], [747, "Lumu Smasher II", "560", "160", "390", "BlastPowerPhial", null, 9], [748, "Lumu Smasher III", "595", "170", "420", "BlastPowerPhial", null, 9], [749, "Carapace Axe I", "420", "120", 0, "raPhial180", "-20", 9], [750, "Carapace Axe II", "490", "140", 0, "raPhial180", "-20", 9], [751, "Carapace Axe III", "560", "160", 0, "raPhial180", "-20", 9], [752, "Barroth Grinder I", "595", "170", "240", "ParalysisParaPhial210", "-20", 9], [753, "Barroth Grinder II", "665", "190", "270", "ParalysisParaPhial240", "-20", 9], [754, "Barroth Grinder III", "735", "210", "300", "ParalysisParaPhial270", "-20", 9], [755, "Diablos Axe I", "595", "170", 0, "werPhial", "-30", 9], [756, "Diablos Axe II", "630", "180", "90", "IcePowerPhial", "-30", 9], [757, "Axe Semper Tyrannis", "735", "210", "120", "IcePowerPhial", "-30", 9], [758, "Axe of Thanatos", "770", "220", "150", "IcePowerPhial", "-30", 9], [759, "Axe of Demons", "805", "230", "180", "IcePowerPhial", "-30", 9], [760, "Flammenbeil", "455", "130", "180", "FirePowerElementPhial", "-20", 9], [761, "Flammenbeil+", "560", "160", "240", "FirePowerElementPhial", "-20", 9], [762, "Gnashing Flammenbeil", "735", "210", "300", "FirePowerElementPhial", "-20", 9], [763, "Dragonbone Slicer I", "350", "100", "210", "DragonPower", null, 9], [764, "Dragonbone Slicer II", "385", "110", "270", "DragonPower", null, 9], [765, "Dragonbone Slicer III", "560", "160", "330", "DragonPower", null, 9], [766, "Peal", "385", "110", "360", "ThunderPower", null, 9], [767, "Peal+", "490", "140", "390", "ThunderPower", null, 9], [768, "Kirin Thunderpeal", "560", "160", "420", "ThunderPower", null, 9], [769, "Blacksteel Switch Axe I", "350", "100", "120", "DragonPowerPhial", null, 9], [770, "Blacksteel Switch Axe II", "385", "110", "150", "DragonPowerPhial", null, 9], [771, "Teostra's Arx", "630", "180", "300", "Bla", null, 9], [772, "Teostra's Castle", "665", "190", "300", "Bla", null, 9], [773, "Xeno Martshu", "595", "170", "150", "Drag", null, 9], [774, "Tyrannos", "700", "200", "120", "DragonPowerPhial", "-25", 9], [775, "Terror Tyrannos", "770", "220", "180", "DragonPowerPhial", "-25", 9], [776, "Proto Commision Axe I", "288", "80", 0, "", null, 10], [777, "Proto Commision Axe II", "324", "90", 0, "", null, 10], [778, "Proto Commision Axe III", "360", "100", 0, "", null, 10], [779, "Elite Commision Axe I", "396", "110", 0, "", null, 10], [780, "Elite Commision Axe II", "468", "130", 0, "", null, 10], [781, "Elite Commision Axe III", "504", "140", "120", "Thunde", null, 10], [782, "Chrome Guardian I", "576", "160", "150", "Thunde", null, 10], [783, "Chrome Guardian II", "648", "180", "270", "Thunde", null, 10], [784, "Nergal Lacerator", "720", "200", "120", "Drago", null, 10], [785, "Devastation's Thorns", "756", "210", "150", "Drago", null, 10], [786, "Rathsblade I", "432", "120", "150", "FirePowerElementPhial", null, 10], [787, "Rathsblade II", "576", "160", "180", "FirePowerElementPhial", null, 10], [788, "Axelion Blade", "612", "170", "210", "FirePowerElementPhial", null, 10], [789, "Halberion Blade", "684", "190", "240", "FirePowerElementPhial", null, 10], [790, "Mudslide Blade I", "396", "110", "120", "WaterPower", null, 10], [791, "Mudslide Blade II", "432", "120", "150", "WaterPower", null, 10], [792, "Mudslide Blade III", "504", "140", "180", "WaterPower", null, 10], [793, "Jyura Depth I", "576", "160", "210", "WaterPower", null, 10], [794, "Jyura Depth II", "648", "180", "240", "WaterPower", null, 10], [795, "Jyura Depth III", "684", "190", "270", "WaterPower", null, 10], [796, "Everfrost Blade I", "504", "140", "150", "IcePower", null, 10], [797, "Everfrost Blade II", "540", "150", "180", "IcePower", null, 10], [798, "Gigafrost I", "576", "160", "210", "IcePower", null, 10], [799, "Gigafrost II", "612", "170", "240", "IcePower", null, 10], [800, "Dear Lutemis", "468", "130", "240", "Poiso", null, 10], [801, "Dear Lutemia", "540", "150", "270", "Poiso", null, 10], [802, "Dear Hecatel", "612", "170", "300", "Poiso", null, 10], [803, "Dear Hecatelia", "684", "190", "330", "Poiso", null, 10], [804, "Bone Strongarm I", "324", "90", 0, "", null, 10], [805, "Bone Strongarm II", "360", "100", 0, "", null, 10], [806, "Bone Strongarm III", "396", "110", 0, "", null, 10], [807, "Hard Bone Strongarm I", "432", "120", 0, "", null, 10], [808, "Hard Bone Strongarm II", "504", "140", 0, "", null, 10], [809, "Hard Bone Strongarm III", "576", "160", "180", "Blas", null, 10], [810, "Mighty Strongarm I", "612", "170", "210", "Blas", null, 10], [811, "Mighty Strongarm II", "684", "190", "240", "Blas", null, 10], [812, "Diablos Wall I", "612", "170", 0, "pactPhial", "-30", 10], [813, "Diablos Wall II", "684", "190", "90", "IceImpactPhial", "-30", 10], [814, "Diablos Tyrannis I", "756", "210", "120", "IceImpactPhial", "-30", 10], [815, "Diablos Tyrannis II", "828", "230", "180", "IceImpactPhial", "-30", 10], [816, "Jagras Strongarm I", "396", "110", 0, "", null, 10], [817, "Jagras Strongarm II", "432", "120", 0, "", null, 10], [818, "Jagras Strongarm III", "468", "130", 0, "", null, 10], [819, "Jagras Escudo I", "540", "150", "120", "Slee", null, 10], [820, "Jagras Escudo II", "648", "180", "150", "Slee", null, 10], [821, "Jagras Escudo III", "684", "190", "180", "Slee", null, 10], [822, "Gama Silt I", "576", "160", "150", "Blas", null, 10], [823, "Gama Silt II", "612", "170", "180", "Blas", null, 10], [824, "Girros Strongarm I", "432", "120", "180", "ParalysisImpactPhial", null, 10], [825, "Girros Strongarm II", "468", "130", "210", "ParalysisImpactPhial", null, 10], [826, "Girros Nadja I", "504", "140", "240", "ParalysisImpactPhial", null, 10], [827, "Girros Nadja II", "540", "150", "270", "ParalysisImpactPhial", null, 10], [828, "Girros Nadja III", "576", "160", "300", "ParalysisImpactPhial", null, 10], [829, "Hazak Aspida I", "648", "180", "210", "DragonPower", null, 10], [830, "Hazak Aspida II", "684", "190", "270", "DragonPower", null, 10], [831, "Pulsar Strongarm I", "396", "110", "90", "ThunderPowerElementPhial", null, 10], [832, "Pulsar Strongarm II", "432", "120", "120", "ThunderPowerElementPhial", null, 10], [833, "Pulsar Strongarm III", "468", "130", "120", "ThunderPowerElementPhial", null, 10], [834, "Kadachi Kaina I", "504", "140", "150", "ThunderPowerElementPhial", null, 10], [835, "Kadachi Kaina II", "576", "160", "180", "ThunderPowerElementPhial", null, 10], [836, "Kadachi Kaina III", "648", "180", "210", "ThunderPowerElementPhial", null, 10], [837, "Garon Strongarm I", "468", "130", 0, "pactPhial", null, 10], [838, "Garon Strongarm II", "504", "140", "120", "FireImpactPhial", null, 10], [839, "Hate's Undying Flame", "540", "150", "150", "FireImpactPhial", null, 10], [840, "Odium", "576", "160", "180", "FireImpactPhial", null, 10], [841, "Dragonbone Cutter I", "360", "100", "270", "Drago", null, 10], [842, "Dragonbone Cutter II", "396", "110", "300", "Drago", null, 10], [843, "Dragonbone Cutter III", "576", "160", "360", "Drago", null, 10], [844, "Magda Manus", "576", "160", "180", "BlastImpactPhial", "-10", 10], [845, "Avenging Magda Manus", "756", "210", "210", "BlastImpactPhial", "-10", 10], [846, "Blacksteel Charger I", "360", "100", "120", "Drago", null, 10], [847, "Blacksteel Charger II", "396", "110", "150", "Drago", null, 10], [848, "Daora's Casca", "612", "170", "150", "IceImpactPhial", null, 10], [849, "Daora's Thwartoise", "648", "180", "180", "IceImpactPhial", null, 10], [850, "Xeno Ra'atz", "648", "180", "180", "DragonImpactPhial", null, 10], [851, "Tyrant's Charge Blade", "720", "200", "150", "DragonPowerElementPhial", "-25", 10], [852, "Oppressor's Charge Blade", "792", "220", "210", "DragonPowerElementPhial", "-25", 10], [853, "Dante's Devil Sword", "720", "200", "150", "Thunde", null, 10], [854, "Iron Blade I", "248", "80", 0, "verBoost", null, 11], [855, "Iron Blade II", "279", "90", 0, "verBoost", null, 11], [856, "Iron Blade III", "310", "100", 0, "verBoost", null, 11], [857, "Steel Blade I", "341", "110", 0, "verBoost", null, 11], [858, "Steel Blade II", "403", "130", 0, "verBoost", null, 11], [859, "Steel Blade III", "434", "140", "210", "Bla", null, 11], [860, "Chrome Blade I", "496", "160", "240", "Bla", null, 11], [861, "Chrome Blade II", "558", "180", "270", "Bla", null, 11], [862, "Nergal Reaper", "620", "200", "120", "Drag", null, 11], [863, "Catastrophe's Light", "651", "210", "150", "Drag", null, 11], [864, "Flame Glaive I", "372", "120", "90", "FireAffinity+1", null, 11], [865, "Flame Glaive II", "465", "150", "120", "FireAffinity+1", null, 11], [866, "Rathmaul", "527", "170", "150", "FireAffinity+2", null, 11], [867, "Firedance Rathmaul", "589", "190", "180", "FireAffinity+2", null, 11], [868, "Kulu Blade I", "310", "100", 0, "finity+1", null, 11], [869, "Kulu Blade II", "341", "110", 0, "finity+1", null, 11], [870, "Kulu Blade III", "434", "140", 0, "finity+1", null, 11], [871, "Ya-Ku Wrath I", "465", "150", "150", "SleepAffinity+2", null, 11], [872, "Ya-Ku Wrath II", "496", "160", "180", "SleepAffinity+2", null, 11], [873, "Ya-Ku Wrath III", "527", "170", "210", "SleepAffinity+2", null, 11], [874, "Luminous Blade I", "372", "120", 0, "eedBoost", null, 11], [875, "Luminous Blade II", "434", "140", 0, "eedBoost", null, 11], [876, "Destroyer Bo I", "496", "160", "240", "Thund", null, 11], [877, "Destroyer Bo II", "527", "170", "270", "Thund", null, 11], [878, "Destroyer Bo III", "558", "180", "300", "Thund", null, 11], [879, "Frost Blade I", "434", "140", "150", "Ice", null, 11], [880, "Frost Blade II", "465", "150", "180", "Ice", null, 11], [881, "Freeze Gale I", "496", "160", "210", "Ice", null, 11], [882, "Freeze Gale II", "527", "170", "240", "Ice", null, 11], [883, "Blooming Glaive I", "310", "100", "240", "Poiso", null, 11], [884, "Blooming Glaive II", "341", "110", "270", "Poiso", null, 11], [885, "Blooming Glaive III", "403", "130", "300", "Poiso", null, 11], [886, "Datura Blade I", "465", "150", "330", "Poiso", null, 11], [887, "Datura Blade II", "496", "160", "360", "Poiso", null, 11], [888, "Datura Blade III", "527", "170", "390", "Poiso", null, 11], [889, "Gama Cane I", "496", "160", "120", "Blast", null, 11], [890, "Gama Cane II", "527", "170", "150", "Blast", null, 11], [891, "Bone Rod I", "279", "90", 0, "untBoost", null, 11], [892, "Bone Rod II", "310", "100", 0, "untBoost", null, 11], [893, "Bone Rod III", "341", "110", 0, "untBoost", null, 11], [894, "Hard Bone Rod I", "434", "140", 0, "untBoost", null, 11], [895, "Hard Bone Rod II", "465", "150", 0, "untBoost", null, 11], [896, "Hard Bone Rod III", "496", "160", "180", "Paralys", null, 11], [897, "Aerial Rod I", "527", "170", "210", "Paralys", null, 11], [898, "Aerial Rod II", "589", "190", "210", "Paralys", null, 11], [899, "Hazak Entoma I", "589", "190", "150", "Drag", null, 11], [900, "Hazak Entoma II", "620", "200", "180", "Drag", null, 11], [901, "Flammenkaefer", "403", "130", "210", "FireAffinity-2", "-20", 11], [902, "Flammenkaefer+", "558", "180", "240", "FireAffinity-2", "-20", 11], [903, "Gnashing Flammenkaefer", "651", "210", "270", "FireAffinity-2", "-20", 11], [904, "Aqua Rod I", "341", "110", "60", "Water", null, 11], [905, "Aqua Rod II", "372", "120", "90", "Water", null, 11], [906, "Aqua Rod III", "434", "140", "120", "Water", null, 11], [907, "Water Glaive I", "465", "150", "150", "Water", null, 11], [908, "Water Glaive II", "527", "170", "180", "Water", null, 11], [909, "Water Glaive III", "589", "190", "210", "Water", null, 11], [910, "Diablos Rod I", "496", "160", 0, "finity-30%", "-30", 11], [911, "Diablos Rod II", "620", "200", "120", "IceAffinity-30%", "-30", 11], [912, "Tyrannis Glaive I", "682", "220", "150", "IceAffinity-30%", "-30", 11], [913, "Tyrannis Glaive II", "713", "230", "180", "IceAffinity-30%", "-30", 11], [914, "Pulsar Rod I", "341", "110", "90", "ThunderAffinity+1", null, 11], [915, "Pulsar Rod II", "372", "120", "120", "ThunderAffinity+1", null, 11], [916, "Pulsar Rod III", "434", "140", "150", "ThunderAffinity+1", null, 11], [917, "Kadachi Pillar I", "465", "150", "180", "ThunderAffinity+1", null, 11], [918, "Kadachi Pillar II", "527", "170", "210", "ThunderAffinity+1", null, 11], [919, "Kadachi Pillar III", "558", "180", "240", "ThunderAffinity+1", null, 11], [920, "Garon Rod I", "403", "130", 0, "finity+1", null, 11], [921, "Garon Rod II", "434", "140", "90", "FireAffinity+1", null, 11], [922, "Temptation's Trident", "465", "150", "120", "FireAffinity+2", null, 11], [923, "Vice", "496", "160", "150", "FireAffinity+2", null, 11], [924, "Dragonbone Glaive I", "310", "100", "300", "Dragon", null, 11], [925, "Dragonbone Glaive II", "341", "110", "330", "Dragon", null, 11], [926, "Dragonbone Glaive III", "496", "160", "390", "Dragon", null, 11], [927, "Indigo Flash", "341", "110", "300", "Thunder", null, 11], [928, "Azure Bolt", "434", "140", "330", "Thunder", null, 11], [929, "Verdant Levin", "496", "160", "360", "Thunder", null, 11], [930, "Blacksteel Glaive I", "310", "100", "60", "Drago", null, 11], [931, "Blacksteel Glaive II", "341", "110", "90", "Drago", null, 11], [932, "Daora's Entom", "527", "170", "150", "IceAffinity+10", null, 11], [933, "Daora's Tethidine", "558", "180", "180", "IceAffinity+10", null, 11], [934, "Xeno Shmaena", "558", "180", "120", "DragonAffinity+15%", null, 11], [935, "Bad Wing", "620", "200", "150", "DragonAffinity-25", "-25", 11], [936, "Grunge Storm", "682", "220", "210", "DragonAffinity-25", "-25", 11]]
+1,Buster Sword I,384,80,0,,0,1
+2,Buster Sword II,432,90,0,,0,1
+3,Buster Sword III,480,100,0,,0,1
+4,Buster Blade I,576,120,0,,0,1
+5,Buster Blade II,624,130,0,,0,1
+6,Buster Blade III,672,140,240,Poison,0,1
+7,Chrome Razor I,720,150,330,Poison,0,1
+8,Chrome Razor II,864,180,420,Poison,0,1
+9,Nergal Judicator,912,190,120,Dragon,0,1
+10,Purgation's Atrocity,1008,210,150,Dragon,0,1
+11,Thunder Blade I,528,110,120,Thunder,0,1
+12,Thunder Blade II,624,130,150,Thunder,0,1
+13,Lightning Punisher I,672,140,180,Thunder,0,1
+14,Lightning Punisher II,816,170,210,Thunder,0,1
+15,Lightning Punisher III,912,190,240,Thunder,0,1
+16,Freeze Blade I,576,120,240,Ice,0,1
+17,Freeze Blade II,624,130,270,Ice,0,1
+18,Frost Blaze I,720,150,330,Ice,0,1
+19,Frost Blaze II,768,160,390,Ice,0,1
+20,Jagras Blade I,528,110,0,,0,1
+21,Jagras Blade II,576,120,0,,0,1
+22,Jagras Blade III,672,140,0,,0,1
+23,Jagras Hacker I,816,170,210,Ice,0,1
+24,Jagras Hacker II,864,180,240,Ice,0,1
+25,Jagras Hacker III,912,190,300,Ice,0,1
+26,Girros Blade I,528,110,210,,0,1
+27,Girros Blade II,624,130,240,,0,1
+28,Malady's Kiss I,672,140,270,,0,1
+29,Malady's Kiss II,720,150,360,,0,1
+30,Malady's Kiss III,768,160,450,,0,1
+31,Lava Blaze I,768,160,270,Fire,0,1
+32,Lava Blaze II,864,180,330,Fire,0,1
+33,Blooming Blade I,528,110,240,Poison,0,1
+34,Blooming Blade II,576,120,300,Poison,0,1
+35,Blooming Blade III,624,130,360,Poison,0,1
+36,Datura Blaze I,720,150,420,Poison,0,1
+37,Datura Blaze II,768,160,480,Poison,0,1
+38,Datura Blaze III,816,170,540,Poison,0,1
+39,Flame Blade I,672,140,120,Fire,0,1
+40,Flame Blade II,720,150,150,Fire,0,1
+41,Red Wing,768,160,180,Fire,0,1
+42,Blue Wing,816,170,210,Fire,0,1
+43,Rathalos Glinsword,912,190,240,Fire,0,1
+44,Bone Blade I,480,100,0,,0,1
+45,Bone Blade II,528,110,0,,0,1
+46,Bone Blade III,576,120,0,,0,1
+47,Bone Slasher I,672,140,0,,0,1
+48,Bone Slasher II,720,150,0,,0,1
+49,Bone Slasher III,768,160,180,Ice,0,1
+50,Giant Jawblade I,816,170,240,Ice,0,1
+51,Giant Jawblade II,912,190,300,Ice,0,1
+52,Hazak Kys,912,190,300,Dragon,0,1
+53,Leviathan's Fury,960,200,300,Dragon,0,1
+54,Flammenzahn,720,150,240,Fire,-30,1
+55,Flammenzahn+,864,180,300,Fire,-30,1
+56,Gnshing Flammenzahn,1008,210,360,Fire,-30,1
+57,Aqua Slasher I,576,120,120,Water,-30,1
+58,Aqua Slasher II,624,130,150,Water,-30,1
+59,Aqua Slasher III,672,140,180,Water,-30,1
+60,Water Golum I,768,160,240,Water,-30,1
+61,Water Golum II,816,170,270,Water,-30,1
+62,Water Golum III,912,190,300,Water,-30,1
+63,Carapace Buster I,624,130,0,,-20,1
+64,Carapace Buster II,672,140,0,,-20,1
+65,Carapace Buster III,720,150,0,,-20,1
+66,Barroth Shredder I,816,170,270,,-20,1
+67,Barroth Shredder II,864,180,330,,-20,1
+68,Barroth Shredder III,960,200,390,,-20,1
+69,Spiked Blade I,624,130,150,Sleep,-20,1
+70,Spiked Blade II,672,140,180,Sleep,-20,1
+71,Radobaan Slab I,768,160,210,Sleep,-20,1
+72,Radobaan Slab II,816,170,240,Sleep,-20,1
+73,Radobaan Slab III,912,190,270,Sleep,-20,1
+74,Dragonbone Cleaver I,480,100,270,Dragon,-20,1
+75,Dragonbone Cleaver II,576,120,330,Dragon,-20,1
+76,Dragonbone Cleaver III,768,160,420,Dragon,-20,1
+77,Thundersword,528,110,390,Thunder,-20,1
+78,Kirin Thundersword,720,150,480,Thunder,-20,1
+79,King Thundersword,768,160,540,Thunder,-20,1
+80,Magda Potestas I,768,160,330,Blast,-20,1
+81,Magda Potestas II,1056,220,420,Blast,-20,1
+82,Blacksteel Chopper I,480,100,90,,-20,1
+83,Blacksteel Chopper II,576,120,120,Dragon,-20,1
+84,Icesteel Edge ,816,170,210,Ice,-20,1
+85,Daora's Decimator,864,180,270,Ice,-20,1
+86,Xeno Maliq,816,170,210,Dragon,-20,1
+87,Wyvern Jawblade,864,180,240,Blast,-20,1
+88,Great Wyvern Jawblade,960,200,330,Blast,-20,1
+89,Berseker Sword,1008,210,180,Dragon,-30,1
+90,Anguish,1104,230,240,Dragon,-30,1
+91,"Wyvern Ignition ""Steel""",720,150,0,,-15,1
+92,"Wyvern Ignition ""Impact""",1008,210,510,Fire,-15,1
+93,Iron Katana I,264,80,0,,0,2
+94,Iron Katana II,297,90,0,,0,2
+95,Iron Katana III,330,100,0,,0,2
+96,Iron Grace I,363,110,0,,0,2
+97,Iron Grace II,429,130,0,,0,2
+98,Iron Grace III,462,140,120,Water,0,2
+99,Iron Gospel I,528,160,150,Water,0,2
+100,Iron Gospel II,594,180,180,Water,0,2
+101,Nergal Reaver,627,190,90,,0,2
+102,Extermination's Edge,693,210,120,Dragon,0,2
+103,Flickering Glow I,429,130,0,,0,2
+104,Flickering Glow II,462,140,0,,0,2
+105,Dazzling Flash I,528,160,240,Thunder,0,2
+106,Dazzling Flash II,561,170,300,Thunder,0,2
+107,Dazzling Flash III,594,180,360,Thunder,0,2
+108,First Dance I,330,100,0,,0,2
+109,First Dance II,363,110,0,,0,2
+110,First Dance III,429,130,0,,0,2
+111,Last Dance I,495,150,210,Sleep,0,2
+112,Last Dance II,528,160,240,Sleep,0,2
+113,Last Dance III,561,170,270,Sleep,0,2
+114,Brazenridge I,594,180,90,,-10,2
+115,Brazenridge II,660,200,120,Fire,-10,2
+116,"Wyvern Blade ""Leaf""",363,110,240,Poison,-10,2
+117,"Wyvern Blade ""Verde""",495,150,270,Poison,-10,2
+118,"Wyvern Blade ""Holly""",627,190,330,Poison,-10,2
+119,"Wyvern Blade ""Fall""",396,120,150,Fire,-10,2
+120,"Wyvern Blade ""Blood""",528,160,180,Fire,-10,2
+121,"Wyvern Blade ""Azure""",561,170,210,Fire,-10,2
+122,"Wyvern Blade ""Indigo""",627,190,240,Fire,-10,2
+123,Bone Shotel I,297,90,0,,-10,2
+124,Bone Shotel II,330,100,0,,-10,2
+125,Bone Shotel III,396,120,0,,-10,2
+126,Hard Bone Shotel I,429,130,0,,-10,2
+127,Hard Bone Shotel II,495,150,0,,-10,2
+128,Hard Bone Shotel III,528,160,210,Sleep,-10,2
+129,Bone Reaper I,561,170,240,Sleep,-10,2
+130,Bone Reaper II,627,190,270,Sleep,-10,2
+131,Rookslayer Long Sword,561,170,150,Blast,-10,2
+132,Bazel Varga Rookslayer,660,200,210,Blast,-10,2
+133,Blazing Shotel I,462,140,150,Fire,-20,2
+134,Blazing Shotel II,528,160,210,Fire,-20,2
+135,Anja Scimitar I,594,180,270,Fire,-20,2
+136,Anja Scimitar II,660,200,330,Fire,-20,2
+137,Anja Scimitar III,693,210,390,Fire,-20,2
+138,Jyura Shotel I,396,120,150,Water,-20,2
+139,Jyura Shotel II,429,130,180,Water,-20,2
+140,Jyura Shotel III,462,140,210,Water,-20,2
+141,Dipterus I,495,150,240,Water,-20,2
+142,Dipterus II,561,170,300,Water,-20,2
+143,Dipterus III,627,190,360,Water,-20,2
+144,Hazak Grosser I,627,190,210,Dragon,-20,2
+145,Hazak Grosser II,660,200,270,Dragon,-20,2
+146,Pulsar Shotel I,363,110,120,Thunder,-20,2
+147,Pulsar Shotel II,396,120,150,Thunder,-20,2
+148,Pulsar Shotel III,462,140,180,Thunder,-20,2
+149,Kadachi Fang I,528,160,210,Thunder,-20,2
+150,Kadachi Fang II,561,170,240,Thunder,-20,2
+151,Kadachi Fang III,594,180,270,Thunder,-20,2
+152,Glacial Shotel I,429,130,210,Ice,-20,2
+153,Glacial Shotel II,462,140,240,Ice,-20,2
+154,Stealer,495,150,300,Ice,-20,2
+155,Legia Stealer,528,160,360,Ice,-20,2
+156,Dark Shotel I,396,120,0,,-20,2
+157,Dark Shotel II,429,130,0,,-20,2
+158,Dark Scimitar I,462,140,180,,-20,2
+159,Dark Scimitar II,495,150,210,,-20,2
+160,Dark Scimitar III,528,160,240,,-20,2
+161,Dragonbone Stabber I,330,100,270,Dragon,-20,2
+162,Dragonbone Stabber II,363,110,330,Dragon,-20,2
+163,Dragonbone Stabber III,528,160,420,Dragon,-20,2
+164,Magda Facultas I,528,160,300,Blast,-20,2
+165,Magda Facultas II,726,220,360,Blast,-20,2
+166,Blacksteel Long Sword I,330,100,120,Dragon,-20,2
+167,Blacksteel Long Sword II,363,110,150,Dragon,-20,2
+168,Imperial Saber,561,170,300,Blast,-20,2
+169,Imperial Shimmer,627,190,300,Blast,-20,2
+170,Xeno Cypher ,594,180,180,Dragon,-20,2
+171,Supermacy Blade,561,170,120,Dragon,-20,2
+172,Divine Slasher,693,210,150,Dragon,-20,2
+173,"Reaver ""Cruelty""",693,210,150,Dragon,-25,2
+174,"Reaver ""Calamity""",759,230,210,Dragon,-25,2
+175,Azure Star Blade,363,110,120,Water,-25,2
+176,Hunter's Knife I,112,80,0,,0,3
+177,Hunter's Knife II,126,90,0,,0,3
+178,Hunter's Knife III,140,100,0,,0,3
+179,Steel Knife I,168,120,0,,0,3
+180,Steel Knife II,182,130,0,,0,3
+181,Steel Knife III,196,140,120,Sleep,0,3
+182,Chrome Slicer I,224,160,150,Sleep,0,3
+183,Chrome Slicer II,252,180,240,Sleep,0,3
+184,Nergal Jack,280,200,120,Dragon,0,3
+185,Eradication Vanguard,294,210,150,Dragon,0,3
+186,Flame Knife I,182,130,120,Fire,0,3
+187,Flame Knife II,196,140,120,Fire,0,3
+188,Heat Edge,224,160,150,Fire,0,3
+189,Corona,266,190,180,Fire,0,3
+190,Heavy Bang,210,150,0,,0,3
+191,Heavy Bang+,252,180,270,Thunder,0,3
+192,Master Bang,280,200,330,Thunder,0,3
+193,Aqua Messer I,140,100,90,,0,3
+194,Aqua Messer II,168,120,120,Water,0,3
+195,Aqua Messer III,196,140,150,Water,0,3
+196,Rogue Wave I,210,150,180,Water,0,3
+197,Rogue Wave II,224,160,210,Water,0,3
+198,Rogue Wave III,252,180,240,Water,0,3
+199,Glacial Grace I,182,130,210,Ice,0,3
+200,Glacial Grace II,196,140,240,Ice,0,3
+201,Rimespire ,210,150,300,Ice,0,3
+202,Legia Rimespire,224,160,330,Ice,0,3
+203,Princess Rapier,168,120,150,Poison,0,3
+204,Queen Rapier,210,150,180,Poison,0,3
+205,Queen Rose,238,170,210,Poison,0,3
+206,Royal Rose,266,190,240,Poison,0,3
+207,Lumu Knife I,168,120,0,,0,3
+208,Lumu Knife II,182,130,0,,0,3
+209,Lumu Tabar I,210,150,270,Blast,0,3
+210,Lumu Tabar II,224,160,300,Blast,0,3
+211,Lumu Tabar III,238,170,330,Blast,0,3
+212,Blooming Knife I,154,110,210,Poison,0,3
+213,Blooming Knife II,182,130,240,Poison,0,3
+214,Blooming Knife III,196,140,270,Poison,0,3
+215,Datura Blossom I,210,150,330,Poison,0,3
+216,Datura Blossom II,224,160,360,Poison,0,3
+217,Datura Blossom III,238,170,390,Poison,0,3
+218,Girros Knife I,168,120,120,,0,3
+219,Girros Knife II,182,130,150,,0,3
+220,Malady's Tabar I,196,140,180,,0,3
+221,Malady's Tabar II,210,150,210,,0,3
+222,Malady's Tabar III,224,160,240,,0,3
+223,Bone Kukri I,140,100,0,,0,3
+224,Bone Kukri II,154,110,0,,0,3
+225,Bone Kukri III,168,120,0,,0,3
+226,Chief Kukri I,196,140,0,,0,3
+227,Chief Kukri II,210,150,0,,0,3
+228,Chief Kukri III,224,160,180,,0,3
+229,Grand Barong I,238,170,240,,0,3
+230,Grand Barong II,266,190,300,,0,3
+231,Spiked Edge I,182,130,120,Sleep,0,3
+232,Spiked Edge II,196,140,120,Sleep,0,3
+233,Baan Claw I,238,170,150,Sleep,0,3
+234,Baan Claw II,252,180,180,Sleep,0,3
+235,Baan Claw III,266,190,210,Sleep,0,3
+236,Jagras Edge I,168,120,0,,0,3
+237,Jagras Edge II,196,140,0,,0,3
+238,Jagras Edge III,210,150,0,,0,3
+239,Jagras Garotte I,238,170,300,Water,0,3
+240,Jagras Garotte II,252,180,330,Water,0,3
+241,Jagras Garotte III,266,190,360,Water,0,3
+242,Thunder Edge I,182,130,90,,0,3
+243,Thunder Edge II,210,150,120,Thunder,0,3
+244,Lightning Nemesis I,224,160,150,Thunder,0,3
+245,Lightning Nemesis II,252,180,180,Thunder,0,3
+246,Lightning Nemesis III,266,190,210,Thunder,0,3
+247,Carapace Edge I,182,130,0,,0,3
+248,Carapace Edge II,196,140,0,,0,3
+249,Carapace Edge III,224,160,0,,0,3
+250,Barroth Club I,252,180,120,,-10,3
+251,Barroth Club II,266,190,150,,-10,3
+252,Barroth Club III,294,210,180,,-10,3
+253,Blazing Edge I,196,140,150,Fire,-20,3
+254,Blazing Edge II,224,160,180,Fire,-20,3
+255,Flammensucher,266,190,210,Fire,-20,3
+256,Gnashing Flammensucher,294,210,240,Fire,-20,3
+257,Dragonbone Sword I,140,100,270,Dragon,-20,3
+258,Dragonbone Sword II,154,110,330,Dragon,-20,3
+259,Dragonbone Sword III,196,140,450,Dragon,-20,3
+260,Fulminator,154,110,270,Thunder,-20,3
+261,Thunderbolt Sword I,210,150,300,Thunder,-20,3
+262,Thunderbolt Sword II,224,160,360,Thunder,-20,3
+263,Blacksteel Sword I,140,100,120,Dragon,-20,3
+264,Blacksteel Sword II,154,110,150,Dragon,-20,3
+265,Teostra's Spada,252,180,210,Blast,-20,3
+266,Teostra's Emblem,266,190,240,Blast,-20,3
+267,Xeno Mabura,238,170,270,Dragon,-20,3
+268,Fatal Jho,280,200,150,Dragon,-20,3
+269,Fatal Bite,308,220,210,Dragon,-20,3
+270,Matched Slicers I,112,80,0,,0,4
+271,Matched Slicers II,126,90,0,,0,4
+272,Matched Slicers III,140,100,0,,0,4
+273,Dual Slicers I,154,110,0,,0,4
+274,Dual Slicers II,182,130,0,,0,4
+275,Dual Slicers III,196,140,210,Poison,0,4
+276,Chrome Slicers I,224,160,240,Poison,0,4
+277,Chrome Slicers II,252,180,270,Poison,0,4
+278,Nergal Gouge,280,200,90,,0,4
+279,Decimation Claws,294,210,120,Dragon,0,4
+280,Luminous Daggers I,168,120,0,,0,4
+281,Luminous Daggers II,196,140,0,,0,4
+282,Dual Destroyers I,224,160,120,Thunder,0,4
+283,Dual Destroyers II,238,170,150,Thunder,0,4
+284,Dual Destroyers III,252,180,210,Thunder,0,4
+285,Rookslayer Handaxes,252,180,120,Blast,-10,4
+286,Bazelhawk Rookslayer,280,200,150,Blast,-10,4
+287,Freeze Daggers I,182,130,60,,-10,4
+288,Freeze Daggers II,210,150,60,,-10,4
+289,Freeze Chain I,238,170,120,Ice,-10,4
+290,Freeze Chain II,252,180,150,Ice,-10,4
+291,Rending Beaks I,154,110,0,,-10,4
+292,Rending Beaks II,168,120,0,,-10,4
+293,Rending Beaks III,182,130,0,,-10,4
+294,Arcanaria I,210,150,90,,-10,4
+295,Arcanaria II,224,160,90,,-10,4
+296,Arcanaria III,238,170,120,Sleep,-10,4
+297,Sworn Rapiers,182,130,90,,-10,4
+298,Sworn Rapiers+,210,150,90,,-10,4
+299,Holy Sabers,252,180,120,Water,-10,4
+300,Bone Hachets I,140,100,0,,-10,4
+301,Bone Hachets II,154,110,0,,-10,4
+302,Bone Hachets III,168,120,0,,-10,4
+303,Wild Hachets I,196,140,0,,-10,4
+304,Wild Hachets II,210,150,0,,-10,4
+305,Wild Hachets III,224,160,120,Blast,-10,4
+306,Strong Hatchets I,238,170,150,Blast,-10,4
+307,Strong Hatchets II,266,190,180,Blast,-10,4
+308,Blazing Hachets I,196,140,90,,-20,4
+309,Blazing Hachets II,210,150,120,Fire,-20,4
+310,Anja Cyclone I,238,170,150,Fire,-20,4
+311,Anja Cyclone II,266,190,180,Fire,-20,4
+312,Anja Cyclone III,294,210,210,Fire,-20,4
+313,Diablos Hachets I,224,160,0,,-10,4
+314,Diablos Hachets II,266,190,90,,-10,4
+315,Diablos Clubs I,294,210,90,,-10,4
+316,Diablos Clubs II,322,230,90,,-10,4
+317,Madness Pangas I,154,110,90,,-10,4
+318,Madness Pangas II,182,130,90,,-10,4
+319,Madness Pangas III,210,150,120,Water,-10,4
+320,Jyura Hatchets I,238,170,150,Water,-10,4
+321,Jyura Hatchets II,252,180,180,Water,-10,4
+322,Jyura Hatchets III,266,190,210,Water,-10,4
+323,Lava Cyclone I,252,180,120,Fire,-10,4
+324,Lava Cyclone II,252,180,150,Fire,-10,4
+325,Taurus Pangas I,168,120,0,,-10,4
+326,Taurus Pangas II,182,130,0,,-10,4
+327,Dark Ripper I,196,140,90,,-10,4
+328,Dark Ripper II,210,150,90,,-10,4
+329,Dark Ripper III,224,160,90,,-10,4
+330,Pulsar Hachets I,154,110,60,,-10,4
+331,Pulsar Hachets II,168,120,60,,-10,4
+332,Pulsar Hachets III,196,140,60,,-10,4
+333,Kadachi Claws I,224,160,90,,-10,4
+334,Kadachi Claws II,238,170,120,Thunder,-10,4
+335,Kadachi Claws III,252,180,150,Thunder,-10,4
+336,Garon Hatchets I,182,130,0,,-10,4
+337,Garon Hatchets II,196,140,180,Fire,-10,4
+338,Blood-drinker Chainblade,210,150,180,Fire,-10,4
+339,Sin,224,160,180,Fire,-10,4
+340,Dragonbone Twinblades I,140,100,120,Dragon,-10,4
+341,Dragonbone Twinblades II,168,120,120,Dragon,-10,4
+342,Enduring Schism,196,140,270,Dragon,-10,4
+343,Kirin Bolts,154,110,210,Thunder,-10,4
+344,Kirin Bolts+,196,140,240,Thunder,-10,4
+345,Monarch,224,160,270,Thunder,-10,4
+346,Magda Ungulae I,224,160,180,Blast,-20,4
+347,Magda Ungulae II,308,220,210,Blast,-20,4
+348,Blacksteel Twins I,140,100,90,,-20,4
+349,Blacksteel Twins II,154,110,120,Dragon,-20,4
+350,Twin Nails,238,170,210,,-20,4
+351,Fire and Ice,252,180,240,,-20,4
+352,Xeno Raqs,238,170,150,Dragon,-20,4
+353,Wrath & Rancor,280,200,120,Dragon,-20,4
+354,Wrathful Predation,308,220,180,Dragon,-20,4
+355,Iron Hammer I,416,80,0,,0,5
+356,Iron Hammer II,468,90,0,,0,5
+357,Iron Hammer III,520,100,0,,0,5
+358,Iron Demon I,572,110,0,,0,5
+359,Iron Demon II,676,130,0,,0,5
+360,Iron Demon III,728,140,210,Blast,0,5
+361,Iron Archdemon I,832,160,240,Blast,0,5
+362,Iron Archdemon II,936,180,270,Blast,0,5
+363,Nergal Crusher,1040,200,90,,0,5
+364,Obliteration's Footfall,1092,210,120,Dragon,0,5
+365,Frozen Core ,624,120,270,Ice,0,5
+366,Frozen Core+,832,160,390,Ice,0,5
+367,Cocytus,936,180,450,Ice,0,5
+368,Aqua Hammer I,572,110,90,,0,5
+369,Aqua Hammer II,624,120,120,Water,0,5
+370,Aqua Hammer III,676,130,150,Water,0,5
+371,Water Basher I,780,150,180,Water,0,5
+372,Water Basher II,832,160,210,Water,0,5
+373,Water Basher III,936,180,240,Water,0,5
+374,Girros Hammer I,624,120,210,,0,5
+375,Girros Hammer II,676,130,270,,0,5
+376,Malady's Fist I,728,140,330,,0,5
+377,Malady's Fist II,780,150,360,,0,5
+378,Malady's Fist III,832,160,390,,0,5
+379,Blooming Hammer I,520,100,300,Poison,0,5
+380,Blooming Hammer II,624,120,360,Poison,0,5
+381,Blooming Hammer III,728,140,420,Poison,0,5
+382,Buon Fiore,780,150,480,Poison,0,5
+383,Buona Flora,936,180,540,Poison,0,5
+384,Thunder Hammer I,676,130,180,Thunder,0,5
+385,Thunder Hammer II,780,150,210,Thunder,0,5
+386,Lightning Bash I,832,160,832,Thunder,0,5
+387,Lightning Bash II,884,170,270,Thunder,0,5
+388,Lightning Bash III,988,190,300,Thunder,0,5
+389,Bone Bludgeon I,520,100,0,,0,5
+390,Bone Bludgeon II,572,110,0,,0,5
+391,Bone Bludgeon III,624,120,0,,0,5
+392,Fossil Bludgeon I,728,140,0,,0,5
+393,Fossil Bludgeon II,780,150,0,,0,5
+394,Fossil Bludgeon III,832,160,360,Thunder,0,5
+395,Grandrock I,884,170,390,Thunder,0,5
+396,Grandrock II,988,190,420,Thunder,0,5
+397,Hazak Vlafos,988,190,210,Dragon,0,5
+398,Pandemonium's Root,1040,200,270,Dragon,0,5
+399,Bone Spike I,676,130,150,Sleep,0,5
+400,Bone Spike II,728,140,180,Sleep,0,5
+401,Baan Strike I,780,150,210,Sleep,0,5
+402,Baan Strike II,884,170,240,Sleep,0,5
+403,Baan Strike III,988,190,270,Sleep,0,5
+404,Brazenbreak I,988,190,120,Fire,0,5
+405,Brazenbreak II,1092,210,120,Fire,0,5
+406,Kulu Beak I,624,120,0,,0,5
+407,Kulu Beak II,676,130,0,,0,5
+408,Kulu Beak III,728,140,0,,0,5
+409,Crushing Beak I,780,150,240,Sleep,0,5
+410,Crushing Beak II,832,160,300,Sleep,0,5
+411,Crushing Beak III,884,170,360,Sleep,0,5
+412,Diablos Sledge I,884,170,0,,-25,5
+413,Diablos Sledge II,988,190,120,Ice,-25,5
+414,Diablos Shatterer I,1092,210,150,Ice,-25,5
+415,Diablos Shatterer II,1196,230,150,Ice,-25,5
+416,Carapace Sledge I,676,130,0,,-10,5
+417,Carapace Sledge II,728,140,0,,-10,5
+418,Carapace Sledge III,832,160,0,,-10,5
+419,Barroth Breaker I,936,180,270,,-10,5
+420,Barroth Breaker II,988,190,330,,-10,5
+421,Barroth Breaker III,1040,200,390,,-10,5
+422,Blazing Hammer I,780,150,210,Fire,-20,5
+423,Blazing Hammer II,832,160,270,Fire,-20,5
+424,Anja Striker I,884,170,330,Fire,-20,5
+425,Anja Striker II,988,190,360,Fire,-20,5
+426,Anja Striker III,1092,210,390,Fire,-20,5
+427,Dragonbone Basher I,520,100,300,Dragon,-20,5
+428,Dragonbone Basher II,572,110,360,Dragon,-20,5
+429,Dragonbone Basher III,832,160,420,Dragon,-20,5
+430,Magda Floga,832,160,330,Blast,-20,5
+431,Ragefire Magda Floga,1144,220,420,Blast,-20,5
+432,Blacksteel Hammer I,520,100,120,Dragon,-20,5
+433,Blacksteel Hammer II,572,110,150,Dragon,-20,5
+434,Icesteel Hammer,988,190,120,Ice,-20,5
+435,Daora's Colossus,1040,200,150,Ice,-20,5
+436,Xeno Maph'agarna,884,170,180,Dragon,-20,5
+437,Jail Hammer,832,160,180,,-20,5
+438,Binder Mace,936,180,210,,-20,5
+439,Devil's Due,1092,210,150,Dragon,-30,5
+440,Devil's Crush,1196,230,210,Dragon,-30,5
+441,Metal Bagpipe I,336,80,0,,0,6
+442,Metal Bagpipe II,378,90,0,,0,6
+443,Metal Bagpipe III,420,100,0,,0,6
+444,Great Bagpipe I,462,110,0,,0,6
+445,Great Bagpipe II,546,130,0,,0,6
+446,Great Bagpipe III,588,140,0,,0,6
+447,Fortissimo I,672,160,0,,0,6
+448,Fortissimo II,756,180,0,,0,6
+449,Nergal Groove,840,200,0,,0,6
+450,Desolation's Overture,882,210,0,,0,6
+451,Thunder Gaida I,504,120,0,,0,6
+452,Thunder Gaida II,546,130,0,,0,6
+453,Lightning Drum I,630,150,0,,0,6
+454,Lightning Drum II,714,170,0,,0,6
+455,Lightning Drum III,756,180,0,,0,6
+456,Kulu Duda I,420,100,0,,0,6
+457,Kulu Duda II,504,120,0,,0,6
+458,Kulu Duda III,588,140,0,,0,6
+459,Dancing Davul I,630,150,0,,0,6
+460,Dancing Davul II,672,160,0,,0,6
+461,Dancing Davul III,714,170,0,,0,6
+462,Valkyrie Chordmaker,462,110,0,,0,6
+463,Queen Chordmaker,630,150,0,,0,6
+464,Coral Chordmaker,714,170,0,,0,6
+465,Royal Chordmaker,798,190,0,,0,6
+466,Aqua Bagpipe I,420,100,0,,0,6
+467,Aqua Bagpipe II,504,120,0,,0,6
+468,Aqua Bagpipe III,546,130,0,,0,6
+469,Water Tamtam I,588,140,0,,0,6
+470,Water Tamtam II,672,160,0,,0,6
+471,Water Tamtam III,756,180,0,,0,6
+472,Glacial Bagpipe I,546,130,0,,0,6
+473,Glacial Bagpipe II,588,140,0,,0,6
+474,Sectored,630,150,0,,0,6
+475,Legia Sectored,672,160,0,,0,6
+476,Bone Horn I,420,100,0,,0,6
+477,Bone Horn II,462,110,0,,0,6
+478,Bone Horn III,504,120,0,,0,6
+479,Hard Bone Horn I,588,140,0,,0,6
+480,Hard Bone Horn II,630,150,0,,0,6
+481,Hard Bone Horn III,672,160,0,,0,6
+482,Heavy Bone Horn I,714,170,0,,0,6
+483,Heavy Bone Horn II,798,190,0,,0,6
+484,Gama Horn I,756,180,0,,0,6
+485,Gama Horn II,798,190,0,,0,6
+486,Blazing Horn I,546,130,0,,-20,6
+487,Blazing Horn II,630,150,0,,-20,6
+488,Anja Barone I,672,160,0,,-20,6
+489,Anja Barone II,798,190,0,,-20,6
+490,Anja Barone III,882,210,0,,-20,6
+491,Blooming Horn I,504,120,0,,-20,6
+492,Blooming Horn II,546,130,0,,-20,6
+493,Blooming Horn III,588,140,0,,-20,6
+494,Datura Horn I,630,150,0,,-20,6
+495,Datura Horn II,672,160,0,,-20,6
+496,Datura Horn III,714,170,0,,-20,6
+497,Lumu Horn I,546,130,0,,-20,6
+498,Lumu Horn II,588,140,0,,-20,6
+499,Lumu Barone I,630,150,0,,-20,6
+500,Lumu Barone II,672,160,0,,-20,6
+501,Lumu Barone III,714,170,0,,-20,6
+502,Rookslayer Drum,756,180,0,,-10,6
+503,Bazelreid Rookslayer,840,200,0,,-10,6
+504,Sonic Horn I,462,110,0,,-10,6
+505,Sonic Horn II,504,120,0,,-10,6
+506,Sonic Horn III,546,130,0,,-10,6
+507,Glass Royale,588,140,0,,-10,6
+508,Glass Royale+,630,150,0,,-10,6
+509,Queen Vespoid Horn,672,160,0,,-10,6
+510,Spiked Horn I,546,130,0,,-10,6
+511,Spiked Horn II,588,140,0,,-10,6
+512,Baan Horn I,672,160,0,,-10,6
+513,Baan Horn II,756,180,0,,-10,6
+514,Baan Horn III,798,190,0,,-10,6
+515,Dragonbone Auldhorn I,420,100,0,,-10,6
+516,Dragonbone Auldhorn II,462,110,0,,-10,6
+517,Dragonbone Auldhorn III,672,160,0,,-10,6
+518,Thundercry Horn ,504,120,0,,-10,6
+519,Thunderbolt Horn I,588,140,0,,-10,6
+520,Thunderbolt Horn II,672,160,0,,-10,6
+521,Blacksteel Dragonhorn I,420,100,0,,-10,6
+522,Blacksteel Dragonhorn II,462,110,0,,-10,6
+523,Teostra's Tiple,756,180,0,,-10,6
+524,Teostra's Orphée,798,190,0,,-10,6
+525,Xeno Manasheena,714,170,0,,-10,6
+526,Devil's Maestro,840,200,0,,-30,6
+527,Deep Vero,924,220,0,,-30,6
+528,Iron Lance I,184,80,0,,0,7
+529,Iron Lance II,207,90,0,,0,7
+530,Iron Lance III,230,100,0,,0,7
+531,Steel Lance I,253,110,0,,0,7
+532,Steel Lance II,299,130,0,,0,7
+533,Steel Lance III,322,140,210,,0,7
+534,Chrome Lance I,368,160,240,,0,7
+535,Chrome Lance II,414,180,270,,0,7
+536,Nergal Impaler,460,200,120,Dragon,0,7
+537,Perdition's Hand,483,210,150,Dragon,0,7
+538,Glacial Lance I,299,130,270,Ice,0,7
+539,Glacial Lance II,322,140,300,Ice,0,7
+540,Legiana Halberd I,345,150,330,Ice,0,7
+541,Legiana Halberd II,368,160,360,Ice,0,7
+542,Kulu Lance I,253,110,0,,0,7
+543,Kulu Lance II,276,120,0,,0,7
+544,Kulu Lance III,299,130,0,,0,7
+545,Kulu Hasta I,345,150,300,Sleep,0,7
+546,Kulu Hasta II,368,160,330,Sleep,0,7
+547,Kulu Hasta III,391,170,360,Sleep,0,7
+548,Gama Pilebunker I,368,160,180,Blast,0,7
+549,Gama Pilebunker II,391,170,210,Blast,0,7
+550,Thunder Lance I,276,120,120,Thunder,0,7
+551,Thunder Lance II,322,140,150,Thunder,0,7
+552,Lightning Spire I,368,160,180,Thunder,0,7
+553,Lightning Spire II,391,170,210,Thunder,0,7
+554,Lightning Spire III,414,180,240,Thunder,0,7
+555,Blooming Lance I,230,100,240,Poison,0,7
+556,Blooming Lance II,253,110,300,Poison,0,7
+557,Blooming Lance III,299,130,360,Poison,0,7
+558,Datura Pike I,345,150,420,Poison,0,7
+559,Datura Pike II,368,160,480,Poison,0,7
+560,Datura Pike III,391,170,540,Poison,0,7
+561,Flame Lance I,299,130,180,Fire,0,7
+562,Flame Lance II,322,140,210,Fire,0,7
+563,Red Tail,391,170,240,Fire,0,7
+564,Blue Tail,414,180,210,Fire,0,7
+565,Blue Prominence,437,190,300,Fire,0,7
+566,Bone Lance I,207,90,0,,0,7
+567,Bone Lance II,230,100,0,,0,7
+568,Bone Lance III,253,110,0,,0,7
+569,Hard Bone Lance I,322,140,0,,0,7
+570,Hard Bone Lance II,345,150,0,,0,7
+571,Hard Bone Lance III,368,160,180,Poison,0,7
+572,Heavy Bone Lance I,391,170,210,Poison,0,7
+573,Heavy Bone Lance II,437,190,240,Poison,0,7
+574,Hazak Wächter,437,190,240,Dragon,0,7
+575,Love's Sorrow,460,200,270,Dragon,0,7
+576,Taurus Lance I,276,120,0,,0,7
+577,Taurus Lance II,299,130,0,,0,7
+578,Dark Stinger I,322,140,180,Blast,0,7
+579,Dark Stinger II,345,150,210,Blast,0,7
+580,Dark Stinger III,368,160,240,Blast,0,7
+581,Carapace Lance I,253,110,0,,-20,7
+582,Carapace Lance II,276,120,0,,-20,7
+583,Carapace Lance III,345,150,0,,-20,7
+584,Barroth Stinger I,391,170,300,,-20,7
+585,Barroth Stinger II,437,190,330,,-20,7
+586,Barroth Stinger III,460,200,390,,-20,7
+587,Garon Lance I,299,130,0,,-20,7
+588,Garon Lance II,322,140,150,Fire,-20,7
+589,Garon Dhara I,345,150,180,Fire,-20,7
+590,Garon Dhara II,391,170,210,Fire,-20,7
+591,Aqua Horn I,253,110,150,Water,-20,7
+592,Aqua Horn II,276,120,180,Water,-20,7
+593,Aqua Horn III,322,140,210,Water,-20,7
+594,Water Spike I,345,150,240,Water,-20,7
+595,Water Spike II,391,170,270,Water,-20,7
+596,Water Spike III,437,190,300,Water,-20,7
+597,Dragonbone Lance I,230,100,300,Dragon,-20,7
+598,Dragonbone Lance II,253,110,360,Dragon,-20,7
+599,Dragonbone Lance III,368,160,420,Dragon,-20,7
+600,Rookslayer Lance,414,180,180,Blast,-10,7
+601,Bazel Myniad Rookslayer,460,200,210,Blast,-10,7
+602,Thunderpike,253,110,420,Thunder,-10,7
+603,Thunderspear,345,150,480,Thunder,-10,7
+604,Thunderpiercer,368,160,540,Thunder,-10,7
+605,Blacksteel Lance I,230,100,120,Dragon,-10,7
+606,Blacksteel Lance II,253,110,150,Dragon,-10,7
+607,Icesteel Spear,391,170,210,Ice,-10,7
+608,Daora's Fang,414,180,240,Ice,-10,7
+609,Xeno Zauta,391,170,180,Dragon,-10,7
+610,Babel Spear,414,180,270,Fire,-10,7
+611,Elder Babel Spear,460,200,330,Fire,-10,7
+612,Grief Lance,483,210,150,Dragon,-25,7
+613,Fiendish Tower,529,230,210,Dragon,-25,7
+614,Iron Gunlance I,184,80,0,,0,8
+615,Iron Gunlance II,207,90,0,,0,8
+616,Iron Gunlance III,230,100,0,,0,8
+617,Steel Gunlance I,253,110,0,,0,8
+618,Steel Gunlance II,299,130,0,,0,8
+619,Steel Gunlance III,322,140,0,,0,8
+620,Chrome Gunlance I,368,160,240,Blast,0,8
+621,Chrome Gunlance II,414,180,270,Blast,0,8
+622,Nergal Ram,460,200,120,Dragon,0,8
+623,Eradication Flame,483,210,150,Dragon,0,8
+624,Pulsar Gunlance I,230,100,120,Thunder,0,8
+625,Pulsar Gunlance II,253,110,150,Thunder,0,8
+626,Pulsar Gunlance III,299,130,180,Thunder,0,8
+627,Kadachi Striker,345,150,210,Thunder,0,8
+628,Kadachi Striker+,391,170,240,Thunder,0,8
+629,Mythic Kadachi Striker,414,180,270,Thunder,0,8
+630,Rath Gunlance I,276,120,120,Fire,0,8
+631,Rath Gunlance II,322,140,150,Fire,0,8
+632,Red Rook,345,150,180,Fire,0,8
+633,Blue Rook,414,180,210,Fire,0,8
+634,Blue Chariot,437,190,240,Fire,0,8
+635,Princess Panoply,276,120,240,Poison,0,8
+636,Princess Panoply+,345,150,270,Poison,0,8
+637,Rose Burst,391,170,300,Poison,0,8
+638,Royal Burst,437,190,330,Poison,0,8
+639,Madness Gunlance I,253,110,210,Water,0,8
+640,Madness Gunlance II,276,120,240,Water,0,8
+641,Madness Gunlance III,299,130,270,Water,0,8
+642,Jyura Blaster I,345,150,300,Water,0,8
+643,Jyura Blaster II,368,160,330,Water,0,8
+644,Jyura Blaster III,437,190,360,Water,0,8
+645,Glacial Gunlance I,299,130,180,Ice,0,8
+646,Glacial Gunlance II,322,140,240,Ice,0,8
+647,Legiana Cannon I,345,150,300,Ice,0,8
+648,Legiana Cannon II,368,160,360,Ice,0,8
+649,Bone Gunlance I,207,90,0,,0,8
+650,Bone Gunlance II,230,100,0,,0,8
+651,Bone Gunlance III,253,110,0,,0,8
+652,Bone Cannon I,276,120,0,,0,8
+653,Bone Cannon II,322,140,0,,0,8
+654,Bone Cannon III,368,160,210,Thunder,0,8
+655,Great Bone Gunlance I,391,170,240,Thunder,0,8
+656,Great Bone Gunlance II,437,190,270,Thunder,0,8
+657,Bazel Buster I,437,190,180,Blast,-10,8
+658,Bazel Buster II,460,200,210,Blast,-10,8
+659,Jagras Gunlance I,253,110,0,,-10,8
+660,Jagras Gunlance II,276,120,0,,-10,8
+661,Jagras Gunlance III,322,140,0,,-10,8
+662,Glutton Gunlance I,345,150,240,Sleep,-10,8
+663,Glutton Gunlance II,437,190,270,Sleep,-10,8
+664,Glutton Gunlance III,437,190,300,Sleep,-10,8
+665,Girros Gunlance I,276,120,210,,-10,8
+666,Girros Gunlance II,299,130,270,,-10,8
+667,Deathfang Gunlance I,322,140,330,,-10,8
+668,Deathfang Gunlance II,345,150,390,,-10,8
+669,Deathfang Gunlance III,368,160,450,,-10,8
+670,Hazak Spysa I,437,190,240,Dragon,-10,8
+671,Hazak Spysa II,460,200,270,Dragon,-10,8
+672,Carapace Cannon I,276,120,0,,-10,8
+673,Carapace Cannon II,299,130,0,,-10,8
+674,Carapace Cannon III,345,150,0,,-10,8
+675,Barroth Blaster I,391,170,270,,-10,8
+676,Barroth Blaster II,437,190,330,,-10,8
+677,Barroth Blaster III,460,200,390,,-10,8
+678,Blazing Gunlance I,299,130,210,Fire,-20,8
+679,Blazing Gunlance II,322,140,240,Fire,-20,8
+680,Anja Cannon I,368,160,270,Fire,-20,8
+681,Anja Cannon II,414,180,330,Fire,-20,8
+682,Anja Cannon III,483,210,450,Fire,-20,8
+683,Dragonbone Gunlance I,230,100,360,Dragon,-20,8
+684,Dragonbone Gunlance II,253,110,390,Dragon,-20,8
+685,Dragonbone Gunlance III,368,160,420,Dragon,-20,8
+686,Magda Lahat,368,160,330,Blast,-10,8
+687,Earthshaker Magda Lahat,460,200,420,Blast,-10,8
+688,Blacksteel Gunlance I,230,100,120,Dragon,-10,8
+689,Blacksteel Gunlance II,253,110,150,Dragon,-10,8
+690,Icesteel Gunlance,391,170,210,Ice,-10,8
+691,Daora's Brigia,414,180,240,Ice,-10,8
+692,Xeno Hemta,391,170,180,Dragon,-10,8
+693,Ravenous Gunlance,483,210,180,Dragon,-30,8
+694,Insatiable Gunlance,529,230,240,Dragon,-30,8
+695,Proto Iron Axe I,280,80,0,,0,9
+696,Proto Iron Axe II,315,90,0,,0,9
+697,Proto Iron Axe III,350,100,0,,0,9
+698,Improved Steel Axe I,385,110,0,,0,9
+699,Improved Steel Axe II,455,130,0,,0,9
+700,Improved Steel Axe III,490,140,300,Poison,0,9
+701,Perfected Alloy Axe I,560,160,360,Poison,0,9
+702,Perfected Alloy Axe II,630,180,420,Poison,0,9
+703,Nergal Gash,665,190,120,Dragon,0,9
+704,Dying Light,700,200,150,Dragon,0,9
+705,Glacial Axe I,455,130,210,Ice,0,9
+706,Glacial Axe II,490,140,240,Ice,0,9
+707,Frostreaver,525,150,270,Ice,0,9
+708,Legia Frostreaver,560,160,300,Ice,0,9
+709,Thunder Axe I,420,120,90,,0,9
+710,Thunder Axe II,490,140,90,,0,9
+711,Lightning Chopper I,560,160,120,Thunder,0,9
+712,Lightning Chopper II,595,170,150,Thunder,0,9
+713,Lightning Chopper III,630,180,180,Thunder,0,9
+714,Motor Chopper I,630,180,120,Fire,0,9
+715,Motor Chopper II,735,210,120,Fire,0,9
+716,Jagras Axe I,385,110,0,,0,9
+717,Jagras Axe II,420,120,0,,0,9
+718,Jagras Axe III,490,140,0,,0,9
+719,Jagras Raider I,560,160,180,Sleep,0,9
+720,Jagras Raider II,630,180,210,Sleep,0,9
+721,Jagras Raider III,665,190,240,Sleep,0,9
+722,Bazel Raider I,665,190,150,Blast,-15,9
+723,Bazel Raider II,700,200,180,Blast,-15,9
+724,Rathalos Axe I,455,130,120,Fire,-15,9
+725,Rathalos Axe II,490,140,120,Fire,-15,9
+726,Rathbringer Axe I,560,160,150,Fire,-15,9
+727,Rathbringer Axe II,665,190,150,Fire,-15,9
+728,Bone Axe I,315,90,0,,-15,9
+729,Bone Axe II,350,100,0,,-15,9
+730,Bone Axe III,385,110,0,,-15,9
+731,Bone Smasher I,490,140,0,,-15,9
+732,Bone Smasher II,525,150,0,,-15,9
+733,Bone Smasher III,560,160,0,,-15,9
+734,Power Smasher I,595,170,0,,-15,9
+735,Power Smasher II,665,190,0,,-15,9
+736,Hazak Demios I,665,190,180,Dragon,-15,9
+737,Hazak Demios II,700,200,210,Dragon,-15,9
+738,Madness Axe I,385,110,150,Water,-15,9
+739,Madness Axe II,420,120,180,Water,-15,9
+740,Madness Axe III,490,140,210,Water,-15,9
+741,Jyura Drought I,560,160,240,Water,-15,9
+742,Jyura Drought II,630,180,270,Water,-15,9
+743,Jyura Drought III,665,190,300,Water,-15,9
+744,Lumu Axe I,420,120,0,,-15,9
+745,Lumu Axe II,490,140,0,,-15,9
+746,Lumu Smasher I,525,150,360,Blast,-15,9
+747,Lumu Smasher II,560,160,390,Blast,-15,9
+748,Lumu Smasher III,595,170,420,Blast,-15,9
+749,Carapace Axe I,420,120,0,,-20,9
+750,Carapace Axe II,490,140,0,,-20,9
+751,Carapace Axe III,560,160,0,,-20,9
+752,Barroth Grinder I,595,170,240,,-20,9
+753,Barroth Grinder II,665,190,270,,-20,9
+754,Barroth Grinder III,735,210,300,,-20,9
+755,Diablos Axe I,595,170,0,,-30,9
+756,Diablos Axe II,630,180,90,,-30,9
+757,Axe Semper Tyrannis,735,210,120,Ice,-30,9
+758,Axe of Thanatos,770,220,150,Ice,-30,9
+759,Axe of Demons,805,230,180,Ice,-30,9
+760,Flammenbeil,455,130,180,Fire,-20,9
+761,Flammenbeil+,560,160,240,Fire,-20,9
+762,Gnashing Flammenbeil,735,210,300,Fire,-20,9
+763,Dragonbone Slicer I,350,100,210,Dragon,-20,9
+764,Dragonbone Slicer II,385,110,270,Dragon,-20,9
+765,Dragonbone Slicer III,560,160,330,Dragon,-20,9
+766,Peal,385,110,360,Thunder,-20,9
+767,Peal+,490,140,390,Thunder,-20,9
+768,Kirin Thunderpeal,560,160,420,Thunder,-20,9
+769,Blacksteel Switch Axe I,350,100,120,Dragon,-20,9
+770,Blacksteel Switch Axe II,385,110,150,Dragon,-20,9
+771,Teostra's Arx,630,180,300,Blast,-20,9
+772,Teostra's Castle,665,190,300,Blast,-20,9
+773,Xeno Martshu,595,170,150,Dragon,-20,9
+774,Tyrannos,700,200,120,Dragon,-25,9
+775,Terror Tyrannos,770,220,180,Dragon,-25,9
+776,Proto Commision Axe I,288,80,0,,0,10
+777,Proto Commision Axe II,324,90,0,,0,10
+778,Proto Commision Axe III,360,100,0,,0,10
+779,Elite Commision Axe I,396,110,0,,0,10
+780,Elite Commision Axe II,468,130,0,,0,10
+781,Elite Commision Axe III,504,140,120,Thunder,0,10
+782,Chrome Guardian I,576,160,150,Thunder,0,10
+783,Chrome Guardian II,648,180,270,Thunder,0,10
+784,Nergal Lacerator,720,200,120,Dragon,0,10
+785,Devastation's Thorns,756,210,150,Dragon,0,10
+786,Rathsblade I,432,120,150,Fire,0,10
+787,Rathsblade II,576,160,180,Fire,0,10
+788,Axelion Blade,612,170,210,Fire,0,10
+789,Halberion Blade,684,190,240,Fire,0,10
+790,Mudslide Blade I,396,110,120,Water,0,10
+791,Mudslide Blade II,432,120,150,Water,0,10
+792,Mudslide Blade III,504,140,180,Water,0,10
+793,Jyura Depth I,576,160,210,Water,0,10
+794,Jyura Depth II,648,180,240,Water,0,10
+795,Jyura Depth III,684,190,270,Water,0,10
+796,Everfrost Blade I,504,140,150,Ice,0,10
+797,Everfrost Blade II,540,150,180,Ice,0,10
+798,Gigafrost I,576,160,210,Ice,0,10
+799,Gigafrost II,612,170,240,Ice,0,10
+800,Dear Lutemis,468,130,240,Poison,0,10
+801,Dear Lutemia,540,150,270,Poison,0,10
+802,Dear Hecatel,612,170,300,Poison,0,10
+803,Dear Hecatelia,684,190,330,Poison,0,10
+804,Bone Strongarm I,324,90,0,,0,10
+805,Bone Strongarm II,360,100,0,,0,10
+806,Bone Strongarm III,396,110,0,,0,10
+807,Hard Bone Strongarm I,432,120,0,,0,10
+808,Hard Bone Strongarm II,504,140,0,,0,10
+809,Hard Bone Strongarm III,576,160,180,Blast,0,10
+810,Mighty Strongarm I,612,170,210,Blast,0,10
+811,Mighty Strongarm II,684,190,240,Blast,0,10
+812,Diablos Wall I,612,170,0,,-30,10
+813,Diablos Wall II,684,190,90,,-30,10
+814,Diablos Tyrannis I,756,210,120,Ice,-30,10
+815,Diablos Tyrannis II,828,230,180,Ice,-30,10
+816,Jagras Strongarm I,396,110,0,,-30,10
+817,Jagras Strongarm II,432,120,0,,-30,10
+818,Jagras Strongarm III,468,130,0,,-30,10
+819,Jagras Escudo I,540,150,120,Sleep,-30,10
+820,Jagras Escudo II,648,180,150,Sleep,-30,10
+821,Jagras Escudo III,684,190,180,Sleep,-30,10
+822,Gama Silt I,576,160,150,Blast,-30,10
+823,Gama Silt II,612,170,180,Blast,-30,10
+824,Girros Strongarm I,432,120,180,,-30,10
+825,Girros Strongarm II,468,130,210,,-30,10
+826,Girros Nadja I,504,140,240,,-30,10
+827,Girros Nadja II,540,150,270,,-30,10
+828,Girros Nadja III,576,160,300,,-30,10
+829,Hazak Aspida I,648,180,210,Dragon,-30,10
+830,Hazak Aspida II,684,190,270,Dragon,-30,10
+831,Pulsar Strongarm I,396,110,90,,-30,10
+832,Pulsar Strongarm II,432,120,120,Thunder,-30,10
+833,Pulsar Strongarm III,468,130,120,Thunder,-30,10
+834,Kadachi Kaina I,504,140,150,Thunder,-30,10
+835,Kadachi Kaina II,576,160,180,Thunder,-30,10
+836,Kadachi Kaina III,648,180,210,Thunder,-30,10
+837,Garon Strongarm I,468,130,0,,-30,10
+838,Garon Strongarm II,504,140,120,Fire,-30,10
+839,Hate's Undying Flame,540,150,150,Fire,-30,10
+840,Odium,576,160,180,Fire,-30,10
+841,Dragonbone Cutter I,360,100,270,Dragon,-30,10
+842,Dragonbone Cutter II,396,110,300,Dragon,-30,10
+843,Dragonbone Cutter III,576,160,360,Dragon,-30,10
+844,Magda Manus,576,160,180,Blast,-10,10
+845,Avenging Magda Manus,756,210,210,Blast,-10,10
+846,Blacksteel Charger I,360,100,120,Dragon,-10,10
+847,Blacksteel Charger II,396,110,150,Dragon,-10,10
+848,Daora's Casca,612,170,150,Ice,-10,10
+849,Daora's Thwartoise,648,180,180,Ice,-10,10
+850,Xeno Ra'atz,648,180,180,Dragon,-10,10
+851,Tyrant's Charge Blade,720,200,150,Dragon,-25,10
+852,Oppressor's Charge Blade,792,220,210,Dragon,-25,10
+853,Dante's Devil Sword,720,200,150,Thunder,-25,10
+854,Iron Blade I,248,80,0,,0,11
+855,Iron Blade II,279,90,0,,0,11
+856,Iron Blade III,310,100,0,,0,11
+857,Steel Blade I,341,110,0,,0,11
+858,Steel Blade II,403,130,0,,0,11
+859,Steel Blade III,434,140,210,Blast,0,11
+860,Chrome Blade I,496,160,240,Blast,0,11
+861,Chrome Blade II,558,180,270,Blast,0,11
+862,Nergal Reaper,620,200,120,Dragon,0,11
+863,Catastrophe's Light,651,210,150,Dragon,0,11
+864,Flame Glaive I,372,120,90,,0,11
+865,Flame Glaive II,465,150,120,Fire,0,11
+866,Rathmaul,527,170,150,Fire,0,11
+867,Firedance Rathmaul,589,190,180,Fire,0,11
+868,Kulu Blade I,310,100,0,,0,11
+869,Kulu Blade II,341,110,0,,0,11
+870,Kulu Blade III,434,140,0,,0,11
+871,Ya-Ku Wrath I,465,150,150,Sleep,0,11
+872,Ya-Ku Wrath II,496,160,180,Sleep,0,11
+873,Ya-Ku Wrath III,527,170,210,Sleep,0,11
+874,Luminous Blade I,372,120,0,,0,11
+875,Luminous Blade II,434,140,0,,0,11
+876,Destroyer Bo I,496,160,240,Thunder,0,11
+877,Destroyer Bo II,527,170,270,Thunder,0,11
+878,Destroyer Bo III,558,180,300,Thunder,0,11
+879,Frost Blade I,434,140,150,Ice,0,11
+880,Frost Blade II,465,150,180,Ice,0,11
+881,Freeze Gale I,496,160,210,Ice,0,11
+882,Freeze Gale II,527,170,240,Ice,0,11
+883,Blooming Glaive I,310,100,240,Poison,0,11
+884,Blooming Glaive II,341,110,270,Poison,0,11
+885,Blooming Glaive III,403,130,300,Poison,0,11
+886,Datura Blade I,465,150,330,Poison,0,11
+887,Datura Blade II,496,160,360,Poison,0,11
+888,Datura Blade III,527,170,390,Poison,0,11
+889,Gama Cane I,496,160,120,Blast,0,11
+890,Gama Cane II,527,170,150,Blast,0,11
+891,Bone Rod I,279,90,0,,0,11
+892,Bone Rod II,310,100,0,,0,11
+893,Bone Rod III,341,110,0,,0,11
+894,Hard Bone Rod I,434,140,0,,0,11
+895,Hard Bone Rod II,465,150,0,,0,11
+896,Hard Bone Rod III,496,160,180,,0,11
+897,Aerial Rod I,527,170,210,,0,11
+898,Aerial Rod II,589,190,210,,0,11
+899,Hazak Entoma I,589,190,150,Dragon,0,11
+900,Hazak Entoma II,620,200,180,Dragon,0,11
+901,Flammenkaefer,403,130,210,Fire,-20,11
+902,Flammenkaefer+,558,180,240,Fire,-20,11
+903,Gnashing Flammenkaefer,651,210,270,Fire,-20,11
+904,Aqua Rod I,341,110,60,,-20,11
+905,Aqua Rod II,372,120,90,,-20,11
+906,Aqua Rod III,434,140,120,Water,-20,11
+907,Water Glaive I,465,150,150,Water,-20,11
+908,Water Glaive II,527,170,180,Water,-20,11
+909,Water Glaive III,589,190,210,Water,-20,11
+910,Diablos Rod I,496,160,0,,-30,11
+911,Diablos Rod II,620,200,120,Ice,-30,11
+912,Tyrannis Glaive I,682,220,150,Ice,-30,11
+913,Tyrannis Glaive II,713,230,180,Ice,-30,11
+914,Pulsar Rod I,341,110,90,,-30,11
+915,Pulsar Rod II,372,120,120,Thunder,-30,11
+916,Pulsar Rod III,434,140,150,Thunder,-30,11
+917,Kadachi Pillar I,465,150,180,Thunder,-30,11
+918,Kadachi Pillar II,527,170,210,Thunder,-30,11
+919,Kadachi Pillar III,558,180,240,Thunder,-30,11
+920,Garon Rod I,403,130,0,,-30,11
+921,Garon Rod II,434,140,90,,-30,11
+922,Temptation's Trident,465,150,120,Fire,-30,11
+923,Vice,496,160,150,Fire,-30,11
+924,Dragonbone Glaive I,310,100,300,Dragon,-30,11
+925,Dragonbone Glaive II,341,110,330,Dragon,-30,11
+926,Dragonbone Glaive III,496,160,390,Dragon,-30,11
+927,Indigo Flash,341,110,300,Thunder,-30,11
+928,Azure Bolt,434,140,330,Thunder,-30,11
+929,Verdant Levin,496,160,360,Thunder,-30,11
+930,Blacksteel Glaive I,310,100,60,,-30,11
+931,Blacksteel Glaive II,341,110,90,,-30,11
+932,Daora's Entom,527,170,150,Ice,-30,11
+933,Daora's Tethidine,558,180,180,Ice,-30,11
+934,Xeno Shmaena,558,180,120,Dragon,-30,11
+935,Bad Wing,620,200,150,Dragon,-25,11
+936,Grunge Storm,682,220,210,Dragon,-25,11
