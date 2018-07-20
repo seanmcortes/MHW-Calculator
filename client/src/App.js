@@ -4,25 +4,39 @@ import './App.css';
 
 class App extends Component {
   state = {
-    response: ''
+    weapons: []
   };
 
   componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      .catch(err => console.log(err));
+    this.getWeapons();
   }
 
-  callApi = async () => {
-    const response = await fetch('/test');
-    const body = await response.json();
+  getWeapons = _ => {
+    fetch('http://localhost:3000/test')
+      .then(response => response.json())
+      .then(response => this.setState({ weapons: response.data }))
+      .catch(err => console.error(err))
+  }
 
-    if (response.status !== 200) throw Error(body.message);
+  renderWeapons = ({name}) => <option key={name}>{name}</option>
 
-    return body;
-  };
+  testChange = (event) => {
+  	fetch('http://localhost:3000/test', {
+  		method: 'POST',
+  		headers: {
+  			'Content-Type': 'application/json'
+  		},
+  		body: JSON.stringify({
+  			class: event.target.value
+  		})
+  	})
+  	  .then(response => response.json())
+  	  .then(response => this.setState({ weapons: response.data }))
+  	  .catch(err => console.error(err))
+  }
 
   render() {
+    const { weapons } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -30,7 +44,14 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          {this.state.response}
+          <select onChange={this.testChange}>
+          	<option value="1">Great Sword</option>
+          	<option value="2">Long Sword</option>
+          	<option value="3">Sword and Shield</option>
+          </select>
+          <select>
+          	{weapons.map(this.renderWeapons)}
+          </select>
         </p>
       </div>
     );
