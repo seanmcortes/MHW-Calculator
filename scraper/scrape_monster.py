@@ -6,6 +6,8 @@ output_file = 'monsters.csv'
 
 monster_list_url = 'https://mhworld.kiranico.com/monster'
 
+monster_list = []
+
 url_list = []
 
 
@@ -19,13 +21,16 @@ def get_values(soup, outer_counter):
     name = soup.find('h1', itemprop="name").text
     table = soup.find_all('table', class_='table table-sm')[1]
 
-    newLine = [0] * 11
+    newLine = [0] * 12
 
     for row in table.find_all('tr')[1:]:
+        newLine[0] = monster_list[outer_counter-1]
+
         for counter, rowz in enumerate(row.find_all('td')):
-            newLine[counter] = rowz.text
+            newLine[counter+1] = rowz.text
 
         newLine[-1] = outer_counter
+        print(newLine)
         writer.writerow(newLine)
 
 
@@ -41,6 +46,7 @@ def get_url():
 
     for href in body:
         url_list.append(href['href'])
+        monster_list.append(href.text)
 
 
 # Write all hitzones and values into output csv
