@@ -131,7 +131,15 @@ class MonsterData extends Component {
     .catch(err => console.error(err))
   }
 
+  calcDamage = (part) => {
+    console.log(this.state)
+    return <p>{part}</p>
+  }
+  
+
+
   renderHitZones = ({ monster_part_id, name, part, sever, blunt, shot, fire, water, thunder, ice, dragon, stun}) =>
+    <tbody>
     <tr key={monster_part_id}> 
       <td key={monster_part_id + 'part'}>{part}</td>
       <td key={monster_part_id + 'sever'}>{sever}</td>
@@ -144,6 +152,10 @@ class MonsterData extends Component {
       <td key={monster_part_id + 'dragon'}>{dragon}</td>
       <td key={monster_part_id + 'stun'}>{stun}</td>
     </tr>
+    <tr>
+      {this.calcDamage(part)}
+    </tr>
+    </tbody>
   
 
   render(){
@@ -153,9 +165,7 @@ class MonsterData extends Component {
 	    <p>{this.props.wep} </p>
 	    <p>{this.props.mon}</p>
       <table>
-        <tbody>
         {hitzone.map(this.renderHitZones)}
-        </tbody>
       </table>
       
 	  </div>
