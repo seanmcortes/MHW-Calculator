@@ -2,7 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 
-output_file = 'monsters.csv'
+monster_part_output_file = 'monster_part_list.csv'
+monster_output_file = 'monster_list.csv'
 
 monster_list_url = 'https://mhworld.kiranico.com/monster'
 
@@ -18,7 +19,6 @@ def get_values(soup, outer_counter):
     :return: none
     '''
 
-    name = soup.find('h1', itemprop="name").text
     table = soup.find_all('table', class_='table table-sm')[1]
 
     newLine = [0] * 12
@@ -31,7 +31,7 @@ def get_values(soup, outer_counter):
 
         newLine[-1] = outer_counter
         print(newLine)
-        writer.writerow(newLine)
+        monster_part_writer.writerow(newLine)
 
 
 # Scrape monster list for urls and fill url_list
@@ -47,6 +47,13 @@ def get_url():
     for href in body:
         url_list.append(href['href'])
         monster_list.append(href.text)
+
+    newLine = [0]*2
+    for counter, monster in enumerate(monster_list):
+        newLine[0] = counter+1;
+        newLine[1] = monster
+        monster_writer.writerow(newLine)
+
 
 
 # Write all hitzones and values into output csv
@@ -65,9 +72,12 @@ def monster_scrape():
 
 
 # execute scrape
-outfile = open(output_file, 'w', encoding="utf-8", newline='')
-writer = csv.writer(outfile)
+monster_part_outfile = open(monster_part_output_file, 'w', encoding="utf-8", newline='')
+monster_outfile = open(monster_output_file, 'w', encoding="utf-8", newline='')
+monster_part_writer = csv.writer(monster_part_outfile)
+monster_writer = csv.writer(monster_outfile)
 
 monster_scrape()
 
-outfile.close()
+monster_part_outfile.close()
+monster_outfile.close()

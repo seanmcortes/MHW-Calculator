@@ -2,7 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 
-output_file = 'weapons.csv'
+weapon_output_file = 'weapons.csv'
+weapon_list_output_file = 'weapon_list.csv'
 universal_counter = 0
 
 url_list = [
@@ -17,6 +18,20 @@ url_list = [
     'https://mhworld.kiranico.com/switch-axe',
     'https://mhworld.kiranico.com/charge-blade',
     'https://mhworld.kiranico.com/insect-glaive',
+]
+
+weapon_list = [
+    'Great Sword',
+    'Long Sword',
+    'Sword and Shield',
+    'Dual Blades',
+    'Hammer',
+    'Hunting Horn',
+    'Lance',
+    'Gunlance',
+    'Switch Axe',
+    'Charge Blade',
+    'Insect Glaive'
 ]
 
 
@@ -91,11 +106,11 @@ def get_values(table, outer_counter):
             outer_counter+1
         ]
 
-        writer.writerow(newLine)
+        weapon_writer.writerow(newLine)
 
 
 def weapon_scrape():
-    outer_counter = 0
+    counter = 0
 
     # iterate and scrape through weapon urls
     for weapon_url in url_list:
@@ -103,17 +118,29 @@ def weapon_scrape():
         soup = BeautifulSoup(source, 'lxml')
         table_soup = soup.find('table', class_='table table-sm')
 
-        get_values(table_soup, outer_counter)
-        outer_counter += 1
+        get_values(table_soup, counter)
+        counter += 1
+
+
+def weapon_list_create():
+    newLine = [0]*2
+    for counter, weapon in enumerate(weapon_list):
+        newLine[0] = counter+1
+        newLine[1] = weapon
+        weapon_list_writer.writerow(newLine)
 
 
 # execute scrape
-outfile = open(output_file, 'w', encoding="utf-8", newline='')
-writer = csv.writer(outfile)
+weapon_outfile = open(weapon_output_file, 'w', encoding="utf-8", newline='')
+weapon_list_outfile = open(weapon_list_output_file, 'w', encoding="utf-8", newline='')
+weapon_writer = csv.writer(weapon_outfile)
+weapon_list_writer = csv.writer(weapon_list_outfile)
 
 weapon_scrape()
+weapon_list_create()
 
-outfile.close()
+weapon_outfile.close()
+weapon_list_outfile.close()
 
 
 
