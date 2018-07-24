@@ -7,7 +7,7 @@ class App extends Component {
     weapons: [],
     weaponType: [],
     monsters: [],
-    weaponValue: 'None',
+    weaponValue: [],
     monsterValue: 'None'
   };
 
@@ -38,9 +38,9 @@ class App extends Component {
       .catch(err => console.error(err))
   }
 
-  renderWeapons = ({ weapon_id, weapon_name }) => <option key={weapon_id} id={weapon_id}>{weapon_name}</option>
+  renderWeapons = ({ weapon_id, weapon_name }) => <option key={weapon_id} id={weapon_id} value={weapon_id}>{weapon_name}</option>
 
-  renderMonsters = ({ monster_id, name }) => <option key={monster_id} id ={monster_id}>{name}</option>
+  renderMonsters = ({ monster_id, name }) => <option key={monster_id} id ={monster_id} value={monster_id}>{name}</option>
 
   renderWeaponType = ({ weapon_list_id, name }) => <option key={weapon_list_id} id={weapon_list_id}>{name}</option>
 
@@ -63,6 +63,10 @@ class App extends Component {
   	this.setState({
   		weaponValue: event.target.value
   	})
+    fetch(`http://localhost:3000/weapon-select?id=` + event.target.value)
+      .then(response => response.json())
+      .then(response => this.setState({ weaponValue: response.data }))
+      .catch(err => console.error(err))
   }
 
   monsterSelect = (event) => {
@@ -97,7 +101,7 @@ class App extends Component {
             {monsters.map(this.renderMonsters)}
           </select>
         </p>
-        <MonsterData wep={weaponValue} mon={monsterValue}/>
+        <MonsterData wep={weaponValue[0]} mon={monsterValue}/>
       </div>
     );
   }
@@ -113,27 +117,19 @@ class MonsterData extends Component {
     if(this.props.wep !== prevProps.wep || this.props.mon !== prevProps.mon){
       this.getHitZones(this.props.mon)
     }
-
   }
 
   getHitZones = (prop) => {
-    fetch('http://localhost:3000/hitzone', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: prop
-      })
-    })
-    .then(response => response.json())
-    .then(response => this.setState({ hitzone: response.data }))
-    .catch(err => console.error(err))
+    fetch(`http://localhost:3000/hitzone?name=` + prop)
+      .then(response => response.json())
+      .then(response => this.setState({ hitzone: response.data }))
+      .catch(err => console.error(err))
   }
 
-  calcDamage = (part) => {
-    console.log(this.state)
-    return <p>{part}</p>
+  calcDamage = (sever, blunt, shot, fire, water, thunder, ice, dragon, stun) => {
+    console.log(sever)
+    if(this.props.wep == undefined){console.log("props fail!")}
+    return <td>{sever}</td>
   }
   
 
@@ -153,7 +149,7 @@ class MonsterData extends Component {
       <td key={monster_part_id + 'stun'}>{stun}</td>
     </tr>
     <tr>
-      {this.calcDamage(part)}
+      {this.calcDamage(sever, blunt, shot, fire, water, thunder,  ice, dragon, stun)}
     </tr>
     </tbody>
   
@@ -162,7 +158,7 @@ class MonsterData extends Component {
     const { hitzone } = this.state;
     return(
 	  <div>
-	    <p>{this.props.wep} </p>
+      <p>{this.state.wep}</p>
 	    <p>{this.props.mon}</p>
       <table>
         {hitzone.map(this.renderHitZones)}

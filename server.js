@@ -28,6 +28,21 @@ app.get('/weapon', function(req, res){
 });
 
 
+app.get('/weapon-select', function(req, res){
+  db.query('SELECT *  FROM `weapon` where weapon_id = ?', 
+    [req.query.id], function(err, results){
+    if (err){
+      return res.send(err);
+    }
+    else {
+      return res.json({
+        data: results
+      })
+    }
+  })
+});
+
+
 app.post('/weapon', function(req, res){
   console.log(req.body)
   if(req.body.class==0){
@@ -92,11 +107,10 @@ app.get('/monster-part', function(req, res){
 })
 
 
-app.post('/hitzone', function(req, res){
-  console.log(req.body)
-  var context={}
-  db.query('SELECT * FROM `monster_part` WHERE name = ?',
-    [req.body.name], function(err, results){
+app.get('/hitzone', function(req, res){
+  console.log(req.query.name)
+  db.query('SELECT * FROM `monster_part` WHERE name_id = ?',
+    [req.query.name], function(err, results){
       if(err){
         return res.send(err);
       }
