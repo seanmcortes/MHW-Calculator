@@ -29,6 +29,7 @@ app.get('/weapon', function(req, res){
 
 
 app.post('/weapon', function(req, res){
+  console.log(req.body)
   if(req.body.class==0){
     db.query('SELECT * FROM `weapon`', function(err, results){
       if (err){
@@ -40,7 +41,9 @@ app.post('/weapon', function(req, res){
     })
   }
   else{
-    db.query('SELECT weapon_id, name FROM `weapon` WHERE weapon_class = ?',
+    db.query('SELECT * FROM `weapon` w \
+      INNER JOIN `weapon_list` wl ON w.weapon_class = wl.weapon_list_id\
+      WHERE wl.name = ?',
       [req.body.class], function(err, results, fields){
         if(err){
           return res.send(err);
@@ -52,12 +55,37 @@ app.post('/weapon', function(req, res){
   }
 });
 
-app.get('/monster', function(req, res){
-  db.query('SELECT * FROM `monster`', function(err, results){
+app.get('/weapon-type', function(req, res){
+  db.query('SELECT * FROM `weapon_list`', function(err, results){
+    if (err){
+      return res.send(err);
+    }
+    else{
+      return res.json({ data: results })
+    }
+  })
+});
+
+
+app.get('/monster', function(req,res){
+  db.query('SELECT * FROM `monster_list`', function(err, results){
     if(err){
       return res.send(err);
     }
     else{
+      return res.json({ data: results })
+    }
+  })
+})
+
+
+app.get('/monster-part', function(req, res){
+  db.query('SELECT * FROM `monster_part`', function(err, results){
+    if(err){
+      return res.send(err);
+    }
+    else{
+      console.log(results)
       return res.json({ data: results })
     }
   })
