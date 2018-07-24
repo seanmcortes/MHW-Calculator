@@ -131,18 +131,18 @@ class MonsterData extends Component {
     .catch(err => console.error(err))
   }
 
-  renderHitZones = ({ monster_id, name, part, sever, blunt, shot, fire, water, thunder, ice, dragon, stun}) =>
-    <tr key={monster_id}> 
-      <td key={monster_id + 'part'}>{part}</td>
-      <td key={monster_id + 'sever'}>{sever}</td>
-      <td key={monster_id + 'blunt'}>{blunt}</td>
-      <td key={monster_id + 'shot'}>{shot}</td>
-      <td key={monster_id + 'fire'}>{fire}</td>
-      <td key={monster_id + 'water'}>{water}</td>
-      <td key={monster_id + 'thunder'}>{thunder}</td>
-      <td key={monster_id + 'ice'}>{ice}</td>
-      <td key={monster_id + 'dragon'}>{dragon}</td>
-      <td key={monster_id + 'stun'}>{stun}</td>
+  renderHitZones = ({ monster_part_id, name, part, sever, blunt, shot, fire, water, thunder, ice, dragon, stun}) =>
+    <tr key={monster_part_id}> 
+      <td key={monster_part_id + 'part'}>{part}</td>
+      <td key={monster_part_id + 'sever'}>{sever}</td>
+      <td key={monster_part_id + 'blunt'}>{blunt}</td>
+      <td key={monster_part_id + 'shot'}>{shot}</td>
+      <td key={monster_part_id + 'fire'}>{fire}</td>
+      <td key={monster_part_id + 'water'}>{water}</td>
+      <td key={monster_part_id + 'thunder'}>{thunder}</td>
+      <td key={monster_part_id + 'ice'}>{ice}</td>
+      <td key={monster_part_id + 'dragon'}>{dragon}</td>
+      <td key={monster_part_id + 'stun'}>{stun}</td>
     </tr>
   
 
@@ -154,7 +154,7 @@ class MonsterData extends Component {
 	    <p>{this.props.mon}</p>
       <table>
         <tbody>
-          {hitzone.map(this.renderHitZones)}
+        {hitzone.map(this.renderHitZones)}
         </tbody>
       </table>
       

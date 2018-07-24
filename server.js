@@ -93,14 +93,15 @@ app.get('/monster-part', function(req, res){
 
 
 app.post('/hitzone', function(req, res){
-  // console.log(req.body)
+  console.log(req.body)
   var context={}
-  db.query('SELECT * FROM `monster` WHERE name = ?',
+  db.query('SELECT * FROM `monster_part` WHERE name = ?',
     [req.body.name], function(err, results){
       if(err){
         return res.send(err);
       }
       else{
+        console.log(results)
         return res.json({
           data: results
         })
