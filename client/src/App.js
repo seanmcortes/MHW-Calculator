@@ -5,6 +5,7 @@ import './App.css';
 class App extends Component {
   state = {
     weapons: [],
+    weaponType: [],
     monsters: [],
     weaponValue: 'None',
     monsterValue: 'None'
@@ -13,12 +14,20 @@ class App extends Component {
   componentDidMount() {
     this.getWeapons();
     this.getMonsters();
+    this.getWeaponType();
   }
 
   getWeapons = _ => {
     fetch('http://localhost:3000/weapon')
       .then(response => response.json())
       .then(response => this.setState({ weapons: response.data }))
+      .catch(err => console.error(err))
+  }
+
+  getWeaponType = _ => {
+    fetch('http://localhost:3000/weapon-type')
+      .then(response => response.json())
+      .then(response => this.setState({ weaponType: response.data }))
       .catch(err => console.error(err))
   }
 
@@ -29,9 +38,11 @@ class App extends Component {
       .catch(err => console.error(err))
   }
 
-  renderWeapons = ({ weapon_id, name }) => <option key={weapon_id} id={weapon_id}>{name}</option>
+  renderWeapons = ({ weapon_id, weapon_name }) => <option key={weapon_id} id={weapon_id}>{weapon_name}</option>
 
   renderMonsters = ({ monster_id, name }) => <option key={monster_id} id ={monster_id}>{name}</option>
+
+  renderWeaponType = ({ weapon_list_id, name }) => <option key={weapon_list_id} id={weapon_list_id}>{name}</option>
 
   weaponTypeSelect = (event) => {
   	fetch('http://localhost:3000/weapon', {
@@ -40,7 +51,7 @@ class App extends Component {
   			'Content-Type': 'application/json'
   		},
   		body: JSON.stringify({
-  			class: event.target.value
+  			class: event.target.value,
   		})
   	})
   	  .then(response => response.json())
@@ -65,6 +76,7 @@ class App extends Component {
     const { monsters } = this.state;
     const { weaponValue } = this.state;
     const { monsterValue } = this.state;
+    const { weaponType } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -74,9 +86,7 @@ class App extends Component {
         <p className="App-intro">
           <select onChange={this.weaponTypeSelect}>
           	<option value="0">All</option>
-          	<option value="1">Great Sword</option>
-          	<option value="2">Long Sword</option>
-          	<option value="3">Sword and Shield</option>
+          	{weaponType.map(this.renderWeaponType)}
           </select>
           <select onChange={this.weaponSelect}>
             <option value="None">None</option>
