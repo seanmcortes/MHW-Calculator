@@ -15,31 +15,41 @@ class App extends Component {
 		weapons: [],
 		weaponType: [],
 		monsters: [],
-		weaponValue: [],
-		monsterValue: 'None',
+		weaponValue: {
+      weapon_id: 0,
+      weapon_name: '',
+      bloat_damage: 0,
+      real_damage: 0,
+      element_damage: 0,
+      element_type: '',
+      weapon_affinity: 0,
+      weapon_class: 0,
+    },
+		monsterValue: [],
 		skills: {
-			affinitySliding: ['',''],
-			agitator: ['',''],
-			attackBoost: ['',''],
-			criticalBoost: ['',''],
-			criticalElement: ['',''],
-			criticalEye: ['',''],
-			dragonAttack: ['',''],
-			fireAttack: ['',''],
-			fortify: ['',''],
-			freeElem: ['',''],
-			heroics: ['',''],
-			iceAttack: ['',''],
-			latentPower: ['',''],
-			maximumMight: ['',''],
-			nonElementalBoost: ['',''],
-			peakPerformance: ['',''],
-			resentment: ['',''],
-			thunderAttack: ['',''],
-			waterAttack: ['',''],
-			weaknessExploit: ['','']
-		}
+      affinitySliding: ['',0],
+      agitator: ['','0-0'],
+      attackBoost: ['','0-0'],
+      criticalBoost: ['',0],
+      criticalElement: ['',0],
+      criticalEye: ['',0],
+      dragonAttack: ['','0-1'],
+      fireAttack: ['','0-1'],
+      fortify: ['',0],
+      freeElem: ['',0],
+      heroics: ['',0],
+      iceAttack: ['','0-1'],
+      latentPower: ['',0],
+      maximumMight: ['',0],
+      nonElementalBoost: ['',0],
+      peakPerformance: ['',0],
+      resentment: ['',0],
+      thunderAttack: ['','0-1'],
+      waterAttack: ['','0-1'],
+      weaknessExploit: ['',0]
+    }
 	};
+
 
 	componentDidMount() {
 		this.getWeapons();
@@ -48,8 +58,137 @@ class App extends Component {
   }
 
 	componentDidUpdate(){
-
 	}
+
+  /*
+    Render methods--
+    WeaponType: populate weapon type dropdown from query from `weapon_list`
+    Weapons: populate weapon dropdown with weapon names from `weapon` based on weapon type selection
+    Monsters: query from `monster_list`
+    Skills: render skills. No query, pure DOM.
+  */
+  renderWeaponType = ({ weapon_list_id, name }) => <option key={weapon_list_id} id={weapon_list_id}>{name}</option>
+  renderWeapons = ({ weapon_id, weapon_name }) => <option key={weapon_id} id={weapon_id} value={weapon_id}>{weapon_name}</option>
+  renderMonsters = ({ monster_id, name }) => <option key={monster_id} id ={monster_id} value={monster_id}>{name}</option>
+  renderSkills =  _ =>
+  <div>
+    <label htmlFor="affinitySliding">Affinity Sliding </label>
+    <input type="Checkbox" name="affinitySliding" value="30" id="0" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="agitator">Agitator {this.state.skills.agitator[0]}</label>
+    <input type="Checkbox" name="agitator" value="4-3" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="agitator" value="8-6" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="agitator" value="12-9" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="agitator" value="16-12" id="3" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="agitator" value="20-15" id="4" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="attackBoost">Attack Boost {this.state.skills.attackBoost[0]}</label>
+    <input type="Checkbox" name="attackBoost" value="3" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="attackBoost" value="6" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="attackBoost" value="9" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="attackBoost" value="12-5" id="3" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="attackBoost" value="15-5" id="4" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="attackBoost" value="18-5" id="5" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="attackBoost" value="21-5" id="6" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="criticalBoost">Critical Boost {this.state.skills.criticalBoost[0]}</label>
+    <input type="Checkbox" name="criticalBoost" value="30" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="criticalBoost" value="35" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="criticalBoost" value="40" id="2" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="criticalElement">Critical Element </label>
+    <input type="Checkbox" name="criticalElement" value=".2-.275-.35" id="0" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="criticalEye">Critical Eye {this.state.skills.criticalEye[0]}</label>
+    <input type="Checkbox" name="criticalEye" value="3" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="criticalEye" value="6" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="criticalEye" value="10" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="criticalEye" value="15" id="3" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="criticalEye" value="20" id="4" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="criticalEye" value="25" id="5" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="criticalEye" value="30" id="6" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="dragonAttack">Dragon Attack {this.state.skills.dragonAttack[0]}</label>
+    <input type="Checkbox" name="dragonAttack" value="30-1" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="dragonAttack" value="60-1" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="dragonAttack" value="100-1" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="dragonAttack" value="100-1.05" id="3" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="dragonAttack" value="100-1.10" id="4" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="fireAttack">Fire Attack {this.state.skills.fireAttack[0]}</label>
+    <input type="Checkbox" name="fireAttack" value="30-1" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="fireAttack" value="60-1" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="fireAttack" value="100-1" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="fireAttack" value="100-1.05" id="3" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="fireAttack" value="100-1.10" id="4" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="fortify">Fortify {this.state.skills.fortify[0]}</label>
+    <input type="Checkbox" name="fortify" value="10" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="fortify" value="20" id="1" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="freeElem">Free Element </label>
+    <input type="Checkbox" name="freeElem" value="1" id="0" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="heroics">Heroics {this.state.skills.heroics[0]}</label>
+    <input type="Checkbox" name="heroics" value="1.05" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="heroics" value="1.1" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="heroics" value="1.15" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="heroics" value="1.2" id="3" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="heroics" value="1.3" id="4" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="iceAttack">Ice Attack {this.state.skills.iceAttack[0]}</label>
+    <input type="Checkbox" name="iceAttack" value="30-1" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="iceAttack" value="60-1" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="iceAttack" value="100-1" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="iceAttack" value="100-1.05" id="3" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="iceAttack" value="100-1.10" id="4" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="latentPower">Latent Power {this.state.skills.latentPower[0]}</label>
+    <input type="Checkbox" name="latentPower" value="10" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="latentPower" value="20" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="latentPower" value="30" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="latentPower" value="40" id="3" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="latentPower" value="50" id="4" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="maximumMight">Maximum Might {this.state.skills.maximumMight[0]}</label>
+    <input type="Checkbox" name="maximumMight" value="10" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="maximumMight" value="20" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="maximumMight" value="30" id="2" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="nonElementalBoost">Non-Elemental Boost </label>
+    <input type="Checkbox" name="nonElementalBoost" value="1.1" id="0" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="peakPerformance">Peak Performance {this.state.skills.peakPerformance[0]}</label>
+    <input type="Checkbox" name="peakPerformance" value="5" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="peakPerformance" value="10" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="peakPerformance" value="20" id="2" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="resentment">Resentment {this.state.skills.resentment[0]}</label>
+    <input type="Checkbox" name="resentment" value="5" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="resentment" value="10" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="resentment" value="15" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="resentment" value="20" id="3" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="resentment" value="25" id="4" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="thunderAttack">Thunder Attack {this.state.skills.thunderAttack[0]}</label>
+    <input type="Checkbox" name="thunderAttack" value="30-1" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="thunderAttack" value="60-1" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="thunderAttack" value="100-1" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="thunderAttack" value="100-1.05" id="3" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="thunderAttack" value="100-1.10" id="4" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="waterAttack">Water Attack {this.state.skills.waterAttack[0]}</label>
+    <input type="Checkbox" name="waterAttack" value="30-1" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="waterAttack" value="60-1" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="waterAttack" value="100-1" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="waterAttack" value="100-1.05" id="3" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="waterAttack" value="100-1.10" id="4" onChange={this.handleSkillBoxClick}></input>
+
+    <label htmlFor="weaknessExploit">Weakness Exploit {this.state.skills.weaknessExploit[0]}</label>
+    <input type="Checkbox" name="weaknessExploit" value="15" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="weaknessExploit" value="30" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="weaknessExploit" value="50" id="2" onChange={this.handleSkillBoxClick}></input>
+  </div>
 
 	getWeapons = _ => {
 		fetch('http://localhost:3000/weapon')
@@ -72,12 +211,6 @@ class App extends Component {
 			.catch(err => console.error(err))
 	}
 
-	renderWeapons = ({ weapon_id, weapon_name }) => <option key={weapon_id} id={weapon_id} value={weapon_id}>{weapon_name}</option>
-
-	renderMonsters = ({ monster_id, name }) => <option key={monster_id} id ={monster_id} value={monster_id}>{name}</option>
-
-	renderWeaponType = ({ weapon_list_id, name }) => <option key={weapon_list_id} id={weapon_list_id}>{name}</option>
-
 	weaponTypeSelect = (event) => {
 		fetch('http://localhost:3000/weapon', {
 			method: 'POST',
@@ -94,19 +227,18 @@ class App extends Component {
 	}
 
 	weaponSelect = (event) => {
-		this.setState({
-			weaponValue: event.target.value
-		})
 		fetch(`http://localhost:3000/weapon-select?id=` + event.target.value)
 			.then(response => response.json())
-			.then(response => this.setState({ weaponValue: response.data }))
+			.then(response => this.setState({ weaponValue: response.data[0] }))
 			.catch(err => console.error(err))
 	}
 
 	monsterSelect = (event) => {
-		this.setState({
-			monsterValue: event.target.value
-		})
+
+    fetch(`http://localhost:3000/monster-select?id=` + event.target.value)
+      .then(response => response.json())
+      .then(response => this.setState({ monsterValue: response.data }))
+      .catch(err => console.error(err))
 	}
 
 	handleSkillBoxClick = (event) => {
@@ -125,8 +257,25 @@ class App extends Component {
 					skills[key][1] = event.target.value;
 					skills[key][0] = Number(event.target.id) + 1;
 				}else{
-					skills[key][1] = '';
-					skills[key][0] = '';
+          if(event.target.name == "dragonAttack" ||
+             event.target.name == "fireAttack" ||
+             event.target.name == "iceAttack" ||
+             event.target.name == "thunderAttack" ||
+             event.target.anem == "waterAttack"){
+            skills[key][1] = '1-0';
+            skills[key][0] = '';
+          }
+          else if
+            (event.target.name == "agitator" ||
+             event.target.anem == "attackBoost"){
+            skills[key][1] = '0-0';
+            skills[key][0] = '';
+            }
+          else{
+            skills[key][1] = 0;
+            skills[key][0] = '';
+          }
+
 					for(i = 0; i < box.length; i++){
 						box[i].checked = false;
 					}
@@ -135,126 +284,6 @@ class App extends Component {
 			}
 		}
 	}
-
-	renderSkills =  _ =>
-	<div>
-		<label for="affinitySliding">Affinity Sliding </label>
-		<input type="Checkbox" name="affinitySliding" value="30" id="0" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="agitator">Agitator {this.state.skills.agitator[0]}</label>
-		<input type="Checkbox" name="agitator" value="[4, 3]" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="agitator" value="[8, 6]" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="agitator" value="[12, 9]" id="2" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="agitator" value="[16, 12]" id="3" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="agitator" value="[20, 15]" id="4" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="attackBoost">Attack Boost {this.state.skills.attackBoost[0]}</label>
-		<input type="Checkbox" name="attackBoost" value="3" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="attackBoost" value="6" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="attackBoost" value="9" id="2" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="attackBoost" value="[12, 5]" id="3" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="attackBoost" value="[15, 5]" id="4" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="attackBoost" value="[18, 5]" id="5" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="attackBoost" value="[21, 5]" id="6" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="criticalBoost">Critical Boost {this.state.skills.criticalBoost[0]}</label>
-		<input type="Checkbox" name="criticalBoost" value="30" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="criticalBoost" value="35" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="criticalBoost" value="40" id="2" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="criticalElement">Critical Element </label>
-		<input type="Checkbox" name="criticalElement" value="[1.2, 1.275, 1.35]" id="0" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="criticalEye">Critical Eye {this.state.skills.criticalEye[0]}</label>
-		<input type="Checkbox" name="criticalEye" value="3" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="criticalEye" value="6" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="criticalEye" value="10" id="2" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="criticalEye" value="15" id="3" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="criticalEye" value="20" id="4" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="criticalEye" value="25" id="5" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="criticalEye" value="30" id="6" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="dragonAttack">Dragon Attack {this.state.skills.dragonAttack[0]}</label>
-		<input type="Checkbox" name="dragonAttack" value="[30, 1]" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="dragonAttack" value="[60, 1]" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="dragonAttack" value="[100, 1]" id="2" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="dragonAttack" value="[100, 1.05]" id="3" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="dragonAttack" value="[100, 1.10]" id="4" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="fireAttack">Fire Attack {this.state.skills.fireAttack[0]}</label>
-		<input type="Checkbox" name="fireAttack" value="[30, 1]" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="fireAttack" value="[60, 1]" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="fireAttack" value="[100, 1]" id="2" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="fireAttack" value="[100, 1.05]" id="3" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="fireAttack" value="[100, 1.10]" id="4" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="fortify">Fortify {this.state.skills.fortify[0]}</label>
-		<input type="Checkbox" name="fortify" value="10" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="fortify" value="20" id="1" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="freeElem">Free Element </label>
-		<input type="Checkbox" name="freeElem" value="1" id="0" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="heroics">Heroics {this.state.skills.heroics[0]}</label>
-		<input type="Checkbox" name="heroics" value="1.05" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="heroics" value="1.1" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="heroics" value="1.15" id="2" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="heroics" value="1.2" id="3" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="heroics" value="1.3" id="4" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="iceAttack">Ice Attack {this.state.skills.iceAttack[0]}</label>
-		<input type="Checkbox" name="iceAttack" value="[30, 1]" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="iceAttack" value="[60, 1]" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="iceAttack" value="[100, 1]" id="2" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="iceAttack" value="[100, 1.05]" id="3" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="iceAttack" value="[100, 1.10]" id="4" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="latentPower">Latent Power {this.state.skills.latentPower[0]}</label>
-		<input type="Checkbox" name="latentPower" value="10" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="latentPower" value="20" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="latentPower" value="30" id="2" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="latentPower" value="40" id="3" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="latentPower" value="50" id="4" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="maximumMight">Maximum Might {this.state.skills.maximumMight[0]}</label>
-		<input type="Checkbox" name="maximumMight" value="10" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="maximumMight" value="20" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="maximumMight" value="30" id="2" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="nonElementalBoost">Non-Elemental Boost </label>
-		<input type="Checkbox" name="nonElementalBoost" value="1.1" id="0" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="peakPerformance">Peak Performance {this.state.skills.peakPerformance[0]}</label>
-		<input type="Checkbox" name="peakPerformance" value="5" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="peakPerformance" value="10" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="peakPerformance" value="20" id="2" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="resentment">Resentment {this.state.skills.resentment[0]}</label>
-		<input type="Checkbox" name="resentment" value="5" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="resentment" value="10" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="resentment" value="15" id="2" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="resentment" value="20" id="3" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="resentment" value="25" id="4" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="thunderAttack">Thunder Attack {this.state.skills.thunderAttack[0]}</label>
-		<input type="Checkbox" name="thunderAttack" value="[30, 1]" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="thunderAttack" value="[60, 1]" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="thunderAttack" value="[100, 1]" id="2" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="thunderAttack" value="[100, 1.05]" id="3" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="thunderAttack" value="[100, 1.10]" id="4" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="waterAttack">Water Attack {this.state.skills.waterAttack[0]}</label>
-		<input type="Checkbox" name="waterAttack" value="[30, 1]" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="waterAttack" value="[60, 1]" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="waterAttack" value="[100, 1]" id="2" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="waterAttack" value="[100, 1.05]" id="3" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="waterAttack" value="[100, 1.10]" id="4" onClick={this.handleSkillBoxClick}></input>
-
-		<label for="weaknessExploit">Weakness Exploit {this.state.skills.weaknessExploit[0]}</label>
-		<input type="Checkbox" name="weaknessExploit" value="15" id="0" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="weaknessExploit" value="30" id="1" onClick={this.handleSkillBoxClick}></input>
-		<input type="Checkbox" name="weaknessExploit" value="50" id="2" onClick={this.handleSkillBoxClick}></input>
-	</div>
 
 
 	render() {
@@ -271,7 +300,7 @@ class App extends Component {
     			<img src={logo} className="App-logo" alt="logo" />
     			<h1 className="App-title">Welcome to React</h1>
     		</header>
-    		<p className="App-intro">
+    		<div className="App-intro">
     			<select onChange={this.weaponTypeSelect}>
     			<option value="0">All</option>
     			{weaponType.map(this.renderWeaponType)}
@@ -285,9 +314,9 @@ class App extends Component {
     			{monsters.map(this.renderMonsters)}
     			</select>
     			{this.renderSkills()}
-    		</p>
-    		<Hitzone wep={weaponValue[0]} mon={monsterValue} skills={skills}/>
-        <Calculator />
+    		</div>
+    		<Hitzone monster={monsterValue} />
+        <Calculator weapon={weaponValue} monster={monsterValue} skills={skills} />
   		</div>
   	);
   }

@@ -25,7 +25,6 @@ class Hitzone extends Component{
 
 
   renderHitZones = ({ monster_part_id, name, part, sever, blunt, shot, fire, water, thunder, ice, dragon, stun}) =>
-  <tbody key={monster_part_id + '-tbody'}>
     <tr key={monster_part_id + '-tr'}> 
       <td key={monster_part_id + 'part'}>{part}</td>
       <td key={monster_part_id + 'sever'}>{sever}</td>
@@ -38,7 +37,7 @@ class Hitzone extends Component{
       <td key={monster_part_id + 'dragon'}>{dragon}</td>
       <td key={monster_part_id + 'stun'}>{stun}</td>
     </tr>
-  </tbody>
+
   
 
   render(){
@@ -46,20 +45,22 @@ class Hitzone extends Component{
     return(
       <div className = "Hitzone">
         <table className = "Hitzone-table">
-          <tr className = "Hitzone-header">
-            <th>Body Part</th>
-            <th>Sever</th>
-            <th>Blunt</th>
-            <th>Shot</th>
-            <th>Fire</th>
-            <th>Water</th>
-            <th>Thunder</th>
-            <th>Ice</th>
-            <th>Dragon</th>
-            <th>Stun</th>
-            <th>Total</th>
-          </tr>
-          {monster.map(this.renderHitZones)}
+          <tbody>
+            <tr className = "Hitzone-header">
+              <th>Body Part</th>
+              <th>Sever</th>
+              <th>Blunt</th>
+              <th>Shot</th>
+              <th>Fire</th>
+              <th>Water</th>
+              <th>Thunder</th>
+              <th>Ice</th>
+              <th>Dragon</th>
+              <th>Stun</th>
+              <th>Total</th>
+            </tr>
+            {monster.map(this.renderHitZones)}
+          </tbody>
         </table>
       </div>
     );

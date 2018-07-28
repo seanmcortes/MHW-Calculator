@@ -42,6 +42,20 @@ app.get('/weapon-select', function(req, res){
   })
 });
 
+app.get('/monster-select', function(req, res){
+  db.query('SELECT *  FROM `monster_part` where name_id = ?', 
+    [req.query.id], function(err, results){
+    if (err){
+      return res.send(err);
+    }
+    else {
+      return res.json({
+        data: results
+      })
+    }
+  })
+});
+
 
 app.post('/weapon', function(req, res){
   console.log(req.body)
