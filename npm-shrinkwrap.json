@@ -473,9 +473,9 @@
       "integrity": "sha1-2Klr13/Wjfd5OnMDajug1UBdR3s="
     },
     "concurrently": {
-      "version": "3.6.0",
-      "resolved": "https://registry.npmjs.org/concurrently/-/concurrently-3.6.0.tgz",
-      "integrity": "sha512-6XiIYtYzmGEccNZFkih5JOH92jLA4ulZArAYy5j1uDSdrPLB3KzdE8GW7t2fHPcg9ry2+5LP9IEYzXzxw9lFdA==",
+      "version": "3.6.1",
+      "resolved": "https://registry.npmjs.org/concurrently/-/concurrently-3.6.1.tgz",
+      "integrity": "sha512-/+ugz+gwFSEfTGUxn0KHkY+19XPRTXR8+7oUK/HxgiN1n7FjeJmkrbSiXAJfyQ0zORgJYPaenmymwon51YXH9Q==",
       "dev": true,
       "requires": {
         "chalk": "2.4.1",
@@ -1576,6 +1576,11 @@
         "mkdirp": "0.5.1",
         "rimraf": "2.6.2"
       }
+    },
+    "fuse.js": {
+      "version": "3.2.1",
+      "resolved": "https://registry.npmjs.org/fuse.js/-/fuse.js-3.2.1.tgz",
+      "integrity": "sha1-YyDLlM5W7JdVyJred1vNuwNY1CU="
     },
     "gauge": {
       "version": "2.7.4",
@@ -2749,6 +2754,20 @@
         "strip-json-comments": "2.0.1"
       }
     },
+    "react-onclickoutside": {
+      "version": "6.7.1",
+      "resolved": "https://registry.npmjs.org/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz",
+      "integrity": "sha512-p84kBqGaMoa7VYT0vZ/aOYRfJB+gw34yjpda1Z5KeLflg70HipZOT+MXQenEhdkPAABuE2Astq4zEPdMqUQxcg=="
+    },
+    "react-select-search": {
+      "version": "0.9.3",
+      "resolved": "https://registry.npmjs.org/react-select-search/-/react-select-search-0.9.3.tgz",
+      "integrity": "sha512-f25GOViAfp1W3WS3KPcWNxTJGPwTUWrMMn9trDYvaY0mA9qBhrkhLYJ7WXISOYBkkEwdJ1aG3GMEdQLl8CQgQw==",
+      "requires": {
+        "fuse.js": "3.2.1",
+        "react-onclickoutside": "6.7.1"
+      }
+    },
     "read-pkg": {
       "version": "3.0.0",
       "resolved": "https://registry.npmjs.org/read-pkg/-/read-pkg-3.0.0.tgz",
@@ -3614,6 +3633,11 @@
           "integrity": "sha1-8S4PPF13sLHN2RRpQuTpbB5N1SU="
         }
       }
+    },
+    "whatwg-fetch": {
+      "version": "2.0.4",
+      "resolved": "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz",
+      "integrity": "sha512-dcQ1GWpOD/eEQ97k66aiEVpNnapVj90/+R+SXTPYGHpYBBypfKJEQjLrvMZ7YXbKm21gXd4NcuxUTjiv1YtLng=="
     },
     "which": {
       "version": "1.3.1",

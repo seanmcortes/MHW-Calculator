@@ -4405,6 +4405,11 @@
       "resolved": "https://registry.npmjs.org/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz",
       "integrity": "sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc="
     },
+    "fuse.js": {
+      "version": "3.2.1",
+      "resolved": "https://registry.npmjs.org/fuse.js/-/fuse.js-3.2.1.tgz",
+      "integrity": "sha1-YyDLlM5W7JdVyJred1vNuwNY1CU="
+    },
     "get-caller-file": {
       "version": "1.0.3",
       "resolved": "https://registry.npmjs.org/get-caller-file/-/get-caller-file-1.0.3.tgz",
@@ -8808,6 +8813,11 @@
       "resolved": "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-4.0.0.tgz",
       "integrity": "sha512-FlsPxavEyMuR6TjVbSSywovXSEyOg6ZDj5+Z8nbsRl9EkOzAhEIcS+GLoQDC5fz/t9suhUXWmUrOBrgeUvrMxw=="
     },
+    "react-onclickoutside": {
+      "version": "6.7.1",
+      "resolved": "https://registry.npmjs.org/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz",
+      "integrity": "sha512-p84kBqGaMoa7VYT0vZ/aOYRfJB+gw34yjpda1Z5KeLflg70HipZOT+MXQenEhdkPAABuE2Astq4zEPdMqUQxcg=="
+    },
     "react-scripts": {
       "version": "1.1.4",
       "resolved": "https://registry.npmjs.org/react-scripts/-/react-scripts-1.1.4.tgz",
@@ -8867,6 +8877,15 @@
           "resolved": "https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz",
           "integrity": "sha1-nITsLc9oGH/wC8ZOEnS0QhduHIQ="
         }
+      }
+    },
+    "react-select-search": {
+      "version": "0.9.3",
+      "resolved": "https://registry.npmjs.org/react-select-search/-/react-select-search-0.9.3.tgz",
+      "integrity": "sha512-f25GOViAfp1W3WS3KPcWNxTJGPwTUWrMMn9trDYvaY0mA9qBhrkhLYJ7WXISOYBkkEwdJ1aG3GMEdQLl8CQgQw==",
+      "requires": {
+        "fuse.js": "3.2.1",
+        "react-onclickoutside": "6.7.1"
       }
     },
     "read-pkg": {

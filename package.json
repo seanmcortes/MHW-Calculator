@@ -13,9 +13,10 @@
     "node-gyp": "^3.7.0",
     "node-mariadb": "^0.1.1",
     "nodemon": "^1.18.3",
+    "react-select-search": "^0.9.3",
     "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
-    "concurrently": "^3.6.0"
+    "concurrently": "^3.6.1"
   }
 }
