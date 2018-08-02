@@ -78,6 +78,21 @@ class Calculator extends Component{
   renderCalculations = ({ part, sever, shot, blunt, fire, water, thunder, ice, dragon, stun }) => {
     let weapon = this.props.weapon;
     let skills = this.props.skills;
+    let sharpness = this.props.sharpness;
+    let attackBoost = skills.attackBoost[1].toString().split('-');
+    let agitator = skills.agitator[1].toString().split('-');
+    let rawModifier = parseInt(agitator[0]) +
+      parseInt(attackBoost[0]) +
+      parseInt(skills.peakPerformance[1]) +
+      parseInt(skills.resentment[1]);
+
+    let affinityModifier = skills.affinitySliding[1] +
+      parseInt(agitator[1]) + 
+      parseInt(attackBoost[1]) +
+      parseInt(skills.criticalEye[1]) +
+      parseInt(skills.latentPower[1]) +
+      parseInt(skills.maximumMight[1]) +
+      parseInt(skills.weaknessExploit[1]);
 
     function calculateElementDamage(){
       let elementHitZone = 0;
@@ -128,19 +143,48 @@ class Calculator extends Component{
         else
           critEle = critEleArray[1];
 
-        return (Math.round(elementBloat/10 * (1 + critEle * weapon.weapon_affinity/100) * elementHitZone/10));
+        return (Math.round(elementBloat/10 * sharpness[1] * (1 + critEle * weapon.weapon_affinity/100) * elementHitZone/10));
       }
-      return(Math.round(elementBloat/10 * elementHitZone/10));
+      return (Math.round(elementBloat/10 * sharpness[1] * elementHitZone/10));
     }
 
+    function calculateRawDamage(){
+      let damageType = 0;
+      if(weapon.weapon_class == 5 || weapon.weapon_class == 6){
+        damageType = blunt;
+      } else {
+        damageType = sever;
+      }
 
-    let test = calculateElementDamage();
+
+      let criticalBoost = 0.25;
+      if(skills.criticalBoost[1] !== 0){
+        criticalBoost = skills.criticalBoost[1];
+      } else {
+        criticalBoost = 0.25;
+      }
+
+      let finalRaw = parseInt(weapon.real_damage) + rawModifier;
+      let finalCrit = 1 + criticalBoost * (parseInt(weapon.weapon_affinity) + affinityModifier)/100;
+      let extraModifiers = (1.00 + parseFloat(skills.fortify[1]) + parseFloat(skills.heroics[1])).toFixed(2);
+
+      console.log(finalRaw);
+      console.log(finalCrit);
+      console.log(extraModifiers);
+
+      return Math.round(
+          finalRaw * finalCrit * extraModifiers * (damageType/100)
+        );
+    }
+
+    let element = calculateElementDamage();
+    let raw = calculateRawDamage();
 
     return(
       <tr>
         <td>{part}</td>
-        <td>test</td>
-        <td>{test}</td>
+        <td>{raw}</td>
+        <td>{element}</td>
       </tr>
     )
   }

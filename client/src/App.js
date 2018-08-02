@@ -16,38 +16,39 @@ class App extends Component {
 		weaponType: [],
 		monsters: [],
 		weaponValue: {
-      weapon_id: 0,
-      weapon_name: '',
-      bloat_damage: 0,
-      real_damage: 0,
-      element_damage: 0,
-      element_type: '',
-      weapon_affinity: 0,
-      weapon_class: 0,
-    },
+	      weapon_id: 0,
+	      weapon_name: '',
+	      bloat_damage: 0,
+	      real_damage: 0,
+	      element_damage: 0,
+	      element_type: '',
+	      weapon_affinity: 0,
+	      weapon_class: 0,
+    	},
+    weaponSharpness: [0, 0],
 		monsterValue: [],
 		skills: {
-      affinitySliding: ['',0],
-      agitator: ['','0-0'],
-      attackBoost: ['','0-0'],
-      criticalBoost: ['',0],
-      criticalElement: ['',0],
-      criticalEye: ['',0],
-      dragonAttack: ['','0-1'],
-      fireAttack: ['','0-1'],
-      fortify: ['',0],
-      freeElem: ['',0],
-      heroics: ['',0],
-      iceAttack: ['','0-1'],
-      latentPower: ['',0],
-      maximumMight: ['',0],
-      nonElementalBoost: ['',0],
-      peakPerformance: ['',0],
-      resentment: ['',0],
-      thunderAttack: ['','0-1'],
-      waterAttack: ['','0-1'],
-      weaknessExploit: ['',0]
-    }
+	      affinitySliding: ['',0],
+	      agitator: ['','0-0'],
+	      attackBoost: ['','0-0'],
+	      criticalBoost: ['',0],
+	      criticalElement: ['',0],
+	      criticalEye: ['',0],
+	      dragonAttack: ['','0-1'],
+	      fireAttack: ['','0-1'],
+	      fortify: ['',0],
+	      freeElem: ['',0],
+	      heroics: ['',0],
+	      iceAttack: ['','0-1'],
+	      latentPower: ['',0],
+	      maximumMight: ['',0],
+	      nonElementalBoost: ['',0],
+	      peakPerformance: ['',0],
+	      resentment: ['',0],
+	      thunderAttack: ['','0-1'],
+	      waterAttack: ['','0-1'],
+	      weaknessExploit: ['',0]
+    	}
 	};
 
 
@@ -55,7 +56,7 @@ class App extends Component {
 		this.getWeapons();
 		this.getMonsters();
 		this.getWeaponType();
-  }
+  	}
 
 	componentDidUpdate(){
 	}
@@ -71,7 +72,7 @@ class App extends Component {
   renderWeapons = ({ weapon_id, weapon_name }) => <option key={weapon_id} id={weapon_id} value={weapon_id}>{weapon_name}</option>
   renderMonsters = ({ monster_id, name }) => <option key={monster_id} id ={monster_id} value={monster_id}>{name}</option>
   renderSkills =  _ =>
-  <div>
+  <div className="Skills-div">
     <label htmlFor="affinitySliding">Affinity Sliding </label>
     <input type="Checkbox" name="affinitySliding" value="30" id="0" onChange={this.handleSkillBoxClick}></input>
 
@@ -92,9 +93,9 @@ class App extends Component {
     <input type="Checkbox" name="attackBoost" value="21-5" id="6" onChange={this.handleSkillBoxClick}></input>
 
     <label htmlFor="criticalBoost">Critical Boost {this.state.skills.criticalBoost[0]}</label>
-    <input type="Checkbox" name="criticalBoost" value="30" id="0" onChange={this.handleSkillBoxClick}></input>
-    <input type="Checkbox" name="criticalBoost" value="35" id="1" onChange={this.handleSkillBoxClick}></input>
-    <input type="Checkbox" name="criticalBoost" value="40" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="criticalBoost" value="0.30" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="criticalBoost" value="0.35" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="criticalBoost" value="0.40" id="2" onChange={this.handleSkillBoxClick}></input>
 
     <label htmlFor="criticalElement">Critical Element </label>
     <input type="Checkbox" name="criticalElement" value=".2-.275-.35" id="0" onChange={this.handleSkillBoxClick}></input>
@@ -123,18 +124,18 @@ class App extends Component {
     <input type="Checkbox" name="fireAttack" value="100-1.10" id="4" onChange={this.handleSkillBoxClick}></input>
 
     <label htmlFor="fortify">Fortify {this.state.skills.fortify[0]}</label>
-    <input type="Checkbox" name="fortify" value="10" id="0" onChange={this.handleSkillBoxClick}></input>
-    <input type="Checkbox" name="fortify" value="20" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="fortify" value="0.10" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="fortify" value="0.20" id="1" onChange={this.handleSkillBoxClick}></input>
 
     <label htmlFor="freeElem">Free Element </label>
     <input type="Checkbox" name="freeElem" value="1" id="0" onChange={this.handleSkillBoxClick}></input>
 
     <label htmlFor="heroics">Heroics {this.state.skills.heroics[0]}</label>
-    <input type="Checkbox" name="heroics" value="1.05" id="0" onChange={this.handleSkillBoxClick}></input>
-    <input type="Checkbox" name="heroics" value="1.1" id="1" onChange={this.handleSkillBoxClick}></input>
-    <input type="Checkbox" name="heroics" value="1.15" id="2" onChange={this.handleSkillBoxClick}></input>
-    <input type="Checkbox" name="heroics" value="1.2" id="3" onChange={this.handleSkillBoxClick}></input>
-    <input type="Checkbox" name="heroics" value="1.3" id="4" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="heroics" value="0.05" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="heroics" value="0.1" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="heroics" value="0.15" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="heroics" value="0.2" id="3" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="heroics" value="0.3" id="4" onChange={this.handleSkillBoxClick}></input>
 
     <label htmlFor="iceAttack">Ice Attack {this.state.skills.iceAttack[0]}</label>
     <input type="Checkbox" name="iceAttack" value="30-1" id="0" onChange={this.handleSkillBoxClick}></input>
@@ -189,6 +190,18 @@ class App extends Component {
     <input type="Checkbox" name="weaknessExploit" value="30" id="1" onChange={this.handleSkillBoxClick}></input>
     <input type="Checkbox" name="weaknessExploit" value="50" id="2" onChange={this.handleSkillBoxClick}></input>
   </div>
+  renderSharpness = _ =>
+  	<div className="Sharpness-div">
+  		<select className="Sharpness-select" onChange={this.handleSharpnessSelect}>
+  			<option key="NONE" value="" disabled selected>---</option>
+  			<option key="RED" value="0.50-0.25">Red</option>
+  			<option key="ORANGE" value="0.75-0.50">Orange</option>
+  			<option key="YELLOW" value="1.00-0.75">Yellow</option>
+  			<option key="GREEN" value="1.05-1.00">Green</option>
+  			<option key="BLUE" value="1.20-1.0625">Blue</option>
+  			<option key="WHITE" value="1.32-1.125">White</option>
+  		</select>
+  	</div>
 
 	getWeapons = _ => {
 		fetch('http://localhost:3000/weapon')
@@ -261,13 +274,13 @@ class App extends Component {
              event.target.name == "fireAttack" ||
              event.target.name == "iceAttack" ||
              event.target.name == "thunderAttack" ||
-             event.target.anem == "waterAttack"){
+             event.target.name == "waterAttack"){
             skills[key][1] = '1-0';
             skills[key][0] = '';
           }
           else if
             (event.target.name == "agitator" ||
-             event.target.anem == "attackBoost"){
+             event.target.name == "attackBoost"){
             skills[key][1] = '0-0';
             skills[key][0] = '';
             }
@@ -285,6 +298,10 @@ class App extends Component {
 		}
 	}
 
+	handleSharpnessSelect = (event) => { 
+		let sharpnessSelect = event.target.value.toString().split('-');
+		this.setState({ weaponSharpness: sharpnessSelect});
+	}
 
 	render() {
   	const { weapons } = this.state;
@@ -293,6 +310,7 @@ class App extends Component {
   	const { monsterValue } = this.state;
   	const { weaponType } = this.state;
   	const { skills } = this.state;
+  	const { weaponSharpness } = this.state;
 
   	return (
   		<div className="App">
@@ -301,22 +319,28 @@ class App extends Component {
     			<h1 className="App-title">Welcome to React</h1>
     		</header>
     		<div className="App-intro">
-    			<select onChange={this.weaponTypeSelect}>
+
+    			<select className="WeaponType-select" onChange={this.weaponTypeSelect}>
     			<option value="0">All</option>
     			{weaponType.map(this.renderWeaponType)}
     			</select>
-    			<select onChange={this.weaponSelect}>
+
+    			<select className="Weapon-select" onChange={this.weaponSelect}>
     			<option value="None">None</option>
     			{weapons.map(this.renderWeapons)}
     			</select>
-    			<select onChange={this.monsterSelect}>
+
+    			{this.renderSharpness()}
+
+    			<select className="Monster-select" onChange={this.monsterSelect}>
     			<option value="None">None</option>
     			{monsters.map(this.renderMonsters)}
     			</select>
+
     			{this.renderSkills()}
     		</div>
     		<Hitzone monster={monsterValue} />
-        <Calculator weapon={weaponValue} monster={monsterValue} skills={skills} />
+        <Calculator weapon={weaponValue} monster={monsterValue} skills={skills} sharpness={weaponSharpness}/>
   		</div>
   	);
   }
