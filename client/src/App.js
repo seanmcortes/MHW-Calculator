@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import Hitzone from './components/Hitzone';
 import Calculator from './components/Calculator'
+
+import { Button, Form, FormGroup, Label, FormText, Input } from 'reactstrap';
+
 // import SelectSearch from 'react-select-search'
 
 class App extends Component {  
@@ -51,7 +54,6 @@ class App extends Component {
     	}
 	};
 
-
 	componentDidMount() {
 		this.getWeapons();
 		this.getMonsters();
@@ -69,8 +71,11 @@ class App extends Component {
     Skills: render skills. No query, pure DOM.
   */
   renderWeaponType = ({ weapon_list_id, name }) => <option key={weapon_list_id} id={weapon_list_id}>{name}</option>
+  
   renderWeapons = ({ weapon_id, weapon_name }) => <option key={weapon_id} id={weapon_id} value={weapon_id}>{weapon_name}</option>
+  
   renderMonsters = ({ monster_id, name }) => <option key={monster_id} id ={monster_id} value={monster_id}>{name}</option>
+  
   renderSkills =  _ =>
   <div className="Skills-div">
     <label htmlFor="affinitySliding">Affinity Sliding </label>
@@ -84,9 +89,9 @@ class App extends Component {
     <input type="Checkbox" name="agitator" value="20-15" id="4" onChange={this.handleSkillBoxClick}></input>
 
     <label htmlFor="attackBoost">Attack Boost {this.state.skills.attackBoost[0]}</label>
-    <input type="Checkbox" name="attackBoost" value="3" id="0" onChange={this.handleSkillBoxClick}></input>
-    <input type="Checkbox" name="attackBoost" value="6" id="1" onChange={this.handleSkillBoxClick}></input>
-    <input type="Checkbox" name="attackBoost" value="9" id="2" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="attackBoost" value="3-0" id="0" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="attackBoost" value="6-0" id="1" onChange={this.handleSkillBoxClick}></input>
+    <input type="Checkbox" name="attackBoost" value="9-0" id="2" onChange={this.handleSkillBoxClick}></input>
     <input type="Checkbox" name="attackBoost" value="12-5" id="3" onChange={this.handleSkillBoxClick}></input>
     <input type="Checkbox" name="attackBoost" value="15-5" id="4" onChange={this.handleSkillBoxClick}></input>
     <input type="Checkbox" name="attackBoost" value="18-5" id="5" onChange={this.handleSkillBoxClick}></input>
@@ -190,9 +195,10 @@ class App extends Component {
     <input type="Checkbox" name="weaknessExploit" value="30" id="1" onChange={this.handleSkillBoxClick}></input>
     <input type="Checkbox" name="weaknessExploit" value="50" id="2" onChange={this.handleSkillBoxClick}></input>
   </div>
+
   renderSharpness = _ =>
   	<div className="Sharpness-div">
-  		<select className="Sharpness-select" onChange={this.handleSharpnessSelect}>
+  		<Input type="select" id="Sharpness-select" onChange={this.handleSharpnessSelect}>
   			<option key="NONE" value="" disabled selected>---</option>
   			<option key="RED" value="0.50-0.25">Red</option>
   			<option key="ORANGE" value="0.75-0.50">Orange</option>
@@ -200,7 +206,7 @@ class App extends Component {
   			<option key="GREEN" value="1.05-1.00">Green</option>
   			<option key="BLUE" value="1.20-1.0625">Blue</option>
   			<option key="WHITE" value="1.32-1.125">White</option>
-  		</select>
+  		</Input>
   	</div>
 
 	getWeapons = _ => {
@@ -314,33 +320,40 @@ class App extends Component {
 
   	return (
   		<div className="App">
-    		<header className="App-header">
-    			<img src={logo} className="App-logo" alt="logo" />
-    			<h1 className="App-title">Welcome to React</h1>
-    		</header>
-    		<div className="App-intro">
+    		<div className="row">
+    			<div className="col-4">
+    				<Form id="weapon-1-form">
+    					<FormGroup>
+		    				<Input type="select" name="select" id="Weapon-type-select" onChange={this.weaponTypeSelect}>
+			    				<option value="0">All</option>
+			    				{weaponType.map(this.renderWeaponType)}
+			    			</Input>
+    					</FormGroup>
+    					<FormGroup>
+			    			<Input type="select" name="select" id="Weapon-select" onChange={this.weaponSelect}>
+			    				<option value="None">None</option>
+			    				{weapons.map(this.renderWeapons)}
+			    			</Input>
+    					</FormGroup>
+    					<FormGroup>
+    						{this.renderSharpness()}
+    					</FormGroup>
+    					<FormGroup>
+			    			<Input type="select" id="Monster-select" onChange={this.monsterSelect}>
+			    				<option value="None">None</option>
+			    				{monsters.map(this.renderMonsters)}
+			    			</Input>
+    					</FormGroup>
+    				</Form>
+    			</div>
 
-    			<select className="WeaponType-select" onChange={this.weaponTypeSelect}>
-    			<option value="0">All</option>
-    			{weaponType.map(this.renderWeaponType)}
-    			</select>
-
-    			<select className="Weapon-select" onChange={this.weaponSelect}>
-    			<option value="None">None</option>
-    			{weapons.map(this.renderWeapons)}
-    			</select>
-
-    			{this.renderSharpness()}
-
-    			<select className="Monster-select" onChange={this.monsterSelect}>
-    			<option value="None">None</option>
-    			{monsters.map(this.renderMonsters)}
-    			</select>
-
+    			
     			{this.renderSkills()}
     		</div>
     		<Hitzone monster={monsterValue} />
         <Calculator weapon={weaponValue} monster={monsterValue} skills={skills} sharpness={weaponSharpness}/>
+
+        <Button color="danger">Danger!</Button>
   		</div>
   	);
   }
