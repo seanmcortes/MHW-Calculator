@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {array} from 'prop-types';
+import { Table } from 'reactstrap';
 
 class Hitzone extends Component{
   constructor(props){
@@ -44,7 +45,7 @@ class Hitzone extends Component{
     const { monster } = this.props;
     return(
       <div className = "Hitzone">
-        <table className = "Hitzone-table">
+        <Table className = "Hitzone-table" size="sm">
           <tbody>
             <tr className = "Hitzone-header">
               <th>Body Part</th>
@@ -61,7 +62,7 @@ class Hitzone extends Component{
             </tr>
             {monster.map(this.renderHitZones)}
           </tbody>
-        </table>
+        </Table>
       </div>
     );
   }
