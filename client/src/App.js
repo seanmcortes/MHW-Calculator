@@ -380,21 +380,15 @@ class App extends Component {
   handleSaveClick = (event) => {
     event.preventDefault();
     event.stopPropagation();
-    if(this.state.weaponValue == undefined || this.state.weaponValue.weapon_id == 0)
-        console.log("Weaponvalue");
-    else if (this.state.weaponSharpness[0] == 0)
-        console.log("sharpness");
-    else if (this.state.monsterValue == undefined || !this.state.monsterValue.length)
-        console.log("monstervalue");
-    else {
-      let values = {
-        weaponValue: this.state.weaponValue, 
-        monsterValue: this.state.monsterValue, 
-        weaponSharpness: this.state.weaponSharpness, 
-        skills: this.state.skills
-      }
-      this.setState({ savedState: values })
+
+    let values = {
+      weaponValue: this.state.weaponValue, 
+      monsterValue: this.state.monsterValue, 
+      weaponSharpness: this.state.weaponSharpness, 
+      skills: this.state.skills
     }
+    this.setState({ savedState: values })
+    return false;
   }
 
 	handleSharpnessSelect = (event) => { 
@@ -417,7 +411,7 @@ class App extends Component {
   			<Container fluid>
   				<Row>
   					<Col md="6">
-	  					<Form id="weapon-1-form">
+	  					<Form id="weapon-1-form" onSubmit={this.handleSaveClick}>
 		    				<FormGroup>
                   <Label for="weapon-type-select" className="float-left">Weapon Type:</Label>
 				    			<Input type="select" name="select" id="weapon-type-select" onChange={this.weaponTypeSelect}>
@@ -452,7 +446,7 @@ class App extends Component {
                     </Card>
                   </Collapse>
                 </FormGroup>
-                <Button color="info" type="submit" onClick={this.handleSaveClick}>Save</Button>
+                <Button color="info" type="submit">Save</Button>
 	    				</Form>
   					</Col>
   				</Row>
