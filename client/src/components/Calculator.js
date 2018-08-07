@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import { object, array } from 'prop-types';
+import { Container, Row, Col, Table, Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap'
 
 class Calculator extends Component{
   state={
     rawDamage: 0,
     elementDamage: 0,
     totalDamage: 0,
-    sharpness: 1
+    sharpness: 1,
+    savedState: []
   };
 
   static propTypes = {  
@@ -19,10 +21,12 @@ class Calculator extends Component{
   }
   
   componentDidUpdate(prevProps){
-    if(this.props.weapon !== prevProps.weapon || this.props.monster !== prevProps.monster){
-
+    if(this.props.savedState !== prevProps.savedState){
+      this.setState({ savedState: [...this.state.savedState, this.props.savedState]})
+      console.log("Success!")
     }
     console.log(this.props);
+    console.log(this.state);
   }
 
   renderCalculations = ({ part, sever, shot, blunt, fire, water, thunder, ice, dragon, stun }) => {
@@ -43,8 +47,6 @@ class Calculator extends Component{
       parseInt(skills.latentPower[1]) +
       parseInt(skills.maximumMight[1]) +
       parseInt(skills.weaknessExploit[1]);
-
-    console.log("attack boost: " + attackBoost[1]);
 
     function calculateElementDamage(){
       let elementHitZone = 0;
@@ -120,13 +122,6 @@ class Calculator extends Component{
       let finalCrit = 1 + criticalBoost * (parseInt(weapon.weapon_affinity) + affinityModifier)/100;
       let extraModifiers = (1.00 + parseFloat(skills.fortify[1]) + parseFloat(skills.heroics[1])).toFixed(2);
 
-      console.log(finalRaw);
-      console.log(criticalBoost);
-      console.log(weapon.weapon_affinity);
-      console.log(affinityModifier);
-      console.log(finalCrit);
-      console.log(extraModifiers);
-
       return Math.round(
           finalRaw * finalCrit * extraModifiers * (damageType/100)
         );
@@ -144,24 +139,44 @@ class Calculator extends Component{
     )
   }
     
-    
+  renderSavedState = (savedState) => {
+    console.log(savedState.weaponValue.weapon_name);
+    return(
+      <p>test</p>
+    )
+  }
 
   render(){
+    const { savedState } = this.state;
+
     return(
-      <div className="Calculator">
-        <table className="Calculator-table">
-          <tbody className="Calculator-tbody">
-            <tr className="Calculator-header">
-              <th>Part</th>
-              <th>Raw</th>
-              <th>Element</th>
-              <th>Total</th>
-            </tr>
-            {this.props.monster.map(this.renderCalculations)}
-          </tbody>
-        </table>
-        
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <Table className="calculator-table" size="sm">
+              <tbody className="calculator-tbody">
+                <tr className="calculator-header">
+                  <th>Part</th>
+                  <th>Raw</th>
+                  <th>Element</th>
+                  <th>Total</th>
+                </tr>
+                {this.props.monster.map(this.renderCalculations)}
+              </tbody>
+            </Table>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Table className="saved-table">
+              <tr>
+                {savedState.map(this.renderSavedState)}
+              </tr>
+            </Table>
+          </Col>
+        </Row>
+      </Container>
+      
     );
   }
 }
