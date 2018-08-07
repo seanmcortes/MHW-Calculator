@@ -17,57 +17,7 @@ class Calculator extends Component{
 
   static defaultProps = {
   }
-
   
-  // calculateDamage = _ => {
-  //   let weapon = this.props.weapon;
-  //   let skill = this.props.skills;
-  //   let monster = this.props.monster;
-  //   let severDamage, bluntDamage, shotDamage, stunDamage, totalDamage = 0;
-
-  //   function calcElement(){
-  //     var trueElement = weapon.element_damage/10;
-
-  //     switch(weapon.element_type){
-  //       case "":
-  //       break;
-  //       case "Fire":
-  //       var fireDamage = Math.round(trueElement * (fire/100));
-  //       totalDamage += fireDamage;
-  //       break;
-  //       case "Water":
-  //       var waterDamage = Math.round(trueElement * (water/100));
-  //       totalDamage += waterDamage;
-  //       break;
-  //       case "Thunder":
-  //       var thunderDamage = Math.round(trueElement * (thunder/100));
-  //       totalDamage += thunderDamage;
-  //       break;
-  //       case "Ice":
-  //       var iceDamage = Math.round(trueElement * (ice/100));
-  //       totalDamage += iceDamage;
-  //       break;
-  //       case "Dragon":
-  //       var dragonDamage = Math.round(trueElement * (dragon/100));
-  //       totalDamage += dragonDamage;
-  //       break;
-  //     }
-  //   }
-
-  //   function calcRaw(){
-  //     weapon.real_damage + 
-  //   }
-
-  //   if(weapon.weapon_class == 5 || weapon.weapon_class == 6){
-  //     bluntDamage = Math.round((weapon.real_damage * (1 + 0.25 * (weapon.weapon_affinity/100))) * (blunt/100));
-  //     totalDamage += bluntDamage;
-  //   } else {
-  //     severDamage = Math.round((weapon.real_damage * (1 + 0.25 * (weapon.weapon_affinity/100))) * (sever/100));
-  //     totalDamage += severDamage;
-  //   }
-  // }
-  
-
   componentDidUpdate(prevProps){
     if(this.props.weapon !== prevProps.weapon || this.props.monster !== prevProps.monster){
 
@@ -93,6 +43,8 @@ class Calculator extends Component{
       parseInt(skills.latentPower[1]) +
       parseInt(skills.maximumMight[1]) +
       parseInt(skills.weaknessExploit[1]);
+
+    console.log("attack boost: " + attackBoost[1]);
 
     function calculateElementDamage(){
       let elementHitZone = 0;
@@ -169,6 +121,9 @@ class Calculator extends Component{
       let extraModifiers = (1.00 + parseFloat(skills.fortify[1]) + parseFloat(skills.heroics[1])).toFixed(2);
 
       console.log(finalRaw);
+      console.log(criticalBoost);
+      console.log(weapon.weapon_affinity);
+      console.log(affinityModifier);
       console.log(finalCrit);
       console.log(extraModifiers);
 
@@ -194,7 +149,6 @@ class Calculator extends Component{
   render(){
     return(
       <div className="Calculator">
-        <p>{this.state.rawDamage}</p>
         <table className="Calculator-table">
           <tbody className="Calculator-tbody">
             <tr className="Calculator-header">
