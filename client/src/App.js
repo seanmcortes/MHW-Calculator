@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Hitzone from './components/Hitzone';
 import Calculator from './components/Calculator'
+import WeaponInfo from './components/WeaponInfo'
 
 import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGroup, Collapse, Card, CardBody, Row, Col, Container} from 'reactstrap';
 
@@ -249,7 +250,7 @@ class App extends Component {
   renderSharpness = _ =>
   	<div className="sharpness-div">
       <Label for="sharpness-select" className="float-left">Sharpness:</Label>
-  		<Input type="select" id="sharpness-select" onChange={this.handleSharpnessSelect} required>
+  		<Input type="select" id="sharpness-select" size="sm" onChange={this.handleSharpnessSelect} required>
   			<option key="NONE" value="" disabled selected>---</option>
   			<option key="RED" value="0.50-0.25">Red</option>
   			<option key="ORANGE" value="0.75-0.50">Orange</option>
@@ -331,7 +332,7 @@ class App extends Component {
              event.target.name == "iceAttack" ||
              event.target.name == "thunderAttack" ||
              event.target.name == "waterAttack"){
-            skills[key][1] = '1-0';
+            skills[key][1] = '0-1';
             skills[key][0] = 0;
           }
           else if
@@ -390,24 +391,25 @@ class App extends Component {
 	  					<Form id="weapon-1-form" onSubmit={this.handleSaveClick}>
 		    				<FormGroup>
                   <Label for="weapon-type-select" className="float-left">Weapon Type:</Label>
-				    			<Input type="select" name="select" id="weapon-type-select" onChange={this.weaponTypeSelect}>
+				    			<Input type="select" name="select" id="weapon-type-select" size="sm" onChange={this.weaponTypeSelect}>
 					    			<option value="0">All</option>
 					    			{weaponType.map(this.renderWeaponType)}
 					    		</Input>
 		    				</FormGroup>
 		    				<FormGroup>
                   <Label for="weapon-select" className="float-left">Weapon:</Label>
-					    		<Input type="select" name="select" id="weapon-select" onChange={this.weaponSelect} required>
+					    		<Input type="select" name="select" id="weapon-select" size="sm" onChange={this.weaponSelect} required>
 					    			<option value="">None</option>
 					    			{weapons.map(this.renderWeapons)}
 					    		</Input>
+                  <WeaponInfo weapon={weaponValue}/>
 		    				</FormGroup>
 		    				<FormGroup>
 		    					{this.renderSharpness()}
 		    				</FormGroup>
 		    				<FormGroup>
                   <Label for="monster-select" className="float-left">Monster:</Label>
-					    		<Input type="select" id="monster-select" onChange={this.monsterSelect} required>
+					    		<Input type="select" id="monster-select" size="sm" onChange={this.monsterSelect} required>
 					    			<option value="">None</option>
 					    			{monsters.map(this.renderMonsters)}
 					    		</Input>
