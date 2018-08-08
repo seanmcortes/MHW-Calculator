@@ -6,6 +6,7 @@ import Hitzone from './components/Hitzone'
 import Calculator from './components/Calculator'
 import registerServiceWorker from './registerServiceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import calculatorHelpers from './helper/calculatorHelpers'
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

@@ -26,6 +26,7 @@ class Hitzone extends Component{
     if(this.props.monster !== prevProps.monster){
       this.setState({ data: true })
     }
+    console.log(this.props);
   }
 
 
@@ -53,6 +54,7 @@ class Hitzone extends Component{
     const { monster } = this.props;
     return(
       <div className = "Hitzone">
+        <h1>{monster[0].name} Hitzones</h1>
         <Table className = "Hitzone-table" size="sm" responsive>
           <tbody>
             <tr className = "Hitzone-header">
