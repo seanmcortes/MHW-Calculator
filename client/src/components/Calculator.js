@@ -14,7 +14,8 @@ class Calculator extends Component{
     elementDamage: 0,
     totalDamage: 0,
     sharpness: 1,
-    savedState: []
+    savedState: [],
+    data: false
   };
 
   static propTypes = {  
@@ -34,6 +35,9 @@ class Calculator extends Component{
         tempSavedState.index = index
       )
       this.setState({ savedState: tempSavedState })
+    }
+    if(this.props !== prevProps){
+      this.setState({ data: true })
     }
   }
 
@@ -121,6 +125,10 @@ class Calculator extends Component{
   
   render(){
     const { savedState } = this.state;
+
+    if(!this.state.data){
+      return <div />
+    }
 
     return(
         <div>

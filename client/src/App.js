@@ -4,7 +4,7 @@ import './App.css';
 import Hitzone from './components/Hitzone';
 import Calculator from './components/Calculator'
 
-import { Button, Form, FormGroup, Label, FormText, Input, InputGroup, Collapse, Card, CardBody, Row, Col, Container} from 'reactstrap';
+import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGroup, Collapse, Card, CardBody, Row, Col, Container} from 'reactstrap';
 
 // import SelectSearch from 'react-select-search'
 
