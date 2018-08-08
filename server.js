@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 app.set('port', 5000);
 
+app.use(express.static('client/src'))
+
 app.get('/weapon', function(req, res){
   db.query('SELECT *  FROM `weapon`', function(err, results){
     if (err){

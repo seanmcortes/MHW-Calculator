@@ -86,9 +86,9 @@ class App extends Component {
   renderMonsters = ({ monster_id, name }) => <option key={monster_id} id ={monster_id} value={monster_id}>{name}</option>
   
   renderSkills =  _ =>
-  <Container fluid id="skills-container">
+  <Container fluid className="skills-container">
   	<Row>
-  		<Col xs="4" className="float-right">
+  		<Col xs="4" className="testing">
         <label className="skills-label">Affinity Sliding:</label><br className="skills-br"></br>
         <input type="checkbox" className="input-checkbox" name="affinitySliding" value="30" id="0" onChange={this.handleSkillBoxClick}></input>
   		</Col>
@@ -261,6 +261,18 @@ class App extends Component {
   		</Input>
   	</div>
 
+  renderHeader = _ => {
+    return(
+      <div>
+        <h1>the Handler's Notes</h1>
+        <p>
+          Welcome to yet another weapon calculator. Specify a weapon, its sharpness level, and a target
+          monster. {'\n'} You may save a combination for comparison with another.
+        </p>
+      </div>
+    )
+  }
+
 	getWeapons = _ => {
 		fetch('http://localhost:3000/weapon')
 			.then(response => response.json())
@@ -382,30 +394,35 @@ class App extends Component {
 
   	return (
   		<div className="App">
-  			<Container fluid>
+  			<Container className="app-container" fluid>
   				<Row>
-            <Col xs="3" className="outer-padding">
-            </Col>
-  					<Col xs="6">
-              <h1 className='app-title'>Calico Palico</h1>
+            <Col xs="1" className="outer-padding" />
+  					<Col xs="10">
+              <div className="app-header">{this.renderHeader()}</div>
 	  					<Form id="weapon-1-form" onSubmit={this.handleSaveClick}>
-		    				<FormGroup>
-                  <Label for="weapon-type-select" className="float-left">Weapon Type:</Label>
-				    			<Input type="select" name="select" id="weapon-type-select" size="sm" onChange={this.weaponTypeSelect}>
-					    			<option value="0">All</option>
-					    			{weaponType.map(this.renderWeaponType)}
-					    		</Input>
+		    				<FormGroup row>
+                  <Col sm={3}>
+                    <Label for="weapon-type-select" className="float-left">Weapon Type:</Label>
+                    <Input type="select" name="select" id="weapon-type-select" size="sm" onChange={this.weaponTypeSelect}>
+                      <option value="0">All</option>
+                      {weaponType.map(this.renderWeaponType)}
+                    </Input>
+                  </Col>
+                  <Col sm={6}>
+                    <Label for="weapon-select" className="float-left">Weapon:</Label>
+                      <Input type="select" name="select" id="weapon-select" size="sm" onChange={this.weaponSelect} required>
+                        <option value="">None</option>
+                        {weapons.map(this.renderWeapons)}
+                      </Input>
+                  </Col>
+                  <Col sm={3}>
+                    {this.renderSharpness()}
+                  </Col>
 		    				</FormGroup>
-		    				<FormGroup>
-                  <Label for="weapon-select" className="float-left">Weapon:</Label>
-					    		<Input type="select" name="select" id="weapon-select" size="sm" onChange={this.weaponSelect} required>
-					    			<option value="">None</option>
-					    			{weapons.map(this.renderWeapons)}
-					    		</Input>
-                  <WeaponInfo weapon={weaponValue}/>
-		    				</FormGroup>
-		    				<FormGroup>
-		    					{this.renderSharpness()}
+		    				<FormGroup row>
+                  <Col sm={{ size: 6, offset: 3}}>
+                    <WeaponInfo weapon={weaponValue}/>
+                  </Col>
 		    				</FormGroup>
 		    				<FormGroup>
                   <Label for="monster-select" className="float-left">Monster:</Label>
@@ -417,11 +434,9 @@ class App extends Component {
                 <FormGroup>
                   <Button onClick={this.toggle} style={{ marginBottom: '1rem' }} className="btn-block">Skills</Button>
                   <Collapse isOpen={this.state.collapse}>
-                    <Card>
-                      <CardBody>
-                        {this.renderSkills()}
-                      </CardBody>
-                    </Card>
+                    <div className="skills-div border">
+                      {this.renderSkills()}
+                    </div>
                   </Collapse>
                 </FormGroup>
                 <Button color="info" type="submit">Save</Button>
@@ -429,8 +444,7 @@ class App extends Component {
               <Hitzone monster={monsterValue} />
               <Calculator weapon={weaponValue} monster={monsterValue} skills={skills} sharpness={weaponSharpness} savedState={savedState} />
   					</Col>
-            <Col xs="3" className="outer-padding">
-            </Col>
+            <Col xs="1" className="outer-padding" />
   				</Row>
   			</Container>
   		</div>

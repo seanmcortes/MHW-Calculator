@@ -39,6 +39,8 @@ class Calculator extends Component{
     if(this.props !== prevProps){
       this.setState({ data: true })
     }
+    console.log(this.props);
+    console.log(this.state);
   }
 
   renderCalculations = (monster) => {
@@ -69,7 +71,7 @@ class Calculator extends Component{
   renderSavedState = (savedState) => {
     return(
       <td>
-        <Card>
+        <Card className="saved-state-card">
           <CardTitle className="saved-state-card-title">
             {savedState.index}
             {savedState.weaponValue.weapon_name} vs. {savedState.monsterValue[0].name}
@@ -111,17 +113,6 @@ class Calculator extends Component{
       </tr>
     );
   }
-
-  renderTest = _ => {
-    <tr>
-      <td>test</td>
-      <td>test</td>
-      <td>test</td>
-      <td>test</td>
-      <td>test</td>
-      <td>test</td>
-    </tr>
-  }
   
   render(){
     const { savedState } = this.state;
@@ -143,28 +134,10 @@ class Calculator extends Component{
               {this.props.monster.map(this.renderCalculations)}
             </tbody>
           </Table>
-          <Table className="saved-table" responsive>
+          <Table className="saved-table" size="sm" responsive>
             <tr>
               {savedState.map(this.renderSavedState)}
             </tr>
-          </Table>
-          <Table responsive>
-            <tbody>
-              <tr>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-                <td>test</td>
-              </tr>
-              {this.renderTest}
-            </tbody>
           </Table>
         </div> 
     );
