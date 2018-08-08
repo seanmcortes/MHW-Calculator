@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
 import { object, array } from 'prop-types';
-import { Container, Row, Col, Table, Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap'
+import { Container, Row, Col, Table, Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
+import { calcRawModifier, calcAffinityModifier, calcElementDamage, calcRawDamage } from '../helper/calculatorHelpers'
 
 class Calculator extends Component{
+  constructor(props){
+    super(props);
+    this.handleCardDelete = this.handleCardDelete.bind(this);
+  }
+
   state={
     rawDamage: 0,
     elementDamage: 0,
@@ -19,131 +25,109 @@ class Calculator extends Component{
 
   static defaultProps = {
   }
-  
-  componentDidUpdate(prevProps){
+
+  componentDidUpdate(prevProps, prevState){
     if(this.props.savedState !== prevProps.savedState){
-      this.setState({ savedState: [...this.state.savedState, this.props.savedState]})
-      console.log("Success!")
+      let tempSavedState = [...this.state.savedState];
+      tempSavedState.push(this.props.savedState);
+      tempSavedState.map((tempSavedState, index) =>
+        tempSavedState.index = index
+      )
+      this.setState({ savedState: tempSavedState })
+
+      // this.setState({ savedState: [...this.state.savedState, this.props.savedState]})
     }
-    console.log(this.props);
-    console.log(this.state);
+
+    // if(this.state.savedState !== prevState.savedState && this.state.savedState !== prevProps.savedState){
+    //   let tempSavedState = [...this.props.savedState];
+    //   tempSavedState.map((test, index) => 
+    //     test.index = index + 1
+    //   );
+    //   this.setState({ savedState: tempSavedState });
+    //   console.log(tempSavedState);
+    //   console.log(this.state.savedState); 
+    // }
   }
 
-  renderCalculations = ({ part, sever, shot, blunt, fire, water, thunder, ice, dragon, stun }) => {
-    let weapon = this.props.weapon;
-    let skills = this.props.skills;
-    let sharpness = this.props.sharpness;
-    let attackBoost = skills.attackBoost[1].toString().split('-');
-    let agitator = skills.agitator[1].toString().split('-');
-    let rawModifier = parseInt(agitator[0]) +
-      parseInt(attackBoost[0]) +
-      parseInt(skills.peakPerformance[1]) +
-      parseInt(skills.resentment[1]);
+  renderCalculations = (monster) => {
+    let rawModifier = calcRawModifier(this.props.skills);
+    let affinityModifier = calcAffinityModifier(this.props.skills);
 
-    let affinityModifier = skills.affinitySliding[1] +
-      parseInt(agitator[1]) + 
-      parseInt(attackBoost[1]) +
-      parseInt(skills.criticalEye[1]) +
-      parseInt(skills.latentPower[1]) +
-      parseInt(skills.maximumMight[1]) +
-      parseInt(skills.weaknessExploit[1]);
-
-    function calculateElementDamage(){
-      let elementHitZone = 0;
-      let elementBoost = "0-1";
-      switch(weapon.element_type){
-        case "":
-          break;
-        case "Fire":
-          elementHitZone = fire;
-          elementBoost = skills.fireAttack[1];
-          break;
-        case "Water":
-          elementHitZone = water;
-          elementBoost = skills.waterAttack[1];
-          break;
-        case "Thunder":
-          elementHitZone = thunder;
-          elementBoost = skills.thunderAttack[1];
-          break;
-        case "Ice":
-          elementHitZone = ice;
-          elementBoost = skills.iceAttack[1];
-          break;
-        case "Dragon":
-          elementHitZone = dragon;
-          elementBoost = skills.dragonAttack[1];
-          break;
-        default:
-          console.log("Error in calculateElementDamage() switch!");
-          break;
-      }
-
-      elementBoost = elementBoost.toString().split('-');
-      let elementBloat = weapon.element_damage * parseInt(elementBoost[1]) + parseInt(elementBoost[0]);
-      let elementCap = weapon.element_damage * 1.3;
-      if(elementBloat > elementCap){
-        elementBloat = elementCap;
-      }
-
-      let critEle = 0;
-      if(skills.criticalElement[0] == 1){
-        let critEleArray = skills.criticalElement[1].toString().split('-');
-        
-        if(weapon.weapon_class == 1)
-          critEle = critEleArray[0];
-        else if (weapon.weapon_class == 3 || weapon.weapon_class == 4)
-          critEle = critEleArray[2];
-        else
-          critEle = critEleArray[1];
-
-        return (Math.round(elementBloat/10 * sharpness[1] * (1 + critEle * weapon.weapon_affinity/100) * elementHitZone/10));
-      }
-      return (Math.round(elementBloat/10 * sharpness[1] * elementHitZone/10));
-    }
-
-    function calculateRawDamage(){
-      let damageType = 0;
-      if(weapon.weapon_class == 5 || weapon.weapon_class == 6){
-        damageType = blunt;
-      } else {
-        damageType = sever;
-      }
-
-
-      let criticalBoost = 0.25;
-      if(skills.criticalBoost[1] !== 0){
-        criticalBoost = skills.criticalBoost[1];
-      } else {
-        criticalBoost = 0.25;
-      }
-
-      let finalRaw = parseInt(weapon.real_damage) + rawModifier;
-      let finalCrit = 1 + criticalBoost * (parseInt(weapon.weapon_affinity) + affinityModifier)/100;
-      let extraModifiers = (1.00 + parseFloat(skills.fortify[1]) + parseFloat(skills.heroics[1])).toFixed(2);
-
-      return Math.round(
-          finalRaw * finalCrit * extraModifiers * (damageType/100)
-        );
-    }
-
-    let element = calculateElementDamage();
-    let raw = calculateRawDamage();
+    let element = calcElementDamage(this.props.weapon, this.props.skills, monster, this.props.sharpness);
+    let raw = calcRawDamage(this.props.weapon, this.props.skills, monster, this.props.sharpness, rawModifier, affinityModifier);
 
     return(
       <tr>
-        <td>{part}</td>
+        <td>{monster.part}</td>
         <td>{raw}</td>
         <td>{element}</td>
       </tr>
     )
   }
-    
+
+
+  handleCardDelete = (event) => {
+    // let tempArray = this.state.savedState.map((e, index) => {
+    //   let elementCopy = Object.assign({}, e);
+    //   e.index = index;
+    //   return elementCopy;
+    // })
+
+    let tempArray = [...this.state.savedState];
+
+    let index = tempArray.findIndex(i => i.index == event.target.value);
+
+    // console.log(event.target.value);
+    // console.log(index);
+    // console.log(tempArray);
+    tempArray.splice(index, 1);
+    this.setState({ savedState: tempArray });
+    // console.log(index);
+  }
+
   renderSavedState = (savedState) => {
-    console.log(savedState.weaponValue.weapon_name);
     return(
-      <p>test</p>
+      <td>
+        <Card>
+          <CardTitle className="saved-state-card-title">
+            {savedState.index}
+            {savedState.weaponValue.weapon_name} vs. {savedState.monsterValue[0].name}
+          </CardTitle>
+          <Button color="danger" onClick={this.handleCardDelete} value={savedState.index}>X</Button>
+          <CardBody>
+            <Table>
+              <tbody>
+                <tr>
+                  <th>Part</th>
+                  <th>Raw</th>
+                  <th>Element</th>
+                  <th>Total</th>
+                </tr>
+                {savedState.monsterValue.map(this.renderSavedStateCalculations.bind(this, savedState))}
+              </tbody>
+            </Table>
+          </CardBody>
+        </Card>
+      </td>
     )
+  }
+
+  renderSavedStateCalculations = (savedState, monsterValue) => {
+    // console.log(savedState);
+    let rawModifier = calcRawModifier(savedState.skills);
+    let affinityModifier = calcAffinityModifier(savedState.skills);
+
+    let element = calcElementDamage(savedState.weaponValue, savedState.skills, monsterValue, savedState.weaponSharpness);
+    let raw = calcRawDamage(savedState.weaponValue, savedState.skills, monsterValue, savedState.weaponSharpness, rawModifier, affinityModifier);
+    return(
+      <tr>
+        <td>{monsterValue.part}</td>
+        <td>{raw}</td>
+        <td>{element}</td>
+      </tr>
+    );
+
+    // return(<td>test</td>);
   }
 
   render(){

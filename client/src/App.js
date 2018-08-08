@@ -69,10 +69,10 @@ class App extends Component {
   }
 
 	componentDidUpdate(){
-    console.log(this.state);
-    console.log(typeof this.state.monsterValue);
-    console.log(this.state.monsterValue);
-    console.log(this.state.monsterValue.length);
+    // console.log(this.state);
+    // console.log(typeof this.state.monsterValue);
+    // console.log(this.state.monsterValue);
+    // console.log(this.state.monsterValue.length);
 	}
 
   /*
@@ -326,7 +326,6 @@ class App extends Component {
 	}
 
 	monsterSelect = (event) => {
-
     fetch(`http://localhost:3000/monster-select?id=` + event.target.value)
       .then(response => response.json())
       .then(response => this.setState({ monsterValue: response.data }))
@@ -382,6 +381,7 @@ class App extends Component {
     event.stopPropagation();
 
     let values = {
+      index: 0,
       weaponValue: this.state.weaponValue, 
       monsterValue: this.state.monsterValue, 
       weaponSharpness: this.state.weaponSharpness, 
