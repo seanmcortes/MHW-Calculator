@@ -98,7 +98,6 @@ class App extends Component {
         <input type="checkbox" className="input-checkbox" name="agitator" value="12-9" id="2" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="agitator" value="16-12" id="3" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="agitator" value="20-15" id="4" onChange={this.handleSkillBoxClick}></input>
-        <label className="skills-level-label">Level:</label>{this.state.skills.agitator[0]}
   		</Col>
   		<Col xs="4">
         <label className="skills-label">Attack Boost:</label><br></br>
@@ -109,7 +108,6 @@ class App extends Component {
         <input type="checkbox" className="input-checkbox" name="attackBoost" value="15-5" id="4" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="attackBoost" value="18-5" id="5" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="attackBoost" value="21-5" id="6" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.attackBoost[0]}
       </Col>
   	</Row>
 
@@ -119,7 +117,6 @@ class App extends Component {
         <input type="checkbox" className="input-checkbox" name="criticalBoost" value="0.30" id="0" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="criticalBoost" value="0.35" id="1" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="criticalBoost" value="0.40" id="2" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.criticalBoost[0]}
       </Col>
       <Col xs="4">
         <label className="skills-label">Critical Element:</label><br></br>
@@ -134,10 +131,8 @@ class App extends Component {
         <input type="checkbox" className="input-checkbox" name="criticalEye" value="20" id="4" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="criticalEye" value="25" id="5" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="criticalEye" value="30" id="6" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.criticalEye[0]}
       </Col>
     </Row>
-
 
     <Row>
       <Col xs="4">
@@ -147,7 +142,6 @@ class App extends Component {
         <input type="checkbox" className="input-checkbox" name="dragonAttack" value="100-1" id="2" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="dragonAttack" value="100-1.05" id="3" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="dragonAttack" value="100-1.10" id="4" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.dragonAttack[0]}
       </Col>
       <Col xs="4">
         <label className="skills-label">Fire Attack:</label><br></br>
@@ -155,13 +149,11 @@ class App extends Component {
         <input type="checkbox" className="input-checkbox" name="fireAttack" value="60-1" id="1" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="fireAttack" value="100-1.05" id="3" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="fireAttack" value="100-1.10" id="4" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.fireAttack[0]}
       </Col>
       <Col xs="4">
         <label className="skills-label">Fortify:</label><br></br>
         <input type="checkbox" className="input-checkbox" name="fortify" value="0.10" id="0" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="fortify" value="0.20" id="1" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.fortify[0]}
       </Col>
     </Row>
 
@@ -177,7 +169,6 @@ class App extends Component {
         <input type="Checkbox" className="input-checkbox" name="heroics" value="0.15" id="2" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="heroics" value="0.2" id="3" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="heroics" value="0.3" id="4" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.heroics[0]}
       </Col>
       <Col xs="4">
         <label className="skills-label">Ice Attack:</label><br></br>
@@ -186,7 +177,6 @@ class App extends Component {
         <input type="Checkbox" className="input-checkbox" name="iceAttack" value="100-1" id="2" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="iceAttack" value="100-1.05" id="3" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="iceAttack" value="100-1.10" id="4" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.iceAttack[0]}
       </Col>
     </Row>
 
@@ -198,14 +188,12 @@ class App extends Component {
         <input type="Checkbox" className="input-checkbox" name="latentPower" value="30" id="2" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="latentPower" value="40" id="3" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="latentPower" value="50" id="4" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.latentPower[0]}
       </Col>
       <Col xs="4">
         <label className="skills-label">Maximum Might:</label><br></br>
         <input type="Checkbox" className="input-checkbox" name="maximumMight" value="10" id="0" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="maximumMight" value="20" id="1" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="maximumMight" value="30" id="2" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.maximumMight[0]}
       </Col>
       <Col xs="4">
         <label className="skills-label">Non-Elemental Boost:</label><br></br>
@@ -219,7 +207,6 @@ class App extends Component {
         <input type="Checkbox" className="input-checkbox" name="peakPerformance" value="5" id="0" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="peakPerformance" value="10" id="1" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="peakPerformance" value="20" id="2" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.peakPerformance[0]}
       </Col>
       <Col xs="4">
         <label className="skills-label">Resentment:</label><br></br>
@@ -228,7 +215,6 @@ class App extends Component {
         <input type="Checkbox" className="input-checkbox" name="resentment" value="15" id="2" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="resentment" value="20" id="3" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="resentment" value="25" id="4" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.resentment[0]}
       </Col>
       <Col xs="4">
         <label className="skills-label">Thunder Attack:</label><br></br>
@@ -237,7 +223,6 @@ class App extends Component {
         <input type="Checkbox" className="input-checkbox" name="thunderAttack" value="100-1" id="2" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="thunderAttack" value="100-1.05" id="3" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="thunderAttack" value="100-1.10" id="4" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.thunderAttack[0]}
       </Col>
     </Row>
 
@@ -249,14 +234,12 @@ class App extends Component {
         <input type="Checkbox" className="input-checkbox" name="waterAttack" value="100-1" id="2" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="waterAttack" value="100-1.05" id="3" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="waterAttack" value="100-1.10" id="4" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.waterAttack[0]}
       </Col>
       <Col xs="4">
         <label className="skills-label">Weakness Exploit:</label><br></br>
         <input type="Checkbox" className="input-checkbox" name="weaknessExploit" value="15" id="0" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="weaknessExploit" value="30" id="1" onChange={this.handleSkillBoxClick}></input>
         <input type="Checkbox" className="input-checkbox" name="weaknessExploit" value="50" id="2" onChange={this.handleSkillBoxClick}></input>
-        {this.state.skills.weaknessExploit[0]}
       </Col>
       <Col xs="4">
       </Col>
@@ -400,7 +383,10 @@ class App extends Component {
   		<div className="App">
   			<Container fluid>
   				<Row>
-  					<Col md={{ size:6, offset: 3}}>
+            <Col xs="3" className="outer-padding">
+            </Col>
+  					<Col xs="6">
+              <h1 className='app-title'>Calico Palico</h1>
 	  					<Form id="weapon-1-form" onSubmit={this.handleSaveClick}>
 		    				<FormGroup>
                   <Label for="weapon-type-select" className="float-left">Weapon Type:</Label>
@@ -427,7 +413,7 @@ class App extends Component {
 					    		</Input>
 		    				</FormGroup>
                 <FormGroup>
-                  <Button onClick={this.toggle} style={{ marginBottom: '1rem' }} size="sm">Skills</Button>
+                  <Button onClick={this.toggle} style={{ marginBottom: '1rem' }} className="btn-block">Skills</Button>
                   <Collapse isOpen={this.state.collapse}>
                     <Card>
                       <CardBody>
@@ -438,18 +424,12 @@ class App extends Component {
                 </FormGroup>
                 <Button color="info" type="submit">Save</Button>
 	    				</Form>
-  					</Col>
-  				</Row>
-          <Row>
-            <Col md="6">
               <Hitzone monster={monsterValue} />
-            </Col>
-          </Row>
-          <Row>
-            <Col md="6">
               <Calculator weapon={weaponValue} monster={monsterValue} skills={skills} sharpness={weaponSharpness} savedState={savedState} />
+  					</Col>
+            <Col xs="3" className="outer-padding">
             </Col>
-          </Row>
+  				</Row>
   			</Container>
   		</div>
   	);

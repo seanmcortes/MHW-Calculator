@@ -34,19 +34,7 @@ class Calculator extends Component{
         tempSavedState.index = index
       )
       this.setState({ savedState: tempSavedState })
-
-      // this.setState({ savedState: [...this.state.savedState, this.props.savedState]})
     }
-
-    // if(this.state.savedState !== prevState.savedState && this.state.savedState !== prevProps.savedState){
-    //   let tempSavedState = [...this.props.savedState];
-    //   tempSavedState.map((test, index) => 
-    //     test.index = index + 1
-    //   );
-    //   this.setState({ savedState: tempSavedState });
-    //   console.log(tempSavedState);
-    //   console.log(this.state.savedState); 
-    // }
   }
 
   renderCalculations = (monster) => {
@@ -55,34 +43,23 @@ class Calculator extends Component{
 
     let element = calcElementDamage(this.props.weapon, this.props.skills, monster, this.props.sharpness);
     let raw = calcRawDamage(this.props.weapon, this.props.skills, monster, this.props.sharpness, rawModifier, affinityModifier);
-
+    let total = element + raw;
     return(
       <tr>
         <td>{monster.part}</td>
         <td>{raw}</td>
         <td>{element}</td>
+        <td>{total}</td>
       </tr>
     )
   }
 
 
   handleCardDelete = (event) => {
-    // let tempArray = this.state.savedState.map((e, index) => {
-    //   let elementCopy = Object.assign({}, e);
-    //   e.index = index;
-    //   return elementCopy;
-    // })
-
     let tempArray = [...this.state.savedState];
-
     let index = tempArray.findIndex(i => i.index == event.target.value);
-
-    // console.log(event.target.value);
-    // console.log(index);
-    // console.log(tempArray);
     tempArray.splice(index, 1);
     this.setState({ savedState: tempArray });
-    // console.log(index);
   }
 
   renderSavedState = (savedState) => {
@@ -95,7 +72,7 @@ class Calculator extends Component{
           </CardTitle>
           <Button color="danger" onClick={this.handleCardDelete} value={savedState.index}>X</Button>
           <CardBody>
-            <Table>
+            <Table responsive>
               <tbody>
                 <tr>
                   <th>Part</th>
@@ -113,54 +90,75 @@ class Calculator extends Component{
   }
 
   renderSavedStateCalculations = (savedState, monsterValue) => {
-    // console.log(savedState);
     let rawModifier = calcRawModifier(savedState.skills);
     let affinityModifier = calcAffinityModifier(savedState.skills);
 
-    let element = calcElementDamage(savedState.weaponValue, savedState.skills, monsterValue, savedState.weaponSharpness);
-    let raw = calcRawDamage(savedState.weaponValue, savedState.skills, monsterValue, savedState.weaponSharpness, rawModifier, affinityModifier);
+    let element = calcElementDamage(savedState.weaponValue, savedState.skills, 
+      monsterValue, savedState.weaponSharpness);
+    let raw = calcRawDamage(savedState.weaponValue, savedState.skills, monsterValue, 
+      savedState.weaponSharpness, rawModifier, affinityModifier);
+    let total = element + raw;
     return(
       <tr>
         <td>{monsterValue.part}</td>
         <td>{raw}</td>
         <td>{element}</td>
+        <td>{total}</td>
       </tr>
     );
-
-    // return(<td>test</td>);
   }
 
+  renderTest = _ => {
+    <tr>
+      <td>test</td>
+      <td>test</td>
+      <td>test</td>
+      <td>test</td>
+      <td>test</td>
+      <td>test</td>
+    </tr>
+  }
+  
   render(){
     const { savedState } = this.state;
 
     return(
-      <Container>
-        <Row>
-          <Col>
-            <Table className="calculator-table" size="sm">
-              <tbody className="calculator-tbody">
-                <tr className="calculator-header">
-                  <th>Part</th>
-                  <th>Raw</th>
-                  <th>Element</th>
-                  <th>Total</th>
-                </tr>
-                {this.props.monster.map(this.renderCalculations)}
-              </tbody>
-            </Table>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Table className="saved-table">
-              <tr>
-                {savedState.map(this.renderSavedState)}
+        <div>
+          <Table className="calculator-table" size="sm" responsive>
+            <tbody className="calculator-tbody">
+              <tr className="calculator-header">
+                <th>Part</th>
+                <th>Raw</th>
+                <th>Element</th>
+                <th>Total</th>
               </tr>
-            </Table>
-          </Col>
-        </Row>
-      </Container>
-      
+              {this.props.monster.map(this.renderCalculations)}
+            </tbody>
+          </Table>
+          <Table className="saved-table" responsive>
+            <tr>
+              {savedState.map(this.renderSavedState)}
+            </tr>
+          </Table>
+          <Table responsive>
+            <tbody>
+              <tr>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+              </tr>
+              {this.renderTest}
+            </tbody>
+          </Table>
+        </div> 
     );
   }
 }

@@ -8,7 +8,8 @@ class Hitzone extends Component{
   };
 
   state={
-    monster: []
+    monster: [],
+    data: false
   };
 
   static propTypes = {
@@ -22,6 +23,9 @@ class Hitzone extends Component{
   }
 
   componentDidUpdate(prevProps){
+    if(this.props.monster !== prevProps.monster){
+      this.setState({ data: true })
+    }
   }
 
 
@@ -42,10 +46,14 @@ class Hitzone extends Component{
   
 
   render(){
+    if(!this.state.data){
+      return <div />
+    }
+
     const { monster } = this.props;
     return(
       <div className = "Hitzone">
-        <Table className = "Hitzone-table" size="sm">
+        <Table className = "Hitzone-table" size="sm" responsive>
           <tbody>
             <tr className = "Hitzone-header">
               <th>Body Part</th>
