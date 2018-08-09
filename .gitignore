@@ -6,8 +6,6 @@ node_modules/
 /scraper/*.csv
 /scraper/*.sql
 
-/client/node_modules/
-
 
 
 

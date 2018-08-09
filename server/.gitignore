@@ -1,13 +1,5 @@
 node_modules/
-
-/scraper/.idea/
-/scraper/venv/
-/scraper/venv1/
-/scraper/*.csv
-/scraper/*.sql
-
-/client/node_modules/
-
+build/
 
 
 
