@@ -2,14 +2,18 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var Client = require('mariasql');
+var path = require('path');
 
-var db = new Client({
+const db = new Client({
   host: '127.0.0.1',
   user: 'root',
   password: 'Feb101992',
   db: 'test'
 });
 
+const staticFiles = express.static(path.join(__dirname, '../../client/build'));
+
+app.use(staticFiles);
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 app.set('port', 5000);
