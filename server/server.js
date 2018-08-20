@@ -3,13 +3,34 @@ var app = express();
 var bodyParser = require('body-parser');
 var Client = require('mariasql');
 var path = require('path');
+var mysql = require('mysql');
 
-const db = new Client({
-  host: '127.0.0.1',
-  user: 'root',
+
+var db = mysql.createConnection({
+  host: 'mhw-calculator-db.c2rhnqjzo1dk.us-east-2.rds.amazonaws.com',
+  user: 'seancortes',
   password: 'Feb101992',
-  db: 'test'
+  port: '3306',
+})
+
+
+db.connect(function(err){
+  if(err){
+    console.error('Database connection failed: ' + err.stack);
+    return;
+  }
+  console.log('RDS connection success!');
 });
+// connection.end();
+
+
+
+// const db = new Client({
+//   host: '127.0.0.1',
+//   user: 'root',
+//   password: 'Feb101992',
+//   db: 'test'
+// });
 
 const staticFiles = express.static(path.join(__dirname, '../../client/build'));
 

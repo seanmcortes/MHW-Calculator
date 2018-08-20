@@ -20,7 +20,9 @@
     "node-mariadb": "^0.1.1",
     "nodemon": "^1.18.3",
     "path": "^0.12.7",
-    "react": "^15.3.2"
+    "react": "^15.3.2",
+    "aws-sdk": "latest",
+    "mysql": "latest"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
