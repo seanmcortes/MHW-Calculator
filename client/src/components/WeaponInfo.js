@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardBody, CardText } from 'reactstrap';
+import { Card, CardBody, CardText, Container, Row, Col } from 'reactstrap';
 
 class WeaponInfo extends Component{
 
@@ -15,6 +15,7 @@ class WeaponInfo extends Component{
     if(this.props !== prevProps){
       let tempObject = Object.assign({}, this.props.weapon)
       this.setState({ weapon: tempObject })
+      console.log(this.state.weapon)
     }
   }
 
@@ -34,17 +35,36 @@ class WeaponInfo extends Component{
       "insect_glaive"
     ]
 
-    let imageUrl = "../images/" + tempText[this.state.weapon.weapon_class] + ".png";
+    let weaponTypeIcon = "../images/" + tempText[this.state.weapon.weapon_class] + ".png";
+
+    let elementTypeIcon = "../images/" + this.state.weapon.element_type + ".png";
 
     return(
-      
       <Card className='weapon-info-card'>
-        <CardText>
-          <img src={imageUrl} className='weapon-info-card-image'></img>
-          Testing!
-        </CardText>
+        <CardBody>
+          <Container className='weapon-info-card-container'>
+            <Row>
+              <Col sm={3}><img src={weaponTypeIcon} className='weapon-info-card-weapon-icon'></img></Col>
+              <Col sm={9}>
+                <p>Attack: {this.state.weapon.bloat_damage}</p>
+                <p>Affinity: {this.state.weapon.weapon_affinity}</p>
+                <p>Element: {this.state.weapon.element_damage} {this.renderElementIcon()} </p>
+              </Col>
+            </Row>
+          </Container>
+        </CardBody>
       </Card>
     )
+  }
+
+  renderElementIcon = _ => {
+    console.log("successful call")
+    if(this.state.weapon.element_type != ''){
+      let elementTypeIcon = "../images/" + this.state.weapon.element_type + ".png";
+      return(
+        <img src={elementTypeIcon} className='weapon-info-card-element-icon'></img>
+      )
+    }
   }
 
   render(){
@@ -56,9 +76,9 @@ class WeaponInfo extends Component{
     }
 
     return (
-      <div className='weapon-info-div'>
+      <Container className='weapon-info-div'>
         {this.renderWeaponCard()}
-      </div>
+      </Container>
     )
   }
 }

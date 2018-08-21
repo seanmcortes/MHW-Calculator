@@ -39,13 +39,26 @@ input[type=checkbox]{
   vertical-align: middle;
 }
 
-.weapon-info-card-image {
+.weapon-info-card, .weapon-info-card-container {
+  margin: 0;
+}
+
+.weapon-info-card-weapon-icon {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  /*  height: 5%;
+  width: 5%;*/
+}
+
+.weapon-info-card-container p {
+  margin: 0;
+}
+
+.weapon-info-card-element-icon {
   display: inline-block;
   height: 20px;
   width: 20px;
-
-/*  height: 5%;
-  width: 5%;*/
 }
 
 .saved-state-card {
