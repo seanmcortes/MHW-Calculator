@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "build": "babel . --ignore node_modules,build --out-dir build",
     "start:prod": "node build/server.js"
   },
