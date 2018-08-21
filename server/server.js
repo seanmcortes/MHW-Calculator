@@ -28,21 +28,12 @@ db.connect(function(err){
     }
   })
 });
-// connection.end();
-
-// const db = new Client({
-//   host: '127.0.0.1',
-//   user: 'root',
-//   password: 'Feb101992',
-//   db: 'test'
-// });
 
 const staticFiles = express.static(path.join(__dirname, '../client/build'));
 
 app.use(staticFiles);
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
-// app.set('port', 5000);
 
 app.use(express.static('client/src'))
 
@@ -171,6 +162,6 @@ app.get('/hitzone', function(req, res){
     })
 })
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log('Express started on port:' + app.get('port') + '; press Ctrl-C to terminate.');
-});
+const port = process.env.PORT || 5000;
+app.listen(port);
+console.log(`App listening on ${port}`);
