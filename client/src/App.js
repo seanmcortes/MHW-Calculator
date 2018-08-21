@@ -275,28 +275,28 @@ class App extends Component {
   }
 
 	getWeapons = _ => {
-		fetch(API + '/weapon')
+		fetch(API + `/weapon`)
 			.then(response => response.json())
 			.then(response => this.setState({ weapons: response.data }))
 			.catch(err => console.error(err))
 	}
 
 	getWeaponType = _ => {
-		fetch('http://localhost:3000/weapon-type')
+		fetch(API + `/weapon-type`)
 			.then(response => response.json())
 			.then(response => this.setState({ weaponType: response.data }))
 			.catch(err => console.error(err))
 	}
 
 	getMonsters = _ => {
-		fetch('http://localhost:3000/monster')
+		fetch(API + `/monster`)
 			.then(response => response.json())
 			.then(response => this.setState({ monsters: response.data }))
 			.catch(err => console.error(err))
 	}
 
 	weaponTypeSelect = (event) => {
-		fetch('http://localhost:3000/weapon', {
+		fetch(API + `/weapon`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -311,14 +311,14 @@ class App extends Component {
 	}
 
 	weaponSelect = (event) => {
-		fetch(`http://localhost:3000/weapon-select?id=` + event.target.value)
+		fetch(API + `/weapon-select?id=` + event.target.value)
 			.then(response => response.json())
 			.then(response => this.setState({ weaponValue: response.data[0] }))
 			.catch(err => console.error(err))
 	}
 
 	monsterSelect = (event) => {
-    fetch(`http://localhost:3000/monster-select?id=` + event.target.value)
+    fetch(API + `/monster-select?id=` + event.target.value)
       .then(response => response.json())
       .then(response => this.setState({ monsterValue: response.data }))
       .catch(err => console.error(err))
