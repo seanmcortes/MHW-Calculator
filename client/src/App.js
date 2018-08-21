@@ -9,6 +9,7 @@ import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGrou
 
 // import SelectSearch from 'react-select-search'
 
+const API = 'http://the-handlers-notes.herokuapp.com'
 class App extends Component {  
 	constructor(props){
 		super(props);
@@ -274,7 +275,7 @@ class App extends Component {
   }
 
 	getWeapons = _ => {
-		fetch('http://localhost:3000/weapon')
+		fetch(API + '/weapon')
 			.then(response => response.json())
 			.then(response => this.setState({ weapons: response.data }))
 			.catch(err => console.error(err))
