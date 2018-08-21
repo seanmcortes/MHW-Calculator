@@ -135,9 +135,11 @@ class Calculator extends Component{
             </tbody>
           </Table>
           <Table className="saved-table" size="sm" responsive>
-            <tr>
-              {savedState.map(this.renderSavedState)}
-            </tr>
+            <tbody>
+              <tr>
+                {savedState.map(this.renderSavedState)}
+              </tr>
+            </tbody>
           </Table>
         </div> 
     );
