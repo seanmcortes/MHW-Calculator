@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "client": "cd client && yarn start",
-    "server": "cd server && yarn && yarn start",
+    "server": "cd server && yarn start",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
 
     "start": "yarn server",
@@ -14,7 +14,9 @@
     "node": "9.4.0",
     "npm": "5.6.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    
+  },
   "devDependencies": {
     "concurrently": "^3.6.1"
   }

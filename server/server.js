@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var Client = require('mariasql');
 var path = require('path');
 var mysql = require('mysql');
 
@@ -29,7 +28,7 @@ db.connect(function(err){
 //   db: 'test'
 // });
 
-const staticFiles = express.static(path.join(__dirname, '../../client/build'));
+const staticFiles = express.static(path.join(__dirname, '../client/build'));
 
 app.use(staticFiles);
 app.use(bodyParser.urlencoded({ extended: true }))
