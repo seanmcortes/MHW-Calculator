@@ -18,6 +18,15 @@ db.connect(function(err){
     return;
   }
   console.log('RDS connection success!');
+
+  db.query('SELECT *  FROM ' + dbName + '.weapon', function(err, results){
+    if (err){
+      return res.send(err);
+    }
+    else {
+      console.log(results);
+    }
+  })
 });
 // connection.end();
 
