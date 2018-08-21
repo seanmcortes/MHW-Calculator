@@ -26,7 +26,6 @@ class Hitzone extends Component{
     if(this.props.monster !== prevProps.monster){
       this.setState({ data: true })
     }
-    console.log(this.props);
   }
 
 

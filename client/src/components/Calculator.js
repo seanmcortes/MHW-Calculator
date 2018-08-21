@@ -39,8 +39,6 @@ class Calculator extends Component{
     if(this.props !== prevProps){
       this.setState({ data: true })
     }
-    console.log(this.props);
-    console.log(this.state);
   }
 
   renderCalculations = (monster) => {
