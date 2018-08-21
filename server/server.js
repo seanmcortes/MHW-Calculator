@@ -17,16 +17,19 @@ db.connect(function(err){
     console.error('Database connection failed: ' + err.stack);
     return;
   }
+  console.log("test");
   console.log('RDS connection success!');
+
 
   db.query('SELECT *  FROM ' + dbName + '.weapon', function(err, results){
     if (err){
-      return res.send(err);
+      console.log("error");
     }
     else {
       console.log(results);
     }
   })
+  console.log("test");
 });
 
 const staticFiles = express.static(path.join(__dirname, '../client/build'));

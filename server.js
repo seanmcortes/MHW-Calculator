@@ -162,6 +162,6 @@ app.get('/hitzone', function(req, res){
     })
 })
 
-app.listen(app.get('port'), function(){
-  console.log('Express started on port:' + app.get('port') + '; press Ctrl-C to terminate.');
-});
+const port = process.env.PORT || 5000;
+app.listen(port);
+console.log(`App listening on ${port}`);
