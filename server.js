@@ -29,7 +29,7 @@ app.set('port', 5000);
 
 app.use(express.static('client/src'))
 
-const dbName = 'mhwCalculatorDB'
+const dbName = 'mhwCalculatorDB';
 
 app.get('/weapon', function(req, res){
   db.query('SELECT *  FROM ' + dbName + '.weapon', function(err, results){
@@ -75,7 +75,6 @@ app.get('/monster-select', function(req, res){
 
 
 app.post('/weapon', function(req, res){
-  console.log(req.body)
   if(req.body.class==0){
     db.query('SELECT * FROM ' + dbName + '.weapon', function(err, results){
       if (err){
@@ -87,8 +86,9 @@ app.post('/weapon', function(req, res){
     })
   }
   else{
+    console.log(req.body);
     db.query('SELECT * FROM ' + dbName + '.weapon w \
-      INNER JOIN `weapon_list` wl ON w.weapon_class = wl.weapon_list_id\
+      INNER JOIN ' + dbName + '.weapon_list wl ON w.weapon_class = wl.weapon_list_id\
       WHERE wl.name = ?',
       [req.body.class], function(err, results, fields){
         if(err){

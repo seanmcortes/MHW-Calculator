@@ -10,6 +10,8 @@ import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGrou
 // import SelectSearch from 'react-select-search'
 
 const API = 'http://the-handlers-notes.herokuapp.com'
+// const API = 'http://localhost:3000'
+
 class App extends Component {  
 	constructor(props){
 		super(props);
@@ -89,7 +91,7 @@ class App extends Component {
   renderSkills =  _ =>
   <Container fluid className="skills-container">
   	<Row>
-  		<Col xs="4" className="testing">
+  		<Col xs="4">
         <label className="skills-label">Affinity Sliding:</label><br className="skills-br"></br>
         <input type="checkbox" className="input-checkbox" name="affinitySliding" value="30" id="0" onChange={this.handleSkillBoxClick}></input>
   		</Col>
@@ -422,7 +424,7 @@ class App extends Component {
 		    				</FormGroup>
 		    				<FormGroup row>
                   <Col sm={{ size: 6, offset: 3}}>
-                    <WeaponInfo weapon={weaponValue}/>
+                    <WeaponInfo weapon={weaponValue} skills={skills}/>
                   </Col>
 		    				</FormGroup>
 		    				<FormGroup>
