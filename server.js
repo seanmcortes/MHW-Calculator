@@ -19,14 +19,6 @@ db.connect(function(err){
   }
   console.log('RDS connection success!');
 });
-// connection.end();
-
-// const db = new Client({
-//   host: '127.0.0.1',
-//   user: 'root',
-//   password: 'Feb101992',
-//   db: 'test'
-// });
 
 const staticFiles = express.static(path.join(__dirname, 'client/build'));
 
