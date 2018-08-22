@@ -10,8 +10,8 @@ import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGrou
 
 // import SelectSearch from 'react-select-search'
 
-// const API = 'http://the-handlers-notes.herokuapp.com'
-const API = 'http://localhost:3000'
+const API = 'http://the-handlers-notes.herokuapp.com'
+// const API = 'http://localhost:3000'
 
 class App extends Component {  
 	constructor(props){
@@ -443,7 +443,7 @@ class App extends Component {
 		    				</FormGroup>
 
                 <FormGroup>
-                  <Button onClick={this.toggle} className="btn-block btn-outline-secondary text-left">Skills</Button>
+                  <Button onClick={this.toggle} className="btn-block btn-outline-secondary text-left">Select Armor Skills</Button>
                   <Collapse isOpen={this.state.collapse}>
                     <div className="skills-div border">
                       {this.renderSkills()}
@@ -451,17 +451,27 @@ class App extends Component {
                   </Collapse>
                 </FormGroup>
 		    				<FormGroup>
-                  <Label for="monster-select" className="float-left">Monster:</Label>
-					    		<Input type="select" id="monster-select" size="sm" onChange={this.monsterSelect} required>
-					    			<option value="">None</option>
-					    			{monsters.map(this.renderMonsters)}
-					    		</Input>
+
+                  <Card>
+                    <CardHeader>Select a Monster</CardHeader>
+                    <CardBody>
+                      <Label for="monster-select" className="float-left">Monster:</Label>
+                      <Input type="select" id="monster-select" size="sm" onChange={this.monsterSelect} required>
+                        <option value="">None</option>
+                        {monsters.map(this.renderMonsters)}
+                      </Input>
+
+                      <Hitzone monster={monsterValue} />
+                    </CardBody>
+                  </Card>
+
+                  
 		    				</FormGroup>
 
                 <Button color="info" type="submit">Save</Button>
 	    				</Form>
 
-              <Hitzone monster={monsterValue} />
+              
               <Calculator weapon={weaponValue} monster={monsterValue} skills={skills} sharpness={weaponSharpness} savedState={savedState} />
   					
             </Col>
