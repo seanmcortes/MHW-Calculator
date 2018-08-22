@@ -409,9 +409,9 @@ class App extends Component {
                   <Card className="weapon-card">
                     <CardHeader>Select a Weapon</CardHeader>
                     <CardBody>
-                      <Container fluid>
+                      <Container>
                         <Row>
-                          <Col xs="3" className="weapon-col">
+                          <Col md="3" className="weapon-col">
                             <Row>
                               <Label for="weapon-type-select" className="float-left">Weapon Type:</Label>
                               <Input type="select" name="select" id="weapon-type-select" size="sm" onChange={this.weaponTypeSelect}>
@@ -433,7 +433,7 @@ class App extends Component {
                               {this.renderSharpness()}
                             </Row>
                           </Col>
-                          <Col xs="9" className="weapon-info-col">
+                          <Col md="9" className="weapon-info-col">
                             <WeaponInfo weapon={weaponValue} skills={skills}/>
                           </Col>
                         </Row>      
