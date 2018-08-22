@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { object, array } from 'prop-types';
 import { Container, Row, Col, Table, Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
 import { calcRawModifier, calcAffinityModifier, calcElementDamage, calcRawDamage } from '../helper/calculatorHelpers'
+import './Calculator.css';
 
 class Calculator extends Component{
   constructor(props){

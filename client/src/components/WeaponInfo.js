@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardBody, CardText, Container, Row, Col } from 'reactstrap';
+import './WeaponInfo.css';
 
 class WeaponInfo extends Component{
 

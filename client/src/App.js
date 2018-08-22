@@ -5,12 +5,13 @@ import Hitzone from './components/Hitzone';
 import Calculator from './components/Calculator'
 import WeaponInfo from './components/WeaponInfo'
 
-import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGroup, Collapse, Card, CardBody, Row, Col, Container} from 'reactstrap';
+import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGroup, Collapse, 
+  Card, CardBody, CardHeader, Row, Col, Container} from 'reactstrap';
 
 // import SelectSearch from 'react-select-search'
 
-const API = 'http://the-handlers-notes.herokuapp.com'
-// const API = 'http://localhost:3000'
+// const API = 'http://the-handlers-notes.herokuapp.com'
+const API = 'http://localhost:3000'
 
 class App extends Component {  
 	constructor(props){
@@ -96,7 +97,7 @@ class App extends Component {
         <input type="checkbox" className="input-checkbox" name="affinitySliding" value="30" id="0" onChange={this.handleSkillBoxClick}></input>
   		</Col>
   		<Col xs="4">
-        <label className="skills-label">Agitator:</label><br></br>
+        <label className="skills-label">Agitator:</label><br/>
         <input type="checkbox" className="input-checkbox" name="agitator" value="4-3" id="0" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="agitator" value="8-6" id="1" onChange={this.handleSkillBoxClick}></input>
         <input type="checkbox" className="input-checkbox" name="agitator" value="12-9" id="2" onChange={this.handleSkillBoxClick}></input>
@@ -254,7 +255,7 @@ class App extends Component {
   	<div className="sharpness-div">
       <Label for="sharpness-select" className="float-left">Sharpness:</Label>
   		<Input type="select" id="sharpness-select" size="sm" onChange={this.handleSharpnessSelect} required>
-  			<option key="NONE" value="" disabled selected>---</option>
+  			<option key="NONE" value="" disabled selected>Sharpness</option>
   			<option key="RED" value="0.50-0.25">Red</option>
   			<option key="ORANGE" value="0.75-0.50">Orange</option>
   			<option key="YELLOW" value="1.00-0.75">Yellow</option>
@@ -400,33 +401,55 @@ class App extends Component {
   			<Container className="app-container" fluid>
   				<Row>
             <Col xs="1" className="outer-padding" />
-  					<Col xs="10">
+  					<Col xs="10" className="inner-app">
+
               <div className="app-header">{this.renderHeader()}</div>
 	  					<Form id="weapon-1-form" onSubmit={this.handleSaveClick}>
 		    				<FormGroup row>
-                  <Col sm={3}>
-                    <Label for="weapon-type-select" className="float-left">Weapon Type:</Label>
-                    <Input type="select" name="select" id="weapon-type-select" size="sm" onChange={this.weaponTypeSelect}>
-                      <option value="0">All</option>
-                      {weaponType.map(this.renderWeaponType)}
-                    </Input>
-                  </Col>
-                  <Col sm={6}>
-                    <Label for="weapon-select" className="float-left">Weapon:</Label>
-                      <Input type="select" name="select" id="weapon-select" size="sm" onChange={this.weaponSelect} required>
-                        <option value="">None</option>
-                        {weapons.map(this.renderWeapons)}
-                      </Input>
-                  </Col>
-                  <Col sm={3}>
-                    {this.renderSharpness()}
-                  </Col>
+                  <Card className="weapon-card">
+                    <CardHeader>Select a Weapon</CardHeader>
+                    <CardBody>
+                      <Container fluid>
+                        <Row>
+                          <Col xs="3" className="weapon-col">
+                            <Row>
+                              <Label for="weapon-type-select" className="float-left">Weapon Type:</Label>
+                              <Input type="select" name="select" id="weapon-type-select" size="sm" onChange={this.weaponTypeSelect}>
+                                <option key="NONE" value="" disabled selected>Weapon Type</option>
+                                <option value="0">All</option>
+                                {weaponType.map(this.renderWeaponType)}
+                              </Input>
+                            </Row>
+                            
+                            <Row>
+                              <Label for="weapon-select" className="float-left">Weapon:</Label>
+                              <Input type="select" name="select" id="weapon-select" size="sm" onChange={this.weaponSelect} required>
+                                <option key="NONE" value="" disabled selected>Weapon</option>
+                                {weapons.map(this.renderWeapons)}
+                              </Input>
+                            </Row>
+                              
+                            <Row>
+                              {this.renderSharpness()}
+                            </Row>
+                          </Col>
+                          <Col xs="9" className="weapon-info-col">
+                            <WeaponInfo weapon={weaponValue} skills={skills}/>
+                          </Col>
+                        </Row>      
+                      </Container>
+                    </CardBody>
+                  </Card>
 		    				</FormGroup>
-		    				<FormGroup row>
-                  <Col sm={{ size: 6, offset: 3}}>
-                    <WeaponInfo weapon={weaponValue} skills={skills}/>
-                  </Col>
-		    				</FormGroup>
+
+                <FormGroup>
+                  <Button onClick={this.toggle} className="btn-block btn-outline-dark text-left">Skills</Button>
+                  <Collapse isOpen={this.state.collapse}>
+                    <div className="skills-div border">
+                      {this.renderSkills()}
+                    </div>
+                  </Collapse>
+                </FormGroup>
 		    				<FormGroup>
                   <Label for="monster-select" className="float-left">Monster:</Label>
 					    		<Input type="select" id="monster-select" size="sm" onChange={this.monsterSelect} required>
@@ -434,19 +457,14 @@ class App extends Component {
 					    			{monsters.map(this.renderMonsters)}
 					    		</Input>
 		    				</FormGroup>
-                <FormGroup>
-                  <Button onClick={this.toggle} style={{ marginBottom: '1rem' }} className="btn-block">Skills</Button>
-                  <Collapse isOpen={this.state.collapse}>
-                    <div className="skills-div border">
-                      {this.renderSkills()}
-                    </div>
-                  </Collapse>
-                </FormGroup>
+
                 <Button color="info" type="submit">Save</Button>
 	    				</Form>
+
               <Hitzone monster={monsterValue} />
               <Calculator weapon={weaponValue} monster={monsterValue} skills={skills} sharpness={weaponSharpness} savedState={savedState} />
-  					</Col>
+  					
+            </Col>
             <Col xs="1" className="outer-padding" />
   				</Row>
   			</Container>
