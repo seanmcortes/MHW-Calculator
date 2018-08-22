@@ -14,6 +14,8 @@
 
 .weapon-card {
   width: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 #sharpness-select option[value="0.50-0.25"]{

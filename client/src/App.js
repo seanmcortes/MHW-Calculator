@@ -443,7 +443,7 @@ class App extends Component {
 		    				</FormGroup>
 
                 <FormGroup>
-                  <Button onClick={this.toggle} className="btn-block btn-outline-dark text-left">Skills</Button>
+                  <Button onClick={this.toggle} className="btn-block btn-outline-secondary text-left">Skills</Button>
                   <Collapse isOpen={this.state.collapse}>
                     <div className="skills-div border">
                       {this.renderSkills()}
