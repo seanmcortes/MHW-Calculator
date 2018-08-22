@@ -1,0 +1,26 @@
+.weapon-info-card {
+  display: block;
+  margin: 0;
+}
+
+.weapon-info-card-weapon-icon {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  /*  height: 5%;
+  width: 5%;*/
+}
+
+.weapon-info-card-container p {
+  margin: 0;
+}
+
+.weapon-info-card-element-icon {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.saved-state-card {
+  background-color: rgba(255, 255, 255, 0);
+}
