@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardBody, CardText, Container, Row, Col } from 'reactstrap';
+import { Card, CardBody, CardText, Container, Row, Col, Table } from 'reactstrap';
 import './WeaponInfo.css';
 
 class WeaponInfo extends Component{
@@ -43,13 +43,28 @@ class WeaponInfo extends Component{
     return(
       <Card className='weapon-info-card'>
         <CardBody>
-          <Container className='weapon-info-card-container'>
+          <Container className='weapon-info-card-container' fluid>
             <Row>
-              <Col sm={3}><img src={weaponTypeIcon} className='weapon-info-card-weapon-icon'></img></Col>
-              <Col sm={9}>
-                <p>Attack: {this.state.weapon.bloat_damage}</p>
-                <p>Affinity: {this.state.weapon.weapon_affinity}</p>
-                <p>Element: {this.state.weapon.element_damage} {this.renderElementIcon()} </p>
+              <Col sm="1"><img src={weaponTypeIcon} className='weapon-info-card-weapon-icon'></img></Col>
+              <Col sm="11">
+                <Table className="weapon-info-table" size="xs" responsive>
+                  <tbody>
+                    <tr>
+                      <th>Attack</th>
+                      <th>True Attack</th>
+                      <th>Affinity</th>
+                      <th>Element Type</th>
+                      <th>Element Damage</th>
+                    </tr>
+                    <tr>
+                      <td>{this.state.weapon.bloat_damage}</td>
+                      <td>{this.state.weapon.real_damage}</td>
+                      <td>{this.state.weapon.weapon_affinity}</td>
+                      <td>{this.renderElementIcon()}</td>
+                      <td>{this.state.weapon.element_damage}</td>
+                    </tr>
+                  </tbody>
+                </Table>
               </Col>
             </Row>
           </Container>

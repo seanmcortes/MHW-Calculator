@@ -7,12 +7,13 @@
   display: inline-block;
   height: 50px;
   width: 50px;
-  /*  height: 5%;
-  width: 5%;*/
+  margin-top: 25px;
+  margin-left: -15px;
 }
 
-.weapon-info-card-container p {
-  margin: 0;
+.weapon-info-table tbody td, .weapon-info-table tbody th {
+  font-size: 14px;
+  text-align: center;
 }
 
 .weapon-info-card-element-icon {
@@ -21,6 +22,3 @@
   width: 20px;
 }
 
-.saved-state-card {
-  background-color: rgba(255, 255, 255, 0);
-}
