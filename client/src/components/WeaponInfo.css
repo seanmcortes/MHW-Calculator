@@ -1,14 +1,13 @@
 .weapon-info-card {
   display: block;
-  margin: 0;
 }
 
 .weapon-info-card-weapon-icon {
   display: inline-block;
   height: 50px;
   width: 50px;
-  margin-top: 25px;
-  margin-left: -15px;
+  margin-top: 5px;
+  margin-left: -20px;
 }
 
 .weapon-info-table tbody td, .weapon-info-table tbody th {

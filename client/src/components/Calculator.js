@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { object, array } from 'prop-types';
-import { Container, Row, Col, Table, Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
+import { Container, Row, Col, Table, Card, CardBody, CardTitle, CardHeader, CardSubtitle, CardText, Button } from 'reactstrap'
 import { calcRawModifier, calcAffinityModifier, calcElementDamage, calcRawDamage } from '../helper/calculatorHelpers'
 import './Calculator.css';
 
@@ -15,31 +15,31 @@ class Calculator extends Component{
     elementDamage: 0,
     totalDamage: 0,
     sharpness: 1,
-    savedState: [],
-    data: false
+    savedState: []
   };
 
-  static propTypes = {  
-    weapon: object,
-    monster: array,
-    skills: object
-  }
-
-  static defaultProps = {
-  }
+  // static propTypes = {  
+  //   weapon: object,
+  //   monster: array,
+  //   skills: object
+  // }
 
   componentDidUpdate(prevProps, prevState){
     if(this.props.savedState !== prevProps.savedState){
-      let tempSavedState = [...this.state.savedState];
+
+      // let tempSavedState = [...this.state.savedState];
+      let tempSavedState = this.state.savedState;
+      console.log(tempSavedState);
       tempSavedState.push(this.props.savedState);
+      
       tempSavedState.map((tempSavedState, index) =>
         tempSavedState.index = index
       )
+      // console.log(tempSavedState);
       this.setState({ savedState: tempSavedState })
+      // console.log(this.state.savedState)
     }
-    if(this.props !== prevProps){
-      this.setState({ data: true })
-    }
+
   }
 
   renderCalculations = (monster) => {
@@ -68,16 +68,17 @@ class Calculator extends Component{
   }
 
   renderSavedState = (savedState) => {
+    // console.log(savedState.skills);
     return(
       <td>
         <Card className="saved-state-card">
-          <CardTitle className="saved-state-card-title">
-            {savedState.index}
+          <CardHeader>
             {savedState.weaponValue.weapon_name} vs. {savedState.monsterValue[0].name}
-          </CardTitle>
-          <Button color="danger" onClick={this.handleCardDelete} value={savedState.index}>X</Button>
+            <Button className="saved-state-delete-button float-right" color="danger" onClick={this.handleCardDelete} value={savedState.index}>X</Button>
+          </CardHeader>
           <CardBody>
-            <Table responsive>
+            {this.renderSavedSkills(savedState.skills)}
+            <Table size="sm" striped responsive>
               <tbody>
                 <tr>
                   <th>Part</th>
@@ -91,6 +92,24 @@ class Calculator extends Component{
           </CardBody>
         </Card>
       </td>
+    )
+  }
+
+  renderSavedSkills = (savedState) => {
+    // console.log(savedState);
+    // let returnString = "";
+
+    // for (let i in savedState.skills){
+    //   let skillLevel =  savedState.skills[i][0];
+    //   if(skillLevel > 0){
+    //     let skillName = i.replace(/([A-Z]+)*([A-Z][a-z])/g, "$1 $2");
+    //     returnString = returnString.concat(skillName.charAt(0).toUpperCase() + skillName.slice(1) + 
+    //       " " + skillLevel + ", ");
+    //   }
+    // }
+    return(
+      "Hello"
+      // returnString
     )
   }
 
@@ -116,13 +135,13 @@ class Calculator extends Component{
   render(){
     const { savedState } = this.state;
 
-    if(!this.state.data){
+    if(this.props.weapon.weapon_id == 0 || this.props.monster.length == 0){
       return <div />
     }
 
     return(
         <div>
-          <Table className="calculator-table" size="sm" responsive>
+          <Table className="calculator-table" size="sm" striped responsive>
             <tbody className="calculator-tbody">
               <tr className="calculator-header">
                 <th>Part</th>

@@ -10,8 +10,8 @@ import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGrou
 
 // import SelectSearch from 'react-select-search'
 
-const API = 'http://the-handlers-notes.herokuapp.com'
-// const API = 'http://localhost:3000'
+// const API = 'http://the-handlers-notes.herokuapp.com'
+const API = 'http://localhost:3000'
 
 class App extends Component {  
 	constructor(props){
@@ -74,6 +74,7 @@ class App extends Component {
   }
 
 	componentDidUpdate(){
+    // console.log(this.state.savedState);
 	}
 
   /*
@@ -253,7 +254,6 @@ class App extends Component {
 
   renderSharpness = _ =>
   	<div className="sharpness-div">
-      <Label for="sharpness-select" className="float-left">Sharpness:</Label>
   		<Input type="select" id="sharpness-select" size="sm" onChange={this.handleSharpnessSelect} required>
   			<option key="NONE" value="" disabled selected>Sharpness</option>
   			<option key="RED" value="0.50-0.25">Red</option>
@@ -321,6 +321,7 @@ class App extends Component {
 	}
 
 	monsterSelect = (event) => {
+    console.log(event.target.value);
     fetch(API + `/monster-select?id=` + event.target.value)
       .then(response => response.json())
       .then(response => this.setState({ monsterValue: response.data }))
@@ -383,7 +384,6 @@ class App extends Component {
       skills: this.state.skills
     }
     this.setState({ savedState: values })
-    return false;
   }
 
 	handleSharpnessSelect = (event) => { 
@@ -411,29 +411,25 @@ class App extends Component {
                     <CardBody>
                       <Container>
                         <Row>
-                          <Col md="3" className="weapon-col">
+                          <Col sm="3" className="weapon-col">
                             <Row>
-                              <Label for="weapon-type-select" className="float-left">Weapon Type:</Label>
                               <Input type="select" name="select" id="weapon-type-select" size="sm" onChange={this.weaponTypeSelect}>
                                 <option key="NONE" value="" disabled selected>Weapon Type</option>
                                 <option value="0">All</option>
                                 {weaponType.map(this.renderWeaponType)}
                               </Input>
-                            </Row>
-                            
+                            </Row>                            
                             <Row>
-                              <Label for="weapon-select" className="float-left">Weapon:</Label>
                               <Input type="select" name="select" id="weapon-select" size="sm" onChange={this.weaponSelect} required>
                                 <option key="NONE" value="" disabled selected>Weapon</option>
                                 {weapons.map(this.renderWeapons)}
                               </Input>
                             </Row>
-                              
                             <Row>
                               {this.renderSharpness()}
                             </Row>
                           </Col>
-                          <Col md="9" className="weapon-info-col">
+                          <Col sm="9" className="weapon-info-col">
                             <WeaponInfo weapon={weaponValue} skills={skills}/>
                           </Col>
                         </Row>      
@@ -455,9 +451,8 @@ class App extends Component {
                   <Card>
                     <CardHeader>Select a Monster</CardHeader>
                     <CardBody>
-                      <Label for="monster-select" className="float-left">Monster:</Label>
                       <Input type="select" id="monster-select" size="sm" onChange={this.monsterSelect} required>
-                        <option value="">None</option>
+                        <option key="NONE" value="" disabled selected>Monster</option>
                         {monsters.map(this.renderMonsters)}
                       </Input>
 

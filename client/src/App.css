@@ -12,6 +12,10 @@
   max-width: 1366px;
 }
 
+.weapon-col select {
+  margin: 10px;
+}
+
 .weapon-card {
   width: 100%;
   margin-left: 15px;
@@ -43,7 +47,7 @@
 }
 
 .weapon-info-col {
-  padding-top: 30px;
+  padding-top: 10px;
 }
 /*.outer-padding {
   background-color: black;
@@ -115,6 +119,3 @@ input[type=checkbox]{
   margin-top: 0;
 }*/
 
-/*.weapon-col {
-  margin-left: 15px;
-}*/

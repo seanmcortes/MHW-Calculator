@@ -44,7 +44,14 @@ class Hitzone extends Component{
       <td key={monster_part_id + 'stun'}>{stun}</td>
     </tr>
 
-  
+  renderMonsterIcon = _ => {
+    const monsterName = (this.props.monster[0].name).split(' ').join('_');
+    const monsterIcon = "../images/" + monsterName + ".png"
+
+    return(
+      <img src={monsterIcon} className='monster-hitzone-icon'></img>
+    )
+  }
 
   render(){
     if(!this.state.data){
@@ -54,8 +61,9 @@ class Hitzone extends Component{
     const { monster } = this.props;
     return(
       <div className = "hitzone">
-        <h1>{monster[0].name} Hitzones</h1>
-        <Table className = "hitzone-table" size="xs" responsive>
+        {this.renderMonsterIcon()}
+        <h3>Hitzones</h3>
+        <Table className = "hitzone-table" size="sm" striped responsive>
           <tbody>
             <tr className = "hitzone-header">
               <th>Body Part</th>

@@ -1,3 +1,9 @@
 .calculator-table tbody tr td {
   max-width: 100px;
 }
+
+.saved-state-delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

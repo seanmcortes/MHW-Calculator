@@ -16,7 +16,6 @@ class WeaponInfo extends Component{
     if(this.props !== prevProps){
       let tempObject = Object.assign({}, this.props.weapon)
       this.setState({ weapon: tempObject })
-      console.log(this.state.weapon)
     }
   }
 
@@ -47,7 +46,7 @@ class WeaponInfo extends Component{
             <Row>
               <Col sm="1"><img src={weaponTypeIcon} className='weapon-info-card-weapon-icon'></img></Col>
               <Col sm="11">
-                <Table className="weapon-info-table" size="xs" responsive>
+                <Table className="weapon-info-table" size="sm" responsive>
                   <tbody>
                     <tr>
                       <th>Attack</th>
@@ -74,7 +73,6 @@ class WeaponInfo extends Component{
   }
 
   renderElementIcon = _ => {
-    console.log("successful call")
     if(this.state.weapon.element_type != ''){
       let elementTypeIcon = "../images/" + this.state.weapon.element_type + ".png";
       return(
