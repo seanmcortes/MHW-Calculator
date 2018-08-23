@@ -10,8 +10,8 @@ import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGrou
 
 // import SelectSearch from 'react-select-search'
 
-// const API = 'http://the-handlers-notes.herokuapp.com'
-const API = 'http://localhost:3000'
+const API = 'http://the-handlers-notes.herokuapp.com'
+// const API = 'http://localhost:3000'
 
 class App extends Component {  
 	constructor(props){
