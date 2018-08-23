@@ -1,10 +1,10 @@
 export function calcRawModifier(skills){
   let attackBoost = skills.attackBoost[1].toString().split('-');
   let agitator = skills.agitator[1].toString().split('-');
-  let rawModifier = parseInt(agitator[0]) +
-    parseInt(attackBoost[0]) +
-    parseInt(skills.peakPerformance[1]) +
-    parseInt(skills.resentment[1]);
+  let rawModifier = parseInt(agitator[0], 10) +
+    parseInt(attackBoost[0], 10) +
+    parseInt(skills.peakPerformance[1], 10) +
+    parseInt(skills.resentment[1], 10);
 
   return rawModifier;
 }
@@ -12,13 +12,15 @@ export function calcRawModifier(skills){
 export function calcAffinityModifier(skills){
     let attackBoost = skills.attackBoost[1].toString().split('-');
     let agitator = skills.agitator[1].toString().split('-');
-    let affinityModifier = skills.affinitySliding[1] +
-      parseInt(agitator[1]) + 
-      parseInt(attackBoost[1]) +
-      parseInt(skills.criticalEye[1]) +
-      parseInt(skills.latentPower[1]) +
-      parseInt(skills.maximumMight[1]) +
-      parseInt(skills.weaknessExploit[1]);
+    let affinityModifier = parseInt(skills.affinitySliding[1], 10) +
+      parseInt(agitator[1], 10) + 
+      parseInt(attackBoost[1], 10) +
+      parseInt(skills.criticalEye[1], 10) +
+      parseInt(skills.latentPower[1], 10) +
+      parseInt(skills.maximumMight[1], 10) +
+      parseInt(skills.weaknessExploit[1], 10);
+
+    console.log(affinityModifier);
 
     return affinityModifier;
 }
@@ -55,7 +57,7 @@ export function calcElementDamage(weapon, skills, monster, sharpness, affinityMo
   }
 
   elementBoost = elementBoost.toString().split('-');
-  let elementBloat = weapon.element_damage * parseInt(elementBoost[1]) + parseInt(elementBoost[0]);
+  let elementBloat = weapon.element_damage * parseInt(elementBoost[1], 10) + parseInt(elementBoost[0], 10);
   let elementCap = weapon.element_damage * 1.3;
   if(elementBloat > elementCap){
     elementBloat = elementCap;
@@ -93,8 +95,8 @@ export function calcRawDamage(weapon, skills, monster, sharpness, rawModifier, a
     criticalBoost = 0.25;
   }
 
-  let finalRaw = parseInt(weapon.real_damage) + rawModifier;
-  let finalCrit = 1 + criticalBoost * (parseInt(weapon.weapon_affinity) + affinityModifier)/100;
+  let finalRaw = parseInt(weapon.real_damage, 10) + rawModifier;
+  let finalCrit = 1 + criticalBoost * (parseInt(weapon.weapon_affinity, 10) + affinityModifier)/100;
   let extraModifiers = (1.00 + parseFloat(skills.fortify[1]) + parseFloat(skills.heroics[1])).toFixed(2);
 
   return Math.round(
