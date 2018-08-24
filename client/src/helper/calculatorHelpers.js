@@ -19,9 +19,6 @@ export function calcAffinityModifier(skills){
       parseInt(skills.latentPower[1], 10) +
       parseInt(skills.maximumMight[1], 10) +
       parseInt(skills.weaknessExploit[1], 10);
-
-    console.log(affinityModifier);
-
     return affinityModifier;
 }
 

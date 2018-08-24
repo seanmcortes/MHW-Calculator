@@ -49,6 +49,10 @@
 .weapon-info-col {
   padding-top: 10px;
 }
+
+#monster-select {
+  max-width: 150px;
+}
 /*.outer-padding {
   background-color: black;
   height:110vh;

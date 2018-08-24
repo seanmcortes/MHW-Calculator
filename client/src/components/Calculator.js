@@ -4,6 +4,8 @@ import { Container, Row, Col, Table, Card, CardBody, CardTitle, CardHeader, Card
 import { calcRawModifier, calcAffinityModifier, calcElementDamage, calcRawDamage } from '../helper/calculatorHelpers'
 import './Calculator.css';
 
+let skillContainer = [];
+
 class Calculator extends Component{
   constructor(props){
     super(props);
@@ -18,26 +20,14 @@ class Calculator extends Component{
     savedState: []
   };
 
-  // static propTypes = {  
-  //   weapon: object,
-  //   monster: array,
-  //   skills: object
-  // }
-
   componentDidUpdate(prevProps, prevState){
     if(this.props.savedState !== prevProps.savedState){
-
-      // let tempSavedState = [...this.state.savedState];
-      let tempSavedState = this.state.savedState;
-      console.log(tempSavedState);
+      let tempSavedState = [...this.state.savedState];
       tempSavedState.push(this.props.savedState);
       
-      tempSavedState.map((tempSavedState, index) =>
-        tempSavedState.index = index
-      )
-      // console.log(tempSavedState);
+      skillContainer.push(this.props.savedState);
+
       this.setState({ savedState: tempSavedState })
-      // console.log(this.state.savedState)
     }
 
   }
@@ -68,7 +58,6 @@ class Calculator extends Component{
   }
 
   renderSavedState = (savedState) => {
-    // console.log(savedState.skills);
     return(
       <td>
         <Card className="saved-state-card">
@@ -77,7 +66,7 @@ class Calculator extends Component{
             <Button className="saved-state-delete-button float-right" color="danger" onClick={this.handleCardDelete} value={savedState.index}>X</Button>
           </CardHeader>
           <CardBody>
-            {this.renderSavedSkills(savedState.skills)}
+            {this.renderSavedSkills(savedState)}
             <Table size="sm" striped responsive>
               <tbody>
                 <tr>
@@ -96,20 +85,18 @@ class Calculator extends Component{
   }
 
   renderSavedSkills = (savedState) => {
-    // console.log(savedState);
-    // let returnString = "";
+    let returnString = "";
 
-    // for (let i in savedState.skills){
-    //   let skillLevel =  savedState.skills[i][0];
-    //   if(skillLevel > 0){
-    //     let skillName = i.replace(/([A-Z]+)*([A-Z][a-z])/g, "$1 $2");
-    //     returnString = returnString.concat(skillName.charAt(0).toUpperCase() + skillName.slice(1) + 
-    //       " " + skillLevel + ", ");
-    //   }
-    // }
+    for (let i in savedState.skills){
+      let skillLevel =  savedState.skills[i][0];
+      if(skillLevel > 0){
+        let skillName = i.replace(/([A-Z]+)*([A-Z][a-z])/g, "$1 $2");
+        returnString = returnString.concat(skillName.charAt(0).toUpperCase() + skillName.slice(1) + 
+          " " + skillLevel + ", ");
+      }
+    }
     return(
-      "Hello"
-      // returnString
+      returnString
     )
   }
 
@@ -140,26 +127,29 @@ class Calculator extends Component{
     }
 
     return(
-        <div>
-          <Table className="calculator-table" size="sm" striped responsive>
-            <tbody className="calculator-tbody">
-              <tr className="calculator-header">
-                <th>Part</th>
-                <th>Raw</th>
-                <th>Element</th>
-                <th>Total</th>
-              </tr>
-              {this.props.monster.map(this.renderCalculations)}
-            </tbody>
-          </Table>
-          <Table className="saved-table" size="sm" responsive>
-            <tbody>
-              <tr>
-                {savedState.map(this.renderSavedState)}
-              </tr>
-            </tbody>
-          </Table>
-        </div> 
+        <Card>
+          <CardHeader>Damage</CardHeader>
+            <CardBody>
+              <Table className="calculator-table" size="sm" striped responsive>
+                <tbody className="calculator-tbody">
+                  <tr className="calculator-header">
+                    <th>Part</th>
+                    <th>Raw</th>
+                    <th>Element</th>
+                    <th>Total</th>
+                  </tr>
+                  {this.props.monster.map(this.renderCalculations)}
+                </tbody>
+              </Table>
+              <Table className="saved-table" size="sm" responsive>
+                <tbody>
+                  <tr>
+                    {savedState.map(this.renderSavedState)}
+                  </tr>
+                </tbody>
+              </Table>
+            </CardBody>
+          </Card>  
     );
   }
 }

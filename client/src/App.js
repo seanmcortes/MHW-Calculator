@@ -4,14 +4,15 @@ import './App.css';
 import Hitzone from './components/Hitzone';
 import Calculator from './components/Calculator'
 import WeaponInfo from './components/WeaponInfo'
+import SavedStates from './components/SavedStates'
 
 import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGroup, Collapse, 
   Card, CardBody, CardHeader, Row, Col, Container} from 'reactstrap';
 
 // import SelectSearch from 'react-select-search'
 
-const API = 'http://the-handlers-notes.herokuapp.com'
-// const API = 'http://localhost:3000'
+// const API = 'http://the-handlers-notes.herokuapp.com'
+const API = 'http://localhost:3000'
 
 class App extends Component {  
 	constructor(props){
@@ -73,8 +74,7 @@ class App extends Component {
 		this.getWeaponType();
   }
 
-	componentDidUpdate(){
-    // console.log(this.state.savedState);
+	componentDidUpdate(prevState){
 	}
 
   /*
@@ -321,7 +321,6 @@ class App extends Component {
 	}
 
 	monsterSelect = (event) => {
-    console.log(event.target.value);
     fetch(API + `/monster-select?id=` + event.target.value)
       .then(response => response.json())
       .then(response => this.setState({ monsterValue: response.data }))
@@ -330,9 +329,9 @@ class App extends Component {
 
 	handleSkillBoxClick = (event) => {
 		let box = document.getElementsByName(event.target.name);
+    let tempSkills = Object.assign({}, this.state.skills);
 		for(let [key, value] of Object.entries(this.state.skills)){
 			if(key === event.target.name){
-				let skills = Object.assign({}, this.state.skills);
 				if(event.target.checked==true){
 					for(var i = 0; i < event.target.id; i++){
 						box[i].checked = true;
@@ -341,47 +340,49 @@ class App extends Component {
 						if(box[i] !== undefined)
 							if(box[i].checked) box[i].checked = false;
 					}
-					skills[key][1] = event.target.value;
-					skills[key][0] = Number(event.target.id) + 1;
+					tempSkills[key][1] = event.target.value;
+					tempSkills[key][0] = Number(event.target.id) + 1;
 				}else{
           if(event.target.name == "dragonAttack" ||
              event.target.name == "fireAttack" ||
              event.target.name == "iceAttack" ||
              event.target.name == "thunderAttack" ||
              event.target.name == "waterAttack"){
-            skills[key][1] = '0-1';
-            skills[key][0] = 0;
+            tempSkills[key][1] = '0-1';
+            tempSkills[key][0] = 0;
           }
           else if
             (event.target.name == "agitator" ||
              event.target.name == "attackBoost"){
-            skills[key][1] = '0-0';
-            skills[key][0] = 0;
+            tempSkills[key][1] = '0-0';
+            tempSkills[key][0] = 0;
             }
           else{
-            skills[key][1] = 0;
-            skills[key][0] = 0;
+            tempSkills[key][1] = 0;
+            tempSkills[key][0] = 0;
           }
 
 					for(i = 0; i < box.length; i++){
 						box[i].checked = false;
 					}
 				}
-				this.setState({ skills: skills });
 			}
 		}
+    this.setState({ skills: tempSkills });
 	}
 
   handleSaveClick = (event) => {
     event.preventDefault();
     event.stopPropagation();
 
+
     let values = {
       index: 0,
       weaponValue: this.state.weaponValue, 
       monsterValue: this.state.monsterValue, 
       weaponSharpness: this.state.weaponSharpness, 
-      skills: this.state.skills
+      skills: this.state.skills,
+      testing: this.state.skills
     }
     this.setState({ savedState: values })
   }
@@ -404,7 +405,7 @@ class App extends Component {
   					<Col xs="10" className="inner-app">
 
               <div className="app-header">{this.renderHeader()}</div>
-	  					<Form id="weapon-1-form" onSubmit={this.handleSaveClick}>
+	  					<Form id="weapon-1-form">
 		    				<FormGroup row>
                   <Card className="weapon-card">
                     <CardHeader>Select a Weapon</CardHeader>
@@ -446,8 +447,8 @@ class App extends Component {
                     </div>
                   </Collapse>
                 </FormGroup>
-		    				<FormGroup>
 
+		    				<FormGroup>
                   <Card>
                     <CardHeader>Select a Monster</CardHeader>
                     <CardBody>
@@ -459,13 +460,12 @@ class App extends Component {
                       <Hitzone monster={monsterValue} />
                     </CardBody>
                   </Card>
-
-                  
 		    				</FormGroup>
 
-                <Button color="info" type="submit">Save</Button>
+                <FormGroup>
+                  <Button color="info" type="btn" onClick={this.handleSaveClick}>Save</Button>
+                </FormGroup>
 	    				</Form>
-
               
               <Calculator weapon={weaponValue} monster={monsterValue} skills={skills} sharpness={weaponSharpness} savedState={savedState} />
   					

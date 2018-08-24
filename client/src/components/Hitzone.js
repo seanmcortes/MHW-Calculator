@@ -62,7 +62,7 @@ class Hitzone extends Component{
     return(
       <div className = "hitzone">
         {this.renderMonsterIcon()}
-        <h3>Hitzones</h3>
+        <h3> Hitzones</h3>
         <Table className = "hitzone-table" size="sm" striped responsive>
           <tbody>
             <tr className = "hitzone-header">
