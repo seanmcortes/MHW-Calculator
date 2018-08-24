@@ -7,7 +7,7 @@ import WeaponInfo from './components/WeaponInfo'
 import SavedStates from './components/SavedStates'
 
 import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGroup, Collapse, 
-  Card, CardBody, CardHeader, Row, Col, Container} from 'reactstrap';
+  Card, CardBody, CardHeader, Row, Col, Container, Navbar, Nav, NavItem, NavLink} from 'reactstrap';
 
 // import SelectSearch from 'react-select-search'
 
@@ -399,6 +399,14 @@ class App extends Component {
 
   	return (
   		<div className="App">
+        <Navbar className="justify-content-center top-navbar">
+          <Nav className="top-nav">
+            <NavItem className="top-nav-item max-auto">
+                <img src="../images/felyne-icon.png" className="felyne-icon"></img>
+            </NavItem>
+          </Nav>
+        </Navbar>
+
   			<Container className="app-container" fluid>
   				<Row>
             <Col xs="1" className="outer-padding" />
@@ -473,6 +481,16 @@ class App extends Component {
             <Col xs="1" className="outer-padding" />
   				</Row>
   			</Container>
+
+        <Navbar className="justify-content-center fixed-bottom bottom-navbar">
+          <Nav className="bottom-nav">
+            <NavItem className="bottom-nav-item">
+              <a href="https://github.com/seanmcortes/mhw-calculator">
+                <img src="../images/github.png" className="git-icon"></img>
+              </a>
+            </NavItem>
+          </Nav>
+        </Navbar>
   		</div>
   	);
   }

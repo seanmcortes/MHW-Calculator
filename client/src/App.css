@@ -53,29 +53,6 @@
 #monster-select {
   max-width: 150px;
 }
-/*.outer-padding {
-  background-color: black;
-  height:110vh;
-}*/
-
-/*.App {
-  background-color: black;
-  height:110vh;
-}*/
-
-/*.app-container {
-  max-width: 970px;
-  background-color: #ce9452;
-  background: url('./images/journal_paper.jpg') center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: 100% 100%;
-  -o-background-size: cover;
-  background-size: cover;
-}*/
-
-/*.inner-app {
-  background-color: rgb(255, 230, 204);
-}*/
 
 .skills-button {
   background-color: white;
@@ -117,9 +94,32 @@ input[type=checkbox]{
   vertical-align: middle;
 }
 
-/*br {
-  display: block;
-  content: "";
-  margin-top: 0;
-}*/
+.git-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
 
+.top-navbar, .bottom-navbar {
+  background-color: rgb(122, 131, 145);
+}
+
+.bottom-nav-item {
+  color: white;
+}
+
+.top-nav-item {
+  position: relative;
+}
+
+.top-navbar {
+  height: 50px;
+}
+
+.felyne-icon {
+  position: relative;
+  margin-top: 15px;
+  height: 75px;
+  width: 100px;
+}
