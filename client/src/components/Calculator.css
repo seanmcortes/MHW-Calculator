@@ -3,7 +3,26 @@
 }
 
 .saved-state-delete-button {
+  display: inline-block;
+  padding-left: 100px;
   position: absolute;
   top: 0;
   right: 0;
 }
+
+.saved-state-card {
+  max-height: 100%;
+  max-width: 300px;
+}
+
+.saved-state-card-body{
+  font-size: 10px;
+}
+
+.saved-table .table {
+  font-size: 14px;
+}
+/*.saved-table td {
+  text-align: center;
+}*/
+

@@ -3,6 +3,9 @@
   src: local('MonsterHunter'), url('./fonts/MonsterHunter.ttf') format('truetype');
 }
 
+body {
+  padding-bottom: 100px;
+}
 .app-title {
   font-family: 'MonsterHunter';
   font-size: 35px;

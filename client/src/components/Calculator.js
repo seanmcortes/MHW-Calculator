@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
-import { object, array } from 'prop-types';
-import { Container, Row, Col, Table, Card, CardBody, CardTitle, CardHeader, CardSubtitle, CardText, Button } from 'reactstrap'
+import { Table, Card, CardBody, CardHeader, Button } from 'reactstrap'
 import { calcRawModifier, calcAffinityModifier, calcElementDamage, calcRawDamage } from '../helper/calculatorHelpers'
 import './Calculator.css';
-import cloneDeep from 'clone-deep';
 
-
-let testContainer = [];
-let testContainer2 = [];
 
 class Calculator extends Component{
   constructor(props){
@@ -51,7 +46,7 @@ class Calculator extends Component{
 
   handleCardDelete = (event) => {
     let tempArray = [...this.state.savedState];
-    let index = tempArray.findIndex(i => i.index == event.target.value);
+    let index = tempArray.findIndex(i => i.index === event.target.value);
     tempArray.splice(index, 1);
     this.setState({ savedState: tempArray });
   }
@@ -61,10 +56,10 @@ class Calculator extends Component{
       <td>
         <Card className="saved-state-card">
           <CardHeader>
-            {savedState.weaponValue.weapon_name} vs. {savedState.monsterValue[0].name}
+            {savedState.weaponValue.weapon_name} <br /> {savedState.monsterValue[0].name}
             <Button className="saved-state-delete-button float-right" color="danger" onClick={this.handleCardDelete} value={savedState.index}>X</Button>
           </CardHeader>
-          <CardBody>
+          <CardBody className="saved-state-card-body">
             {this.renderSavedSkills(savedState)}
             <Table size="sm" striped responsive>
               <tbody>
@@ -94,6 +89,8 @@ class Calculator extends Component{
           " " + skillLevel + ", ");
       }
     }
+    returnString = returnString.slice(0, -2);
+
     return(
       returnString
     )
@@ -121,7 +118,7 @@ class Calculator extends Component{
   render(){
 
 
-    if(this.props.weapon.weapon_id == 0 || this.props.monster.length == 0){
+    if(this.props.weapon.weapon_id === 0 || this.props.monster.length === 0){
       return <div />
     }
 

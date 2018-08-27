@@ -61,12 +61,12 @@ export function calcElementDamage(weapon, skills, monster, sharpness, affinityMo
   }
 
   let critEle = 0;
-  if(skills.criticalElement[0] == 1){
+  if(skills.criticalElement[0] === 1){
     let critEleArray = skills.criticalElement[1].toString().split('-');
         
-    if(weapon.weapon_class == 1)
+    if(weapon.weapon_class === 1)
       critEle = critEleArray[0];
-    else if (weapon.weapon_class == 3 || weapon.weapon_class == 4)
+    else if (weapon.weapon_class === 3 || weapon.weapon_class === 4)
       critEle = critEleArray[2];
     else
       critEle = critEleArray[1];
@@ -78,7 +78,7 @@ export function calcElementDamage(weapon, skills, monster, sharpness, affinityMo
 
 export function calcRawDamage(weapon, skills, monster, sharpness, rawModifier, affinityModifier){
   let damageType = 0;
-  if(weapon.weapon_class == 5 || weapon.weapon_class == 6){
+  if(weapon.weapon_class === 5 || weapon.weapon_class === 6){
     damageType = monster.blunt;
   } else {
     damageType = monster.sever;

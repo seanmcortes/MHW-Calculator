@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-import { Card, CardBody, CardText, Container, Row, Col, Table } from 'reactstrap';
+import { Card, CardBody, Container, Row, Col, Table } from 'reactstrap';
 import './WeaponInfo.css';
 
 class WeaponInfo extends Component{
-
   state={
     weapon: {}
-  }
-
-  constructor(props){
-    super(props);
   }
 
   componentDidUpdate(prevProps){
@@ -37,14 +32,12 @@ class WeaponInfo extends Component{
 
     let weaponTypeIcon = "../images/" + tempText[this.state.weapon.weapon_class] + ".png";
 
-    let elementTypeIcon = "../images/" + this.state.weapon.element_type + ".png";
-
     return(
       <Card className='weapon-info-card'>
         <CardBody>
           <Container className='weapon-info-card-container' fluid>
             <Row>
-              <Col sm="1"><img src={weaponTypeIcon} className='weapon-info-card-weapon-icon'></img></Col>
+              <Col sm="1"><img src={weaponTypeIcon} className='weapon-info-card-weapon-icon' alt="Weapon Card Icon"></img></Col>
               <Col sm="11">
                 <Table className="weapon-info-table" size="sm" responsive>
                   <tbody>
@@ -73,10 +66,10 @@ class WeaponInfo extends Component{
   }
 
   renderElementIcon = _ => {
-    if(this.state.weapon.element_type != ''){
+    if(this.state.weapon.element_type !== ''){
       let elementTypeIcon = "../images/" + this.state.weapon.element_type + ".png";
       return(
-        <img src={elementTypeIcon} className='weapon-info-card-element-icon'></img>
+        <img src={elementTypeIcon} className='weapon-info-card-element-icon' alt="Element Type Icon"></img>
       )
     }
   }

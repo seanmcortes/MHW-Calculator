@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Hitzone from './components/Hitzone';
 import Calculator from './components/Calculator'
 import WeaponInfo from './components/WeaponInfo'
-import SavedStates from './components/SavedStates'
 import cloneDeep from 'clone-deep';
 
-import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGroup, Collapse, 
-  Card, CardBody, CardHeader, Row, Col, Container, Navbar, Nav, NavItem, NavLink} from 'reactstrap';
+import { Button, Form, FormGroup, Input, Collapse, 
+  Card, CardBody, CardHeader, Row, Col, Container, Navbar, Nav, NavItem } from 'reactstrap';
 
 // const API = 'http://the-handlers-notes.herokuapp.com'
 const API = 'http://localhost:3000'
@@ -269,8 +267,9 @@ class App extends Component {
       <div>
         <h1>the Handler's Notes</h1>
         <p>
-          Welcome to yet another weapon calculator. Specify a weapon, its sharpness level, and a target
-          monster. {'\n'} You may save a combination for comparison with another.
+          Specify a weapon, its sharpness level, offensive armor skills, and a target
+          monster. <br />
+          You may save a combinations for comparison with others.
         </p>
       </div>
     )
@@ -329,9 +328,9 @@ class App extends Component {
 	handleSkillBoxClick = (event) => {
 		let box = document.getElementsByName(event.target.name);
     let tempSkills = Object.assign({}, this.state.skills);
-		for(let [key, value] of Object.entries(this.state.skills)){
+		for(let [key] of Object.entries(this.state.skills)){
 			if(key === event.target.name){
-				if(event.target.checked==true){
+				if(event.target.checked === true){
 					for(var i = 0; i < event.target.id; i++){
 						box[i].checked = true;
 					}
@@ -342,17 +341,17 @@ class App extends Component {
 					tempSkills[key][1] = event.target.value;
 					tempSkills[key][0] = Number(event.target.id) + 1;
 				}else{
-          if(event.target.name == "dragonAttack" ||
-             event.target.name == "fireAttack" ||
-             event.target.name == "iceAttack" ||
-             event.target.name == "thunderAttack" ||
-             event.target.name == "waterAttack"){
+          if(event.target.name === "dragonAttack" ||
+             event.target.name === "fireAttack" ||
+             event.target.name === "iceAttack" ||
+             event.target.name === "thunderAttack" ||
+             event.target.name === "waterAttack"){
             tempSkills[key][1] = '0-1';
             tempSkills[key][0] = 0;
           }
           else if
-            (event.target.name == "agitator" ||
-             event.target.name == "attackBoost"){
+            (event.target.name === "agitator" ||
+             event.target.name === "attackBoost"){
             tempSkills[key][1] = '0-0';
             tempSkills[key][0] = 0;
             }
@@ -400,7 +399,7 @@ class App extends Component {
         <Navbar className="justify-content-center top-navbar">
           <Nav className="top-nav">
             <NavItem className="top-nav-item max-auto">
-                <img src="../images/felyne-icon.png" className="felyne-icon"></img>
+                <img src="../images/felyne-icon.png" className="felyne-icon" alt="Felyne Icon"></img>
             </NavItem>
           </Nav>
         </Navbar>
@@ -486,7 +485,7 @@ class App extends Component {
           <Nav className="bottom-nav">
             <NavItem className="bottom-nav-item">
               <a href="https://github.com/seanmcortes/mhw-calculator">
-                <img src="../images/github.png" className="git-icon"></img>
+                <img src="../images/github.png" className="git-icon" alt="GitHub Icon"></img>
               </a>
             </NavItem>
           </Nav>

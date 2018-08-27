@@ -4,10 +4,6 @@ import { Table } from 'reactstrap';
 import './Hitzone.css';
 
 class Hitzone extends Component{
-  constructor(props){
-    super(props);
-  };
-
   state={
     monster: [],
     data: false
@@ -49,7 +45,7 @@ class Hitzone extends Component{
     const monsterIcon = "../images/" + monsterName + ".png"
 
     return(
-      <img src={monsterIcon} className='monster-hitzone-icon'></img>
+      <img src={monsterIcon} className='monster-hitzone-icon' alt="Target Monster Logo"></img>
     )
   }
 
