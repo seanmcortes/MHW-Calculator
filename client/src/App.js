@@ -3,13 +3,12 @@ import './App.css';
 import Hitzone from './components/Hitzone';
 import Calculator from './components/Calculator'
 import WeaponInfo from './components/WeaponInfo'
-import cloneDeep from 'clone-deep';
 
 import { Button, Form, FormGroup, Input, Collapse, 
   Card, CardBody, CardHeader, Row, Col, Container, Navbar, Nav, NavItem } from 'reactstrap';
 
-// const API = 'http://the-handlers-notes.herokuapp.com'
-const API = 'http://localhost:3000'
+const API = 'http://the-handlers-notes.herokuapp.com'
+// const API = 'http://localhost:3000'
 
 class App extends Component {  
 	constructor(props){
@@ -373,7 +372,9 @@ class App extends Component {
     event.preventDefault();
     event.stopPropagation();
 
-    let deepSkills = cloneDeep(this.state.skills);
+    let tempSkills = JSON.stringify(this.state.skills);
+    let deepSkills = JSON.parse(tempSkills);
+
     let values = {
       index: 0,
       weaponValue: this.state.weaponValue, 
