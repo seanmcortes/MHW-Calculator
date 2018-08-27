@@ -7,8 +7,8 @@ import WeaponInfo from './components/WeaponInfo'
 import { Button, Form, FormGroup, Input, Collapse, 
   Card, CardBody, CardHeader, Row, Col, Container, Navbar, Nav, NavItem } from 'reactstrap';
 
-const API = 'http://the-handlers-notes.herokuapp.com'
-// const API = 'http://localhost:3000'
+// const API = 'http://the-handlers-notes.herokuapp.com'
+const API = 'http://localhost:3000'
 
 class App extends Component {  
 	constructor(props){
@@ -65,6 +65,7 @@ class App extends Component {
 	};
 
 	componentDidMount() {
+    document.title = "the Handler's Notes";
 		this.getWeapons();
 		this.getMonsters();
 		this.getWeaponType();
