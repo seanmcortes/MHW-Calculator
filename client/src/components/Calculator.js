@@ -3,8 +3,11 @@ import { object, array } from 'prop-types';
 import { Container, Row, Col, Table, Card, CardBody, CardTitle, CardHeader, CardSubtitle, CardText, Button } from 'reactstrap'
 import { calcRawModifier, calcAffinityModifier, calcElementDamage, calcRawDamage } from '../helper/calculatorHelpers'
 import './Calculator.css';
+import cloneDeep from 'clone-deep';
 
-let skillContainer = [];
+
+let testContainer = [];
+let testContainer2 = [];
 
 class Calculator extends Component{
   constructor(props){
@@ -24,12 +27,8 @@ class Calculator extends Component{
     if(this.props.savedState !== prevProps.savedState){
       let tempSavedState = [...this.state.savedState];
       tempSavedState.push(this.props.savedState);
-      
-      skillContainer.push(this.props.savedState);
-
-      this.setState({ savedState: tempSavedState })
+      this.setState({ savedState: tempSavedState });
     }
-
   }
 
   renderCalculations = (monster) => {
@@ -120,7 +119,7 @@ class Calculator extends Component{
   }
   
   render(){
-    const { savedState } = this.state;
+
 
     if(this.props.weapon.weapon_id == 0 || this.props.monster.length == 0){
       return <div />
@@ -144,12 +143,12 @@ class Calculator extends Component{
               <Table className="saved-table" size="sm" responsive>
                 <tbody>
                   <tr>
-                    {savedState.map(this.renderSavedState)}
+                    {this.state.savedState.map(this.renderSavedState)}
                   </tr>
                 </tbody>
               </Table>
             </CardBody>
-          </Card>  
+        </Card>  
     );
   }
 }

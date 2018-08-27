@@ -5,11 +5,10 @@ import Hitzone from './components/Hitzone';
 import Calculator from './components/Calculator'
 import WeaponInfo from './components/WeaponInfo'
 import SavedStates from './components/SavedStates'
+import cloneDeep from 'clone-deep';
 
 import { Button, Form, FormGroup, Label, FormText, Input, CustomInput, InputGroup, Collapse, 
   Card, CardBody, CardHeader, Row, Col, Container, Navbar, Nav, NavItem, NavLink} from 'reactstrap';
-
-// import SelectSearch from 'react-select-search'
 
 // const API = 'http://the-handlers-notes.herokuapp.com'
 const API = 'http://localhost:3000'
@@ -375,14 +374,13 @@ class App extends Component {
     event.preventDefault();
     event.stopPropagation();
 
-
+    let deepSkills = cloneDeep(this.state.skills);
     let values = {
       index: 0,
       weaponValue: this.state.weaponValue, 
       monsterValue: this.state.monsterValue, 
       weaponSharpness: this.state.weaponSharpness, 
-      skills: this.state.skills,
-      testing: this.state.skills
+      skills: deepSkills
     }
     this.setState({ savedState: values })
   }
@@ -476,11 +474,13 @@ class App extends Component {
 	    				</Form>
               
               <Calculator weapon={weaponValue} monster={monsterValue} skills={skills} sharpness={weaponSharpness} savedState={savedState} />
-  					
+
             </Col>
             <Col xs="1" className="outer-padding" />
   				</Row>
   			</Container>
+
+
 
         <Navbar className="justify-content-center fixed-bottom bottom-navbar">
           <Nav className="bottom-nav">
