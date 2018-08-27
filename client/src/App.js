@@ -269,7 +269,7 @@ class App extends Component {
         <p>
           Specify a weapon, its sharpness level, offensive armor skills, and a target
           monster. <br />
-          You may save a combinations for comparison with others.
+          You may save a combination for comparison with others.
         </p>
       </div>
     )
