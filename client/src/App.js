@@ -265,7 +265,7 @@ class App extends Component {
   renderHeader = _ => {
     return(
       <div>
-        <h1>the Handler's Notes</h1>
+        <h1>{"the Handler's Notes"}</h1>
         <p>
           Specify a weapon, its sharpness level, offensive armor skills, and a target
           monster. <br />
