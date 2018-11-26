@@ -2,17 +2,9 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
-var mysql = require('mysql');
+var mysql = require('./dbcon.js')
 
-
-var db = mysql.createConnection({
-  host: 'mhw-calculator-db.c2rhnqjzo1dk.us-east-2.rds.amazonaws.com',
-  user: 'seancortes',
-  password: 'Feb101992',
-  port: '3306',
-})
-
-db.connect(function(err){
+mysql.db.connect(function(err){
   if(err){
     console.error('Database connection failed: ' + err.stack);
     return;
@@ -32,7 +24,7 @@ app.use(express.static('client/src'))
 const dbName = 'mhwCalculatorDB';
 
 app.get('/weapon', function(req, res){
-  db.query('SELECT *  FROM ' + dbName + '.weapon', function(err, results){
+  mysql.db.query('SELECT *  FROM ' + dbName + '.weapon', function(err, results){
     if (err){
       return res.send(err);
     }
@@ -45,7 +37,7 @@ app.get('/weapon', function(req, res){
 });
 
 app.get('/weapon-select', function(req, res){
-  db.query('SELECT *  FROM ' + dbName + '.weapon where weapon_id = ?', 
+  mysql.db.query('SELECT *  FROM ' + dbName + '.weapon where weapon_id = ?', 
     [req.query.id], function(err, results){
     if (err){
       return res.send(err);
@@ -59,7 +51,7 @@ app.get('/weapon-select', function(req, res){
 });
 
 app.get('/monster-select', function(req, res){
-  db.query('SELECT *  FROM ' + dbName + '.monster_part where name_id = ?', 
+  mysql.db.query('SELECT *  FROM ' + dbName + '.monster_part where name_id = ?', 
     [req.query.id], function(err, results){
     if (err){
       return res.send(err);
@@ -74,7 +66,7 @@ app.get('/monster-select', function(req, res){
 
 app.post('/weapon', function(req, res){
   if(req.body.class==0){
-    db.query('SELECT * FROM ' + dbName + '.weapon', function(err, results){
+    mysql.db.query('SELECT * FROM ' + dbName + '.weapon', function(err, results){
       if (err){
         return res.send(err);
       }
@@ -84,7 +76,7 @@ app.post('/weapon', function(req, res){
     })
   }
   else{
-    db.query('SELECT * FROM ' + dbName + '.weapon w \
+    mysql.db.query('SELECT * FROM ' + dbName + '.weapon w \
       INNER JOIN ' + dbName + '.weapon_list wl ON w.weapon_class = wl.weapon_list_id\
       WHERE wl.name = ?',
       [req.body.class], function(err, results, fields){
@@ -99,7 +91,7 @@ app.post('/weapon', function(req, res){
 });
 
 app.get('/weapon-type', function(req, res){
-  db.query('SELECT * FROM ' + dbName + '.weapon_list', function(err, results){
+  mysql.db.query('SELECT * FROM ' + dbName + '.weapon_list', function(err, results){
     if (err){
       return res.send(err);
     }
@@ -110,7 +102,7 @@ app.get('/weapon-type', function(req, res){
 });
 
 app.get('/monster', function(req,res){
-  db.query('SELECT * FROM ' + dbName + '.monster_list', function(err, results){
+  mysql.db.query('SELECT * FROM ' + dbName + '.monster_list', function(err, results){
     if(err){
       return res.send(err);
     }
@@ -121,7 +113,7 @@ app.get('/monster', function(req,res){
 })
 
 app.get('/monster-part', function(req, res){
-  db.query('SELECT * FROM ' + dbName + '.monster_part', function(err, results){
+  mysql.db.query('SELECT * FROM ' + dbName + '.monster_part', function(err, results){
     if(err){
       return res.send(err);
     }
@@ -134,7 +126,7 @@ app.get('/monster-part', function(req, res){
 
 app.get('/hitzone', function(req, res){
   console.log(req.query.name)
-  db.query('SELECT * FROM ' + dbName + '.monster_part WHERE name_id = ?',
+  mysql.db.query('SELECT * FROM ' + dbName + '.monster_part WHERE name_id = ?',
     [req.query.name], function(err, results){
       if(err){
         return res.send(err);
