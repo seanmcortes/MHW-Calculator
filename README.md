@@ -88,5 +88,5 @@ $ yarn install
 ```
 Return to root and run:
 ```
-$ yarn start
+$ yarn dev
 ```
