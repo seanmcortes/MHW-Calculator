@@ -46,7 +46,7 @@ class Calculator extends Component{
 
   handleCardDelete = (event) => {
     let tempArray = [...this.state.savedState];
-    let index = tempArray.findIndex(i => i.index === parseInt(event.target.value));
+    let index = tempArray.findIndex(i => i.index === parseInt(event.target.value, 10));
     console.log(index);
     tempArray.splice(index, 1);
     this.setState({ savedState: tempArray });
