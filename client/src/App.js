@@ -61,7 +61,8 @@ class App extends Component {
 	      waterAttack: [0,'0-1'],
 	      weaknessExploit: [0,0]
     	},
-    savedState: {}
+    savedState: {},
+    index: 0
 	};
 
 	componentDidMount() {
@@ -377,13 +378,16 @@ class App extends Component {
     let deepSkills = JSON.parse(tempSkills);
 
     let values = {
-      index: 0,
+      index: this.state.index,
       weaponValue: this.state.weaponValue, 
       monsterValue: this.state.monsterValue, 
       weaponSharpness: this.state.weaponSharpness, 
       skills: deepSkills
     }
-    this.setState({ savedState: values })
+    this.setState({ 
+      savedState: values,
+      index: this.state.index + 1 
+    })
   }
 
 	handleSharpnessSelect = (event) => { 

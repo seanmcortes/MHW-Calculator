@@ -75,7 +75,7 @@ class WeaponInfo extends Component{
   }
 
   render(){
-    if(Object.keys(this.state.weapon).length === 0 ||
+    if(Object.keys(this.state.weapon).length === 0 || 
       this.state.weapon.weapon_id === 0){
       return(
         <div />

@@ -18,7 +18,7 @@ class Calculator extends Component{
     savedState: []
   };
 
-  componentDidUpdate(prevProps, prevState){
+  componentDidUpdate(prevProps, prevState){   
     if(this.props.savedState !== prevProps.savedState){
       let tempSavedState = [...this.state.savedState];
       tempSavedState.push(this.props.savedState);
@@ -46,7 +46,8 @@ class Calculator extends Component{
 
   handleCardDelete = (event) => {
     let tempArray = [...this.state.savedState];
-    let index = tempArray.findIndex(i => i.index === event.target.value);
+    let index = tempArray.findIndex(i => i.index === parseInt(event.target.value));
+    console.log(index);
     tempArray.splice(index, 1);
     this.setState({ savedState: tempArray });
   }
